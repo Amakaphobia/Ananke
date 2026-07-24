@@ -4,13 +4,17 @@
     # Interface
     number = true;
     relativenumber = true;
-    signcolumn = "yes";
+    # signcolumn = "yes";
 
     # Indentation
     expandtab = true;
     shiftwidth = 2;
     tabstop = 2;
     softtabstop = 2;
+
+    # Folding
+    foldlevel = 99;
+    foldlevelstart = 99;
 
     # Search
     ignorecase = true;
