@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
   # formatting orchestrator
-  programs.nixvim.plugins.conform-nvim = {
-    enable = true;
+  programs.nixvim = {
+
     # import formatting tools here
     extraPackages = with pkgs; [
       nixfmt
@@ -10,24 +10,27 @@
       stylua
     ];
 
-    # declare tool for language
-    settings = {
-      formatters_by_ft = {
+    plugins.conform-nvim = {
+      enable = true;
 
-        nix = [ "nixfmt" ];
-        lua = [ "stylua" ];
+      # declare tool for language
+      settings = {
+        formatters_by_ft = {
 
-        css = [ "prettier" ];
+          nix = [ "nixfmt" ];
+          lua = [ "stylua" ];
 
-        json = [ "prettier" ];
-        jsonc = [ "prettier" ];
-      };
+          css = [ "prettier" ];
 
-      format_on_save = {
-        timeout_ms = 3000;
-        lsp_format = "fallback";
+          json = [ "prettier" ];
+          jsonc = [ "prettier" ];
+        };
+
+        format_on_save = {
+          timeout_ms = 3000;
+          lsp_format = "fallback";
+        };
       };
     };
-
   };
 }
