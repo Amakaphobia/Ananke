@@ -21,7 +21,6 @@
     # nixvim for 26.05
     nixvim = {
       url = "github:nix-community/nixvim/nixos-26.05";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # make firefox addons available via the nur overlay

@@ -7,6 +7,7 @@
     extraPackages = with pkgs; [
       nixfmt
       prettier
+      shfmt
       stylua
     ];
 
@@ -22,8 +23,12 @@
 
           css = [ "prettier" ];
 
+          sh = [ "shfmt" ];
+
           json = [ "prettier" ];
           jsonc = [ "prettier" ];
+
+          markdown = [ "prettier" ];
         };
 
         format_on_save = {

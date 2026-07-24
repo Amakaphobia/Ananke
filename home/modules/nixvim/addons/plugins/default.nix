@@ -5,12 +5,10 @@
     ./treesitter.nix
     ./nvim-lint.nix
     ./snacks.nix
+    ./blink-cmp.nix
   ];
 
   programs.nixvim.plugins = {
-
-    # autocomplete
-    blink-cmp.enable = true;
 
     # commonly used code snippets
     friendly-snippets.enable = true;
