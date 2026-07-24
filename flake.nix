@@ -18,6 +18,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # nixvim for 26.05
+    nixvim = {
+      url = "github:nix-community/nixvim/nixos-26.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # make firefox addons available via the nur overlay
     nur = {
       url = "github:nix-community/NUR";
@@ -79,6 +85,7 @@
               useUserPackages = true;
               sharedModules = [
                 stylix.homeModules.stylix
+                inputs.nixvim.homeModules.nixvim
               ];
               extraSpecialArgs = {
                 inherit
