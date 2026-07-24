@@ -4,13 +4,13 @@
     ./conform-nvim.nix
     ./treesitter.nix
     ./nvim-lint.nix
+    ./snacks.nix
   ];
 
   programs.nixvim.plugins = {
-    # TODO: super tab
 
     # autocomplete
-    blinkcmp.enable = true;
+    blink-cmp.enable = true;
 
     # commonly used code snippets
     friendly-snippets.enable = true;
@@ -23,9 +23,6 @@
 
     # better git integration
     gitsigns.enable = true;
-
-    # file tree
-    snacks.enable = true;
 
     # auto pairs
     mini-pairs.enable = true;

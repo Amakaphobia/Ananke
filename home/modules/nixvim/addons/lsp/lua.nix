@@ -4,7 +4,7 @@
     lua_ls = {
       enable = true;
 
-      settings = {
+      settings.Lua = {
         runtime.version = "LuaJIT";
 
         diagnostics.globals = [

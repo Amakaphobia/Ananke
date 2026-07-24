@@ -15,7 +15,7 @@
     # terminal
     (homeModulesPath + "/kitty.nix")
     # editor
-    (homeModulesPath + "/nvim")
+    (homeModulesPath + "/nixvim")
     # knowledge
     (homeModulesPath + "/obsidian")
     # stuff

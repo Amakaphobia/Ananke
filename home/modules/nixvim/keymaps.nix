@@ -39,15 +39,17 @@
     }
     {
       mode = "n";
-      key = "[d";
-      action.__raw = "vim.diagnostic.goto_prev";
-      options.desc = "Previous diagnostic";
-    }
-    {
-      mode = "n";
-      key = "]d";
-      action.__raw = "vim.diagnostic.goto_next";
-      options.desc = "Next diagnostic";
+      key = "<leader>cf";
+
+      action.__raw = ''
+        function()
+          require("conform").format({
+            lsp_format = "fallback",
+          })
+        end
+      '';
+
+      options.desc = "Format buffer";
     }
   ];
 }
