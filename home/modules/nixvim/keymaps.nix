@@ -31,37 +31,5 @@
       action.__raw = "vim.lsp.buf.code_action";
       options.desc = "Code action";
     }
-    {
-      mode = "n";
-      key = "<leader>cf";
-
-      action.__raw = ''
-        function()
-          require("conform").format({
-            lsp_format = "fallback",
-          })
-        end
-      '';
-
-      options.desc = "Format buffer";
-    }
-    {
-      mode = "n";
-      key = "<leader>e";
-      action.__raw = "function() Snacks.explorer() end";
-      options.desc = "File explorer";
-    }
-    {
-      mode = "n";
-      key = "<leader>ff";
-      action.__raw = "function() Snacks.picker.files() end";
-      options.desc = "Find files";
-    }
-    {
-      mode = "n";
-      key = "<leader>fg";
-      action.__raw = "function() Snacks.picker.grep() end";
-      options.desc = "Grep files";
-    }
   ];
 }

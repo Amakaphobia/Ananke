@@ -10,7 +10,6 @@
       shfmt
       stylua
     ];
-
     plugins.conform-nvim = {
       enable = true;
 
@@ -37,5 +36,22 @@
         };
       };
     };
+
+    keymaps = [
+      {
+        mode = "n";
+        key = "<leader>cf";
+
+        action.__raw = ''
+          function()
+            require("conform").format({
+              lsp_format = "fallback",
+            })
+          end
+        '';
+
+        options.desc = "Format buffer";
+      }
+    ];
   };
 }
