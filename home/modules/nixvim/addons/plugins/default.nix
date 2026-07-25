@@ -6,6 +6,7 @@
     ./colorizer.nix
     ./conform-nvim.nix
     ./lualine.nix
+    ./markdown.nix
     ./mini-ai.nix
     ./mini-pairs.nix
     ./mini-surround.nix

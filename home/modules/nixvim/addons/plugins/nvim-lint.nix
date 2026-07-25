@@ -12,6 +12,7 @@
         nix = [ "statix" ];
         sh = [ "shellcheck" ];
         markdown = [ "markdownlint-cli2" ];
+        "markdown.mdx" = [ "markdownlint-cli2" ];
       };
 
     };
