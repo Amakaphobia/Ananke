@@ -28,6 +28,8 @@
 
         # big file handling
         bigfile.enabled = true;
+        # load file content faster
+        quickfile.enabled = true;
 
         # highlight other occurrences of word under cursor
         words.enabled = true;
