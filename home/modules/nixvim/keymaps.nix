@@ -178,12 +178,6 @@
     }
     {
       mode = "n";
-      key = "<leader>bd";
-      action.__raw = "function() Snacks.bufdelete() end";
-      options.desc = "Delete buffer";
-    }
-    {
-      mode = "n";
       key = "<leader><TAB>";
       action = "<CMD>b#<CR>";
       options.desc = "Last active buffer";

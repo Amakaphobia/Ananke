@@ -4,7 +4,7 @@
     # Interface
     number = true;
     relativenumber = true;
-    # signcolumn = "yes";
+    signcolumn = "yes";
 
     # Indentation
     expandtab = true;
