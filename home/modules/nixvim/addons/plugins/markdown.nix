@@ -10,7 +10,7 @@
         enable = true;
 
         # set filetypes accepted for preview
-        settings.filtypes = [
+        settings.filetypes = [
           "markdown"
           "markdown.mdx"
         ];
@@ -22,7 +22,7 @@
 
         # set filetypes accepted for rendering
         settings = {
-          filtypes = [
+          file_types = [
             "markdown"
             "markdown.mdx"
           ];
