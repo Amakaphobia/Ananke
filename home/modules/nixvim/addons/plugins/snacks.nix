@@ -1,4 +1,7 @@
-{ ... }:
+{ config, ... }:
+let
+  colors = config.lib.stylix.colors.withHashtag;
+in
 {
   programs.nixvim = {
     plugins.snacks = {
@@ -10,6 +13,13 @@
 
         picker.sources.explorer.jump.close = true;
       };
+    };
+
+    # fix highlighted colors
+    highlightOverride.SnacksPickerListCursorLine = {
+      fg = colors.base05;
+      bg = colors.base02;
+      bold = true;
     };
 
     keymaps = [

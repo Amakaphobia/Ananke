@@ -182,12 +182,42 @@
       action.__raw = "function() Snacks.bufdelete() end";
       options.desc = "Delete buffer";
     }
-    # vim.api.nvim_set_keymap('n', '<C-b>', ':bprevious<CR>', { noremap = true, silent = true })
     {
       mode = "n";
       key = "<leader><TAB>";
       action = "<CMD>b#<CR>";
-      options.desc = "Last active Buffer";
+      options.desc = "Last active buffer";
+    }
+
+    # ####
+    # Diagnostics
+    # ####
+
+    {
+      mode = "n";
+      key = "]d";
+      action.__raw = ''
+        function()
+          vim.diagnostic.jump({ count = 1, float = true })
+        end
+      '';
+      options.desc = "Next diagnostic";
+    }
+    {
+      mode = "n";
+      key = "[d";
+      action.__raw = ''
+        function()
+          vim.diagnostic.jump({ count = -1, float = true })
+        end
+      '';
+      options.desc = "Previous diagnostic";
+    }
+    {
+      mode = "n";
+      key = "<leader>cd";
+      action.__raw = "vim.diagnostic.open_float";
+      options.desc = "Line diagnostic";
     }
   ];
 }
