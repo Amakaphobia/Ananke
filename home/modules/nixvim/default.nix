@@ -18,7 +18,7 @@
 
     globals = {
       mapleader = " ";
-      maplocalleader = " ";
+      maplocalleader = "\\";
     };
 
     extraPackages = with pkgs; [
