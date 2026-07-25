@@ -6,9 +6,17 @@
 
       settings = {
         explorer.enabled = true;
-        picker.enabled = true;
+        picker = {
+          enabled = true;
 
-        picker.sources.explorer.jump.close = true;
+          sources.explorer = {
+            # Show ignored files too
+            ignored = true;
+
+            # Close picker after opening a file
+            jump.close = true;
+          };
+        };
       };
     };
 
