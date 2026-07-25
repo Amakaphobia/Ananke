@@ -1,35 +1,77 @@
 { ... }:
 {
   programs.nixvim.keymaps = [
+
+    # ####
+    # expected default behaviour
+    # ####
+
     {
       mode = "n";
-      key = "K";
-      action.__raw = "vim.lsp.buf.hover";
-      options.desc = "LSP hover";
+      key = "<ESC>";
+      action.__raw = ":nohl<CR>";
+      options.desc = "clear search";
+    }
+
+    # ####
+    # window control
+    # ####
+
+    # Splitting
+
+    {
+      mode = "n";
+      key = "<leader>wv";
+      action.__raw = "<C-w>v";
+      options.desc = "split window vertically";
     }
     {
       mode = "n";
-      key = "gd";
-      action.__raw = "vim.lsp.buf.definition";
-      options.desc = "Go to definition";
+      key = "<leader>ws";
+      action.__raw = "<C-w>s";
+      options.desc = "split window horizontally";
+    }
+
+    # split control
+
+    {
+      mode = "n";
+      key = "<leader>we";
+      action.__raw = "<C-w>=";
+      options.desc = "make split equal in size";
     }
     {
       mode = "n";
-      key = "gr";
-      action.__raw = "vim.lsp.buf.references";
-      options.desc = "Find references";
+      key = "<leader>wx";
+      action.__raw = "<cmd>close<CR>";
+      desc = "close current split";
+    }
+
+    # focus control
+
+    {
+      mode = "n";
+      key = "<C-h>";
+      action.__raw = "<C-w><C-h>";
+      desc = "move focus to the left split";
     }
     {
       mode = "n";
-      key = "<leader>rn";
-      action.__raw = "vim.lsp.buf.rename";
-      options.desc = "Rename symbol";
+      key = "<C-j>";
+      action.__raw = "<C-w><C-j>";
+      desc = "move focus to the lower split";
     }
     {
       mode = "n";
-      key = "<leader>ca";
-      action.__raw = "vim.lsp.buf.code_action";
-      options.desc = "Code action";
+      key = "<C-k>";
+      action.__raw = "<C-w><C-k>";
+      options.desc = "move focus to the upper split";
+    }
+    {
+      mode = "n";
+      key = "<C-l>";
+      action.__raw = "<C-w><C-l>";
+      options.desc = "move focus to the right split";
     }
   ];
 }
