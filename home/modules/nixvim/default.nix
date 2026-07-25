@@ -7,6 +7,7 @@
     ./options.nix
     ./keymaps.nix
     ./addons
+    ./autocmds.nix
   ];
 
   programs.nixvim = {

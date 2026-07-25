@@ -43,7 +43,10 @@
     # substitution preview
     inccommand = "nosplit";
 
-    # update buffer after focus loss
+    # reload buffer after source changes externally
+    autoread = true;
+
+    # time before idle events are triggered
     updatetime = 200;
     timeoutlen = 300;
 

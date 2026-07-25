@@ -213,5 +213,24 @@
       action.__raw = "vim.diagnostic.open_float";
       options.desc = "Line diagnostic";
     }
+    # make spellcheck keybinds available in which key
+    {
+      mode = "n";
+      key = "]s";
+      action = "]s";
+      options = {
+        desc = "Next misspelled word";
+        noremap = true;
+      };
+    }
+    {
+      mode = "n";
+      key = "[s";
+      action = "[s";
+      options = {
+        desc = "Previous misspelled word";
+        noremap = true;
+      };
+    }
   ];
 }
