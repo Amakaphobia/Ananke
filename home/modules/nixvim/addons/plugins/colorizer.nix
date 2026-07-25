@@ -8,19 +8,25 @@
         __unkeyed-1 = "*";
         __unkeyed-2 = "!vim";
 
-        css = {
-          parsers.rgb.enable = true;
-        };
-
-        html = {
-          parsers.names.enable = false;
-        };
       };
+      options = {
+        parsers = {
+          css = true;
+          names.enable = false;
+          tailwind = {
+            enable = true;
+            lsp = true;
+          };
+        };
 
-      user_default_options = {
-        mode = "virtualtext";
-        names = false;
-        virtualtext = "■ ";
+        display = {
+          mode = "virtualtext";
+
+          virtualtext = {
+            char = "■";
+            position = "after";
+          };
+        };
       };
     };
   };
