@@ -6,6 +6,7 @@
     ./colorizer.nix
     ./conform-nvim.nix
     ./lualine.nix
+    ./mini-ai.nix
     ./mini-surround.nix
     ./nvim-lint.nix
     ./snacks.nix
