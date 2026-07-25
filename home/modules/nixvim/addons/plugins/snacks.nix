@@ -17,7 +17,7 @@ in
 
     # fix highlighted colors
     highlightOverride.SnacksPickerListCursorLine = {
-      fg = colors.base05;
+      fg = colors.base00;
       bg = colors.base02;
       bold = true;
     };

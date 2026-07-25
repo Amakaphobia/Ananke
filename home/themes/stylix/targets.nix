@@ -24,7 +24,7 @@
 
       # editor
       nixvim = {
-        enable = true;
+        enable = false;
         plugin = "mini.base16";
       };
       # firefox

@@ -1,20 +1,18 @@
 { ... }:
 {
   imports = [
+    ./blink-cmp.nix
     ./conform-nvim.nix
-    ./treesitter.nix
+    ./lualine.nix
     ./nvim-lint.nix
     ./snacks.nix
-    ./blink-cmp.nix
+    ./treesitter.nix
   ];
 
   programs.nixvim.plugins = {
 
     # commonly used code snippets
     friendly-snippets.enable = true;
-
-    # bottom status bar
-    lualine.enable = true;
 
     # hotkey helper
     which-key.enable = true;

@@ -3,6 +3,7 @@
 {
 
   imports = [
+    ./theme/catppuccin.nix
     ./options.nix
     ./keymaps.nix
     ./addons

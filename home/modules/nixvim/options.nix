@@ -23,5 +23,10 @@
     # Editing
     undofile = true;
     swapfile = false;
+
+    # Remove the ~ from end of buffer
+    fillchars = {
+      eob = " ";
+    };
   };
 }
