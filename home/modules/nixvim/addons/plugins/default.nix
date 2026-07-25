@@ -7,6 +7,7 @@
     ./conform-nvim.nix
     ./lualine.nix
     ./mini-ai.nix
+    ./mini-pairs.nix
     ./mini-surround.nix
     ./nvim-lint.nix
     ./snacks.nix
@@ -21,11 +22,5 @@
 
     # better git integration
     gitsigns.enable = true;
-
-    # auto pairs
-    mini-pairs.enable = true;
-
-    # better ai moves
-    mini-ai.enable = true;
   };
 }
