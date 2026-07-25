@@ -5,6 +5,8 @@
     number = true;
     relativenumber = true;
     signcolumn = "yes";
+    cursorline = true;
+    scrolloff = 4;
 
     # Indentation
     expandtab = true;
@@ -23,6 +25,27 @@
     # Editing
     undofile = true;
     swapfile = false;
+
+    # Confirm closing unsaved buffers
+    confirm = true;
+
+    # enable linewrap
+    wrap = true;
+    # prefer linewrapping on suitable characters
+    linebreak = true;
+    # carry indentation over
+    breakindent = true;
+
+    # Split directions
+    splitbelow = true;
+    splitright = true;
+
+    # substitution preview
+    inccommand = "nosplit";
+
+    # update buffer after focus loss
+    updatetime = 200;
+    timeoutlen = 300;
 
     # Remove the ~ from end of buffer
     fillchars = {

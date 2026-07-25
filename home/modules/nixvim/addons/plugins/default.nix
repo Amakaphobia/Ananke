@@ -1,7 +1,9 @@
 { ... }:
 {
   imports = [
+    ./autotag.nix
     ./blink-cmp.nix
+    ./colorizer.nix
     ./conform-nvim.nix
     ./lualine.nix
     ./nvim-lint.nix
