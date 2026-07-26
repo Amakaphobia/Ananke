@@ -10,8 +10,6 @@
     (homeModulesPath + "/fuzzel.nix")
     # git
     (homeModulesPath + "/git.nix")
-    # hypr
-    (homeModulesPath + "/hypr")
     # terminal
     (homeModulesPath + "/kitty.nix")
     # editor
