@@ -36,5 +36,12 @@
     (homeModulesPath + "/xdg.nix")
     # shell configuration
     (homeModulesPath + "/shell")
+
+    # hyprland desktop profile
+    ../../profiles/desktop/hypr.nix
   ];
+
+  config.ananke = {
+    desktop.profiles.hypr.enable = true;
+  };
 }
