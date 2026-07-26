@@ -11,7 +11,10 @@
       ];
 
       settings = {
-        nixpkgs.expr = "import (builtins.getFlake (builtins.toString ./.)).inputs.nixpkgs { }";
+        nixpkgs.expr = ''
+          (builtins.getFlake (builtins.toString ./.))
+            .inputs.nixpkgs.legacyPackages.x86_64-linux
+        '';
 
         formatting.command = [ "nixfmt" ];
 
