@@ -24,6 +24,9 @@
     lua5_1
     fastfetch
 
+    # general purpose library with datastructure, process, file/path, desktop utilities
+    glib
+
     openssh
     libva-utils
   ];

@@ -4,8 +4,6 @@
   home.packages = with pkgs; [
     # gui editor
     geany
-    # general purpose library with datastructure, process, file/path, desktop utilities
-    glib
     # a jason processor
     jq
     # nix language server
