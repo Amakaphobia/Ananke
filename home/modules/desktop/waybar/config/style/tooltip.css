@@ -1,6 +1,6 @@
 tooltip {
-  background: @background1;
-  border: 1px solid @info1;
+  background: @background;
+  border: 1px solid @info;
   border-radius: 8px;
 }
 tooltip label {
