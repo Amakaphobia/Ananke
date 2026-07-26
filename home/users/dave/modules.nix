@@ -4,12 +4,8 @@
   imports = [
     # process homeMonitor
     (homeModulesPath + "/btop.nix")
-    # fuzzel
-    (homeModulesPath + "/fuzzel.nix")
     # git
     (homeModulesPath + "/git.nix")
-    # terminal
-    (homeModulesPath + "/kitty.nix")
     # editor
     (homeModulesPath + "/nixvim")
     # knowledge

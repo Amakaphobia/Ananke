@@ -3,11 +3,7 @@ let
   cfg = config.ananke.desktop.profiles;
 in
 {
-  imports = [
-    ../../modules/hypr
-    ../../modules/screenshot.nix
-    ../../modules/firefox.nix
-  ];
+  imports = [ ../../modules/desktop ];
 
   options.ananke.desktop.profiles.hypr = {
     enable = lib.mkEnableOption "Enable this hyprland powered desktop profile";
@@ -18,6 +14,8 @@ in
       hypr.enable = lib.mkDefault true;
       screenshot.enable = lib.mkDefault true;
       firefox.enable = lib.mkDefault true;
+      fuzzel.enable = lib.mkDefault true;
+      kitty.enable = lib.mkDefault true;
     };
 
     # other desktop programs here
