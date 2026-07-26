@@ -20,8 +20,6 @@
     (homeModulesPath + "/obsidian")
     # stuff
     (homeModulesPath + "/packages.nix")
-    # polkit
-    (homeModulesPath + "/polkit.nix")
     # screenshots
     (homeModulesPath + "/screenshot.nix")
     # ssh

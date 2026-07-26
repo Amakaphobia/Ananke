@@ -1,20 +1,36 @@
-{ config, ... }:
+{ config, lib, ... }:
+let
+  cfg = config.ananka.desktop.hypr;
+in
 {
-  services.hyprpaper = {
-    enable = true;
+  options.ananka.desktop.hypr = {
+    monitor = lib.mkOption {
+      type = lib.types.str;
+      default = "";
+      description = "Monitor used by the machine. An empty string targets all monitors. Default \"\".";
+    };
+    paper = {
+      enable = lib.mkEnableOption "Wether to install hyprpaper";
+    };
+  };
 
-    settings = {
+  config = lib.mkIf (cfg.enable && cfg.paper.enable) {
+    services.hyprpaper = {
+      enable = true;
 
-      splash = false;
+      settings = {
 
-      wallpaper = [
-        {
-          fit_mode = "cover";
-          monitor = "eDP-1";
-          path = "${config.dave.theme.images.wallpaper}";
-        }
+        splash = false;
 
-      ];
+        wallpaper = [
+          {
+            fit_mode = "cover";
+            monitor = cfg.monitor;
+            path = "${config.dave.theme.images.wallpaper}";
+          }
+
+        ];
+      };
     };
   };
 }

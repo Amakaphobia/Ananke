@@ -1,9 +1,10 @@
-{ lib, ... }:
+{ config, lib, ... }:
 let
+  cfg = config.ananka.desktop.hypr;
   lua = lib.generators.mkLuaInline;
 in
 {
-  wayland.windowManager.hyprland.settings = {
+  wayland.windowManager.hyprland.settings = lib.mkIf cfg.enable {
     window_rule = [
       {
         name = "float-modal-windows";

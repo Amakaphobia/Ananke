@@ -1,6 +1,9 @@
-{ ... }:
+{ config, lib, ... }:
+let
+  cfg = config.ananka.desktop.hypr;
+in
 {
-  wayland.windowManager.hyprland.settings = {
+  wayland.windowManager.hyprland.settings = lib.mkIf cfg.enable {
     config = {
       input = {
         kb_layout = "de";

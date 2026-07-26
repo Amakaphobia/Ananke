@@ -1,5 +1,7 @@
-{ lib, ... }:
+{ config, lib, ... }:
 let
+  cfg = config.ananka.desktop.hypr;
+
   mainMod = "SUPER";
 
   # Favorite Programs
@@ -52,7 +54,7 @@ let
   ) (lib.range 1 10);
 in
 {
-  wayland.windowManager.hyprland.settings.bind = workspaceBinds ++ [
+  wayland.windowManager.hyprland.settings.bind = lib.mkIf cfg.enable workspaceBinds ++ [
     # Applications
     (mkBind "${mainMod} + R" (exec terminal))
     (mkBind "${mainMod} + SPACE" (exec menu))

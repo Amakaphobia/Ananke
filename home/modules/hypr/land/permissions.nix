@@ -1,6 +1,12 @@
-{ lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
+  cfg = config.ananka.desktop.hypr;
   grim = lib.escapeRegex (lib.getExe pkgs.grim);
 
   portal = lib.escapeRegex (
@@ -8,7 +14,7 @@ let
   );
 in
 {
-  wayland.windowManager.hyprland.settings = {
+  wayland.windowManager.hyprland.settings = lib.mkIf cfg.enable {
     config.ecosystem.enforce_permissions = true;
 
     permission = [

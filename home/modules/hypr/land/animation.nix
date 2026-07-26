@@ -1,5 +1,6 @@
-{ ... }:
+{ config, lib, ... }:
 let
+  cfg = config.ananka.desktop.hypr;
   mkBezier = name: points: {
     _args = [
       name
@@ -11,7 +12,7 @@ let
   };
 in
 {
-  wayland.windowManager.hyprland.settings = {
+  wayland.windowManager.hyprland.settings = lib.mkIf cfg.enable {
 
     # turn on animations master toggle
     config.animations.enabled = true;

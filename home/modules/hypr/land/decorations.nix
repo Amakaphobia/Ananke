@@ -1,5 +1,7 @@
 { config, lib, ... }:
 let
+  cfg = config.ananka.desktop.hypr;
+
   colorsLib = import ../../../lib/colors.nix {
     inherit lib;
   };
@@ -10,7 +12,7 @@ let
   borderInactive = (colorsLib.hyprRgba colors.surface "dd");
 in
 {
-  wayland.windowManager.hyprland.settings = {
+  wayland.windowManager.hyprland.settings = lib.mkIf cfg.enable {
     config = {
       general = {
         # Gaps
