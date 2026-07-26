@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 {
   programs.nixvim = {
     plugins.snacks = {
@@ -32,7 +32,18 @@
         quickfile.enabled = true;
 
         # highlight other occurrences of word under cursor
-        words.enabled = true;
+        words = {
+          enabled = true;
+
+          # turn it off for nix files, because it shits out 50 loglines per minute full of errors
+          filter = config.lib.nixvim.mkRaw ''
+            function(buf)
+              return vim.bo[buf].filetype ~= "nix"
+                and vim.g.snacks_words ~= false
+                and vim.b[buf].snacks_words ~= false
+            end
+          '';
+        };
 
         # notifications
         notifier = {
