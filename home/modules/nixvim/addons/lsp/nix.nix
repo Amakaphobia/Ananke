@@ -4,7 +4,13 @@
     nixd = {
       enable = true;
 
-      settings = {
+      # set root markers
+      rootMarkers = [
+        "flake.nix"
+        ".git"
+      ];
+
+      settings.nixd = {
         nixpkgs.expr = "import (builtins.getFlake (builtins.toString ./.)).inputs.nixpkgs { }";
 
         formatting.command = [ "nixfmt" ];

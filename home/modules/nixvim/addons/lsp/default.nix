@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 {
   imports = [
     ./bash.nix
@@ -8,7 +8,6 @@
     ./markdown.nix
     ./nix.nix
   ];
-
   programs.nixvim = {
     plugins.lsp = {
       enable = true;
