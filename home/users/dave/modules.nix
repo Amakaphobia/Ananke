@@ -18,8 +18,6 @@
     (homeModulesPath + "/obsidian")
     # stuff
     (homeModulesPath + "/packages.nix")
-    # screenshots
-    (homeModulesPath + "/screenshot.nix")
     # ssh
     (homeModulesPath + "/ssh.nix")
     # custom Scripts
@@ -40,6 +38,10 @@
   ];
 
   config.ananke = {
-    desktop.profiles.hypr.enable = true;
+    desktop.profiles.hypr = {
+
+      enable = true;
+      screenshot.enable = true;
+    };
   };
 }
