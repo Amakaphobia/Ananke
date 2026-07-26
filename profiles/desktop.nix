@@ -8,4 +8,11 @@
     ../modules/programs/firefox.nix
     ../modules/programs/thunar.nix
   ];
+
+  config = {
+    ananke.system = {
+      windowManager.hypr.enable = true;
+      programs.firefox.enable = true;
+    };
+  };
 }

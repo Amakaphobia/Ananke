@@ -39,9 +39,7 @@
 
   config.ananke = {
     desktop.profiles.hypr = {
-
       enable = true;
-      screenshot.enable = true;
     };
   };
 }

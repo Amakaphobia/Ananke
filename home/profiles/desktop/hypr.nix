@@ -6,6 +6,7 @@ in
   imports = [
     ../../modules/hypr
     ../../modules/screenshot.nix
+    ../../modules/firefox.nix
   ];
 
   options.ananke.desktop.profiles.hypr = {
@@ -13,9 +14,11 @@ in
   };
 
   config = lib.mkIf cfg.hypr.enable {
-    ananke.desktop.hypr.enable = true;
-
-    ananke.desktop.screenshot.enable = lib.mkDefault true;
+    ananke.desktop = {
+      hypr.enable = lib.mkDefault true;
+      screenshot.enable = lib.mkDefault true;
+      firefox.enable = lib.mkDefault true;
+    };
 
     # other desktop programs here
   };

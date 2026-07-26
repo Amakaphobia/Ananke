@@ -1,16 +1,25 @@
 {
+  config,
+  lib,
   ...
 }:
+let
+  cfg = config.ananke.system.programs.firefox;
+in
 {
-  programs.firefox = {
+  options.ananke.system.programs.firefox = {
+    enable = lib.mkEnableOption "Install Firefox";
+  };
+
+  programs.firefox = lib.mkIf cfg.enable {
     enable = true;
     policies = {
       HardwareAcceleration = true;
       SearchEngines.Default = "DuckDuckGo";
-	AIControls.Default = {
-	  Value = "blocked";
-	  Locked = true;
-	};
+      AIControls.Default = {
+        Value = "blocked";
+        Locked = true;
+      };
     };
     preferences = {
       "media.ffmpeg.vaapi.enabled" = true;
@@ -22,7 +31,7 @@
       # Primary Firefox fonts are set by stylix
 
       # Fallback chains are set by fontconfig
-      
+
       # Used by some content that Firefox classifies as general Unicode
       "font.name-list.sans-serif.x-unicode" = "Noto Sans, Symbols Nerd Font";
       "font.name-list.serif.x-unicode" = "Noto Serif, Symbols Nerd Font";
