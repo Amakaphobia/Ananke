@@ -10,36 +10,36 @@ in
 {
 
   options.ananke.desktop.utilities = {
-    enable = lib.mkEnableOption "Desktop utilities";
+    enable = lib.mkEnableOption "Desktop Utilities";
     wl-clipboard.enable = lib.mkOption {
       type = lib.types.bool;
       default = true;
-      description = "wl-clipboard";
+      description = "Whether to install Wl-clipboard";
     };
     brightnessctl.enable = lib.mkOption {
       type = lib.types.bool;
       default = true;
-      description = "brightnessctl";
+      description = "Whether to install Brightnessctl";
     };
     playerctl.enable = lib.mkOption {
       type = lib.types.bool;
       default = true;
-      description = "playerctl";
+      description = "Whether to install Playerctl";
     };
     libnotify.enable = lib.mkOption {
       type = lib.types.bool;
       default = true;
-      description = "Libnotify";
+      description = "Whether to install Libnotify";
     };
     pavucontrol.enable = lib.mkOption {
       type = lib.types.bool;
       default = true;
-      description = "pavucontrol";
+      description = "Whether to install Pavucontrol";
     };
     networkmanagerapplet.enable = lib.mkOption {
       type = lib.types.bool;
       default = true;
-      description = "networkmanagerapplet";
+      description = "Whether to install Networkmanagerapplet";
     };
   };
 

@@ -2,6 +2,8 @@
 
 {
   home.packages = with pkgs; [
+    # pastel terminal color
+    pastel
     # a jason processor
     jq
     # terminal git

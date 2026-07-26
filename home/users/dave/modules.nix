@@ -33,7 +33,6 @@
         enable = true;
 
         geany.enable = true;
-        pastel.enable = true;
         gimp.enable = true;
         imv.enable = true;
         vlc.enable = true;

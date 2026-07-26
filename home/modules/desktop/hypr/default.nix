@@ -21,7 +21,7 @@ in
   options.ananke.desktop.hypr = {
     enable = lib.mkEnableOption "The ananke Hypr ecosystem";
     shutdown.enable = lib.mkEnableOption "hyprshutdown";
-    polkitAgent.enable = lib.mkEnableOption "hyprplokitagent";
+    polkitAgent.enable = lib.mkEnableOption "hyprpolkitagent";
   };
 
   config = lib.mkIf cfg.enable {

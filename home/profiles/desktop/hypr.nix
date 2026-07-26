@@ -6,7 +6,7 @@ in
   imports = [ ../../modules/desktop ];
 
   options.ananke.desktop.profiles.hypr = {
-    enable = lib.mkEnableOption "Enable this hyprland powered desktop profile";
+    enable = lib.mkEnableOption "hyprland powered desktop profile";
   };
 
   config = lib.mkIf cfg.hypr.enable {
