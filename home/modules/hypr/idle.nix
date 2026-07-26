@@ -1,9 +1,9 @@
 { config, lib, ... }:
 let
-  cfg = config.ananka.desktop.hypr;
+  cfg = config.ananke.desktop.hypr;
 in
 {
-  options.ananka.desktop.hypr.idle = {
+  options.ananke.desktop.hypr.idle = {
     enable = lib.mkEnableOption "Wether to install hypridle";
 
     lock_timeout = lib.mkOption {
@@ -24,8 +24,8 @@ in
       {
         assertion = cfg.idle.display_timeout > cfg.idle.lock_timeout;
         message = ''
-          ananka.desktop.hypr.idle.display_timeout must be
-          greater than ananka.desktop.hypr.idle.lock_timeout.
+          ananke.desktop.hypr.idle.display_timeout must be
+          greater than ananke.desktop.hypr.idle.lock_timeout.
         '';
       }
     ];

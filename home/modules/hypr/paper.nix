@@ -1,9 +1,9 @@
 { config, lib, ... }:
 let
-  cfg = config.ananka.desktop.hypr;
+  cfg = config.ananke.desktop.hypr;
 in
 {
-  options.ananka.desktop.hypr = {
+  options.ananke.desktop.hypr = {
     monitor = lib.mkOption {
       type = lib.types.str;
       default = "";

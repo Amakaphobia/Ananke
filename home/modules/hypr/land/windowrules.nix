@@ -1,6 +1,6 @@
 { config, lib, ... }:
 let
-  cfg = config.ananka.desktop.hypr;
+  cfg = config.ananke.desktop.hypr;
   lua = lib.generators.mkLuaInline;
 in
 {

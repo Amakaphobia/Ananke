@@ -1,13 +1,13 @@
 { config, lib, ... }:
 let
-  cfg = config.ananka.desktop.hypr;
+  cfg = config.ananke.desktop.hypr;
   colorsLib = import ../../lib/colors.nix {
     inherit lib;
   };
   colors = config.dave.theme.scheme.roles;
 in
 {
-  options.ananka.desktop.hypr.lock = {
+  options.ananke.desktop.hypr.lock = {
     enable = lib.mkEnableOption "wether to install hyprlock";
   };
 

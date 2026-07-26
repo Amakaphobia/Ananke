@@ -1,6 +1,6 @@
 { config, lib, ... }:
 let
-  cfg = config.ananka.desktop.hypr;
+  cfg = config.ananke.desktop.hypr;
 
   colorsLib = import ../../../lib/colors.nix {
     inherit lib;

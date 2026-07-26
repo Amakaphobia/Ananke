@@ -25,18 +25,19 @@ in
 
   config = lib.mkIf cfg.enable {
 
-    # use hyprpolkit by default
-    services.hyprpolkitagent.enable = cfg.polkitAgent.enable;
-    # install hyprshutdown alongside hypr by default
-    home.packages = lib.optional cfg.shutdown.enable pkgs.hyprshutdown;
-
     # set default packages from the hypr ecosystem
-    cfg = {
+    ananke.desktop.hypr = {
       shutdown.enable = lib.mkDefault true;
       polkitAgent.enable = lib.mkDefault true;
       idle.enable = lib.mkDefault true;
       lock.enable = lib.mkDefault true;
       paper.enable = lib.mkDefault true;
     };
+
+    # enable hyprpolkit
+    services.hyprpolkitagent.enable = cfg.polkitAgent.enable;
+    # install hyprshutdown
+    home.packages = lib.optional cfg.shutdown.enable pkgs.hyprshutdown;
+
   };
 }
