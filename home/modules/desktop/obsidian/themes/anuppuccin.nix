@@ -1,4 +1,9 @@
-{ pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   anuPpuccinObsidian = pkgs.stdenvNoCC.mkDerivation {
     pname = "anuPpuccinObsidian";
@@ -20,9 +25,13 @@ let
       runHook postInstall
     '';
   };
+
+  cfg = config.ananke.desktop.obsidian;
 in
 {
-  programs.obsidian.vaults.main.settings.themes = [
-    anuPpuccinObsidian
-  ];
+  config = lib.mkIf cfg.enable {
+    programs.obsidian.vaults.main.settings.themes = [
+      anuPpuccinObsidian
+    ];
+  };
 }

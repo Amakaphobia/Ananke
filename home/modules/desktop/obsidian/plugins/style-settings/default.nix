@@ -1,5 +1,12 @@
-{ pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
+  cfg = config.ananke.desktop.obsidian;
+
   styleSettings = pkgs.stdenvNoCC.mkDerivation rec {
     pname = "obsidian-style-settings";
     version = "1.0.9";
@@ -30,10 +37,12 @@ let
   };
 in
 {
-  programs.obsidian.defaultSettings.communityPlugins = [
-    {
-      pkg = styleSettings;
-      settings = builtins.fromJSON (builtins.readFile ./data.json);
-    }
-  ];
+  config = lib.mkIf cfg.enable {
+    programs.obsidian.defaultSettings.communityPlugins = [
+      {
+        pkg = styleSettings;
+        settings = builtins.fromJSON (builtins.readFile ./data.json);
+      }
+    ];
+  };
 }

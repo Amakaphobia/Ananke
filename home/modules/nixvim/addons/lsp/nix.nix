@@ -1,27 +1,31 @@
-{ ... }:
+{ pkgs, ... }:
 {
-  programs.nixvim.plugins.lsp.servers = {
-    nixd = {
-      enable = true;
+  programs.nixvim = {
+    extraPackages = [ pkgs.nixfmt ];
 
-      # set root markers
-      rootMarkers = [
-        "flake.nix"
-        ".git"
-      ];
+    plugins.lsp.servers = {
+      nixd = {
+        enable = true;
 
-      settings = {
-        nixpkgs.expr = ''
-          (builtins.getFlake (builtins.toString ./.))
-            .inputs.nixpkgs.legacyPackages.x86_64-linux
-        '';
+        # set root markers
+        rootMarkers = [
+          "flake.nix"
+          ".git"
+        ];
 
-        formatting.command = [ "nixfmt" ];
+        settings = {
+          nixpkgs.expr = ''
+            (builtins.getFlake (builtins.toString ./.))
+              .inputs.nixpkgs.legacyPackages.x86_64-linux
+          '';
 
-        options = {
-          nixos.expr = "(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.nyx.options";
+          formatting.command = [ "nixfmt" ];
 
-          home_manager.expr = "(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.nyx.options.home-manager.users.type.getSubOptions []";
+          options = {
+            nixos.expr = "(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.nyx.options";
+
+            home_manager.expr = "(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.nyx.options.home-manager.users.type.getSubOptions []";
+          };
         };
       };
     };

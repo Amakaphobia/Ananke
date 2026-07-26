@@ -1,5 +1,11 @@
-{ pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
+  cfg = config.ananke.desktop.obsidian;
   dataview = pkgs.stdenvNoCC.mkDerivation rec {
 
     pname = "obsidian-dataview";
@@ -32,9 +38,11 @@ let
   };
 in
 {
-  programs.obsidian.defaultSettings.communityPlugins = [
-    {
-      pkg = dataview;
-    }
-  ];
+  config = lib.mkIf cfg.enable {
+    programs.obsidian.defaultSettings.communityPlugins = [
+      {
+        pkg = dataview;
+      }
+    ];
+  };
 }

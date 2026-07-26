@@ -8,18 +8,12 @@
     (homeModulesPath + "/git.nix")
     # editor
     (homeModulesPath + "/nixvim")
-    # knowledge
-    (homeModulesPath + "/obsidian")
     # stuff
     (homeModulesPath + "/packages.nix")
     # ssh
     (homeModulesPath + "/ssh.nix")
     # custom Scripts
     ../../scripts
-    # statusbar
-    (homeModulesPath + "/waybar")
-    # how sandboxed/wayland apps ask for desktop features
-    (homeModulesPath + "/xdg.nix")
     # shell configuration
     (homeModulesPath + "/shell")
 
@@ -29,16 +23,19 @@
 
   config.ananke = {
     desktop = {
-      profiles.hypr = {
-        enable = true;
+      profiles = {
+        hypr.enable = true;
       };
+
+      obsidian.enable = true;
+
       hypr.commands = {
         menu = "fuzzel-once";
-        hyprLayoutToggle = "hypr-toggle-layout";
+        hyprLayoutToggle = "hyprland-toggle-layout";
         barToggle = "toggle-waybar";
-        lockscreen = "hyprlock-once";
+        lockScreen = "hyprlock-once";
         screenshotRegion = "screenshot-region";
-        screenshotComplete = "screenshot-Complete";
+        screenshotComplete = "screenshot-complete";
       };
     };
   };

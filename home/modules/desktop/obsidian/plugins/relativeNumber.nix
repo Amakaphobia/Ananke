@@ -1,5 +1,12 @@
-{ pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
+  cfg = config.ananke.desktop.obsidian;
+
   relativeLineNumbers = pkgs.stdenvNoCC.mkDerivation rec {
     pname = "obsidian-relative-line-numbers";
     version = "3.1.0";
@@ -34,9 +41,11 @@ let
   };
 in
 {
-  programs.obsidian.defaultSettings.communityPlugins = [
-    {
-      pkg = relativeLineNumbers;
-    }
-  ];
+  config = lib.mkIf cfg.enable {
+    programs.obsidian.defaultSettings.communityPlugins = [
+      {
+        pkg = relativeLineNumbers;
+      }
+    ];
+  };
 }
