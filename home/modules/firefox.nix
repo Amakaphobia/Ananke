@@ -3,6 +3,7 @@
   inputs,
   lib,
   config,
+  osConfig,
   ...
 }:
 let
@@ -15,7 +16,7 @@ in
   config = lib.mkIf cfg.enable {
     assertions = [
       {
-        assertion = config.ananke.system.programs.firefox;
+        assertion = osConfig.ananke.system.programs.firefox.enable;
         message = "Firefox needs to be installed at system level, add config.ananke.system.programs.firefox.enable";
       }
     ];

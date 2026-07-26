@@ -4,8 +4,6 @@
   imports = [
     # process homeMonitor
     (homeModulesPath + "/btop.nix")
-    # firefox user profiles
-    (homeModulesPath + "/firefox.nix")
     # fuzzel
     (homeModulesPath + "/fuzzel.nix")
     # git

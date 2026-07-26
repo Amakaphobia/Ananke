@@ -1,4 +1,5 @@
 {
+  osConfig,
   config,
   lib,
   pkgs,
@@ -26,7 +27,7 @@ in
   config = lib.mkIf cfg.enable {
     assertions = [
       {
-        asertion = config.ananke.system.windowManager.hypr.enable;
+        assertion = osConfig.ananke.system.windowManager.hypr.enable;
         message = "Hyprland needs to be installed on system level, add: ananke.system.windowManager.hypr.enable";
       }
     ];
