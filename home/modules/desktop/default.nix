@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+    ./apps.nix
     ./desktoputilities.nix
     ./hypr
     ./firefox.nix

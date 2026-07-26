@@ -10,7 +10,7 @@ in
   ];
 
   options.ananke.desktop.obsidian = {
-    enable = lib.mkEnableOption "Install obsidian the note taking app";
+    enable = lib.mkEnableOption "Obsidian";
   };
 
   config = lib.mkIf cfg.enable {

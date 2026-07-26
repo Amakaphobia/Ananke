@@ -28,7 +28,7 @@ let
 in
 {
   options.ananke.desktop.waybar = {
-    enable = lib.mkEnableOption "Install waybar";
+    enable = lib.mkEnableOption "Waybar";
   };
 
   config = lib.mkIf cfg.enable {

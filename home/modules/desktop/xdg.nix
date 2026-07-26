@@ -4,7 +4,7 @@ let
 in
 {
   options.ananke.desktop.xdgMimeApps = {
-    enable = lib.mkEnableOption "Sets preffered applications";
+    enable = lib.mkEnableOption "preffered applications";
   };
 
   config = lib.mkIf cfg.enable {

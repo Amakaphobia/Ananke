@@ -11,7 +11,7 @@ let
 in
 {
   options.ananke.desktop.firefox = {
-    enable = lib.mkEnableOption "Install this firefox profile";
+    enable = lib.mkEnableOption "Firefox profile";
   };
   config = lib.mkIf cfg.enable {
     assertions = [

@@ -6,7 +6,7 @@ let
 in
 {
   options.ananke.desktop.swaync = {
-    enable = lib.mkEnableOption "Enable swaync";
+    enable = lib.mkEnableOption "swaync";
   };
 
   config = lib.mkIf cfg.enable {

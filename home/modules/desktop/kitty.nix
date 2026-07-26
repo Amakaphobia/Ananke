@@ -12,7 +12,7 @@ let
 in
 {
   options.ananke.desktop.kitty = {
-    enable = lib.mkEnableOption "Enable Kitty";
+    enable = lib.mkEnableOption "Kitty";
   };
 
   config = lib.mkIf cfg.enable {

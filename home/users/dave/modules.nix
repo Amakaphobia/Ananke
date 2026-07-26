@@ -29,6 +29,17 @@
 
       obsidian.enable = true;
 
+      apps = {
+        enable = true;
+
+        geany.enable = true;
+        pastel.enable = true;
+        gimp.enable = true;
+        imv.enable = true;
+        vlc.enable = true;
+        spotify.enable = true;
+      };
+
       hypr.commands = {
         menu = "fuzzel-once";
         hyprLayoutToggle = "hyprland-toggle-layout";

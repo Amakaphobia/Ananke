@@ -20,8 +20,8 @@ in
   # create a master switch and a hyprshutdown option
   options.ananke.desktop.hypr = {
     enable = lib.mkEnableOption "The ananke Hypr ecosystem";
-    shutdown.enable = lib.mkEnableOption "wether to install hyprshutdown";
-    polkitAgent.enable = lib.mkEnableOption "wether to enable hyprplokitagent";
+    shutdown.enable = lib.mkEnableOption "hyprshutdown";
+    polkitAgent.enable = lib.mkEnableOption "hyprplokitagent";
   };
 
   config = lib.mkIf cfg.enable {

@@ -6,7 +6,7 @@ let
 in
 {
   options.ananke.desktop.fuzzel = {
-    enable = lib.mkEnableOption "Enable fuzzel";
+    enable = lib.mkEnableOption "Fuzzel";
   };
 
   config = lib.mkIf cfg.enable {

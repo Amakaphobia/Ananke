@@ -9,7 +9,7 @@ let
 in
 {
   options.ananke.desktop.screenshot = {
-    enable = lib.mkEnableOption "Enable screenshot tooling";
+    enable = lib.mkEnableOption "Screenshot tooling";
   };
 
   config = lib.mkIf cfg.enable {

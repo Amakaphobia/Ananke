@@ -16,7 +16,7 @@ in
     assertions = [
       {
         assertion = osConfig.ananke.system.programs.thunar.enable;
-        message = "Fuzzel needs to be installed at system level. -> config.ananke.system.programs.thunar.enable = true;";
+        message = "Thunar needs to be installed at system level. -> config.ananke.system.programs.thunar.enable = true;";
       }
     ];
     xfconf.settings.thunar = {
