@@ -1,7 +1,6 @@
 { config, lib, ... }:
 let
-  dsk = config.ananke.desktop;
-  cfg = dsk.profiles;
+  cfg = config.ananke.desktop.profiles;
 in
 {
   imports = [
@@ -11,13 +10,12 @@ in
 
   options.ananke.desktop.profiles.hypr = {
     enable = lib.mkEnableOption "Enable this hyprland powered desktop profile";
-    screenshot.enable = lib.mkEnableOption "Enable screenshot tools";
   };
 
   config = lib.mkIf cfg.hypr.enable {
     ananke.desktop.hypr.enable = true;
 
-    ananke.desktop.screenshot.enable = cfg.hypr.screenshot.enable;
+    ananke.desktop.screenshot.enable = lib.mkDefault true;
 
     # other desktop programs here
   };
