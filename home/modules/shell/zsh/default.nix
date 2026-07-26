@@ -24,8 +24,4 @@
       chelp = "cat ~/color-info.txt";
     };
   };
-
-  # make /share/zsh available
-  environment.pathsToLink = [ "/share/zsh" ];
-
 }

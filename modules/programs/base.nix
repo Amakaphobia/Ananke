@@ -34,4 +34,8 @@
     # enable the cool shell
     zsh.enable = true;
   };
+
+  # make /share/zsh available
+  environment.pathsToLink = [ "/share/zsh" ];
+
 }
