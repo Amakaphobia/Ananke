@@ -12,7 +12,10 @@
   config = {
     ananke.system = {
       windowManager.hypr.enable = lib.mkDefault true;
-      programs.firefox.enable = lib.mkDefault true;
+      programs = {
+        firefox.enable = lib.mkDefault true;
+        thunar.enable = lib.mkDefault true;
+      };
     };
   };
 }

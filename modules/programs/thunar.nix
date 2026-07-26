@@ -1,14 +1,22 @@
-{ ... }:
+{ config, lib, ... }:
+let
+  cfg = config.ananke.system.programs.thunar;
+in
 {
-  programs = {
-    thunar.enable = true;
-    xfconf.enable = true;
-  };
-  services = {
-    # user level file system Integration (trash, mounts, remote drives)
-    gvfs.enable = true;
-    # thumbnails
-    tumbler.enable = true;
+  options.ananke.system.programs.thunar = {
+    enable = lib.mkEnableOption "Install Thunar";
   };
 
+  config = lib.mkIf cfg.enable {
+    programs = {
+      thunar.enable = true;
+      xfconf.enable = true;
+    };
+    services = {
+      # user level file system Integration (trash, mounts, remote drives)
+      gvfs.enable = true;
+      # thumbnails
+      tumbler.enable = true;
+    };
+  };
 }

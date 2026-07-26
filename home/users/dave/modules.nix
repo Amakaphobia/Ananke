@@ -16,10 +16,6 @@
     (homeModulesPath + "/ssh.nix")
     # custom Scripts
     ../../scripts
-    # sway notification center
-    (homeModulesPath + "/swaync.nix")
-    # thunar settings
-    (homeModulesPath + "/thunar.nix")
     # statusbar
     (homeModulesPath + "/waybar")
     # how sandboxed/wayland apps ask for desktop features
@@ -32,8 +28,18 @@
   ];
 
   config.ananke = {
-    desktop.profiles.hypr = {
-      enable = true;
+    desktop = {
+      profiles.hypr = {
+        enable = true;
+      };
+      hypr.commands = {
+        menu = "fuzzel-once";
+        hyprLayoutToggle = "hypr-toggle-layout";
+        barToggle = "toggle-waybar";
+        lockscreen = "hyprlock-once";
+        screenshotRegion = "screenshot-region";
+        screenshotComplete = "screenshot-Complete";
+      };
     };
   };
 }

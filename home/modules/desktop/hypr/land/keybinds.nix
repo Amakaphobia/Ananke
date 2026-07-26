@@ -62,30 +62,30 @@ in
 
     hyprLayoutToggle = lib.mkOption {
       type = lib.types.str;
-      default = "hypr-toggle-layout";
+      default = "echo 'No command defined.'";
       description = "toggle different layouts";
     };
 
     barToggle = lib.mkOption {
       type = lib.types.str;
-      default = "toggle-waybar";
-      description = "command that toggles the statusbar. Default toggle-waybar";
+      default = "echo 'No command defined.'";
+      description = "command that toggles the statusbar.";
     };
 
     lockScreen = lib.mkOption {
       type = lib.types.str;
-      default = "hyprlock-once";
-      description = "Opens the lockscreen if the lockscreen is not open yet. Default hyprlock-once";
+      default = "echo 'No command defined.'";
+      description = "Opens the lockscreen if the lockscreen is not open yet.";
     };
 
     screenshotRegion = lib.mkOption {
       type = lib.types.str;
-      default = "screenshot-region";
+      default = "echo 'No command defined.'";
       description = "Screenshots a region";
     };
     screenshotComplete = lib.mkOption {
       type = lib.types.str;
-      default = "screenshot-Complete";
+      default = "echo 'No command defined.'";
       description = "Screenshot";
     };
   };
