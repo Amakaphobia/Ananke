@@ -10,7 +10,7 @@
         ".git"
       ];
 
-      settings.nixd = {
+      settings = {
         nixpkgs.expr = "import (builtins.getFlake (builtins.toString ./.)).inputs.nixpkgs { }";
 
         formatting.command = [ "nixfmt" ];
