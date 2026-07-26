@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 {
   imports = [
     ../modules/desktop/audio.nix
@@ -11,8 +11,8 @@
 
   config = {
     ananke.system = {
-      windowManager.hypr.enable = true;
-      programs.firefox.enable = true;
+      windowManager.hypr.enable = lib.mkDefault true;
+      programs.firefox.enable = lib.mkDefault true;
     };
   };
 }

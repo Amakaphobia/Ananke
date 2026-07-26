@@ -1,7 +1,7 @@
 { config, lib, ... }:
 let
   cfg = config.ananke.desktop.hypr;
-  colorsLib = import ../../lib/colors.nix {
+  colorsLib = import ../../../lib/colors.nix {
     inherit lib;
   };
   colors = config.dave.theme.scheme.roles;

@@ -4,14 +4,14 @@
   ...
 }:
 let
-  cfg = config.anake.desktop.kitty;
-  colorsLib = import ../lib/colors.nix {
+  cfg = config.ananke.desktop.kitty;
+  colorsLib = import ../../lib/colors.nix {
     inherit lib;
   };
   colors = config.dave.theme.scheme.roles;
 in
 {
-  options.anake.desktop.kitty = {
+  options.ananke.desktop.kitty = {
     enable = lib.mkEnableOption "Enable Kitty";
   };
 

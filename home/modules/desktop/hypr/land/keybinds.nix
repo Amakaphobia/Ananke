@@ -4,19 +4,6 @@ let
 
   mainMod = "SUPER";
 
-  # Favorite Programs
-  terminal = "kitty";
-  menu = "fuzzel-once";
-  fileManager = "thunar";
-  waybarToggle = "toggle-waybar";
-  lockscreen = "hyprlock-once";
-
-  # screenshot scripts
-  ssr = "screenshot-region";
-  ssc = "screenshot-complete";
-
-  # layout toggler
-  layoutToggle = "hyprland-toggle-layout";
   # Mark a string as executable Lua instead of an ordinary quoted string.
   lua = lib.generators.mkLuaInline;
 
@@ -54,23 +41,72 @@ let
   ) (lib.range 1 10);
 in
 {
+  options.ananke.desktop.hypr.commands = {
+    terminal = lib.mkOption {
+      type = lib.types.str;
+      default = "kitty";
+      description = "The command that opens the terminal. Default kitty.";
+    };
+
+    menu = lib.mkOption {
+      type = lib.types.str;
+      default = "fuzzel";
+      description = "command that opens the menu. Default fuzzel.";
+    };
+
+    fileManager = lib.mkOption {
+      type = lib.types.str;
+      default = "thunar";
+      description = "command that opens the FileManager. Default thunar.";
+    };
+
+    hyprLayoutToggle = lib.mkOption {
+      type = lib.types.str;
+      default = "hypr-toggle-layout";
+      description = "toggle different layouts";
+    };
+
+    barToggle = lib.mkOption {
+      type = lib.types.str;
+      default = "toggle-waybar";
+      description = "command that toggles the statusbar. Default toggle-waybar";
+    };
+
+    lockScreen = lib.mkOption {
+      type = lib.types.str;
+      default = "hyprlock-once";
+      description = "Opens the lockscreen if the lockscreen is not open yet. Default hyprlock-once";
+    };
+
+    screenshotRegion = lib.mkOption {
+      type = lib.types.str;
+      default = "screenshot-region";
+      description = "Screenshots a region";
+    };
+    screenshotComplete = lib.mkOption {
+      type = lib.types.str;
+      default = "screenshot-Complete";
+      description = "Screenshot";
+    };
+  };
+
   wayland.windowManager.hyprland.settings.bind = lib.mkIf cfg.enable (
     workspaceBinds
     ++ [
       # Applications
-      (mkBind "${mainMod} + R" (exec terminal))
-      (mkBind "${mainMod} + SPACE" (exec menu))
-      (mkBind "${mainMod} + E" (exec fileManager))
+      (mkBind "${mainMod} + R" (exec cfg.commands.terminal))
+      (mkBind "${mainMod} + SPACE" (exec cfg.commands.menu))
+      (mkBind "${mainMod} + E" (exec cfg.commands.fileManager))
 
       # Lockscreen
-      (mkBind "${mainMod} + CTRL + L" (exec lockscreen))
+      (mkBind "${mainMod} + CTRL + L" (exec cfg.commands.lockScreen))
 
       # Waybar
-      (mkBind "${mainMod} + SHIFT + W" (exec waybarToggle))
+      (mkBind "${mainMod} + SHIFT + W" (exec cfg.commands.barToggle))
 
       # Screenshots
-      (mkBind "${mainMod} + Print" (exec ssr))
-      (mkBind "${mainMod} + SHIFT + Print" (exec ssc))
+      (mkBind "${mainMod} + Print" (exec cfg.commands.screenshotRegion))
+      (mkBind "${mainMod} + SHIFT + Print" (exec cfg.commands.screenshotComplete))
 
       #
       # Window Management
@@ -116,7 +152,7 @@ in
       # Next workspace
       (mkBind "${mainMod} + RETURN" (lua ''hl.dsp.focus({ workspace = "e+1" })''))
       # Toggle between scrolling and master
-      (mkBind "${mainMod} + SHIFT + SPACE" (exec layoutToggle))
+      (mkBind "${mainMod} + SHIFT + SPACE" (exec cfg.commands.hyprLayoutToggle))
 
       #
       # Scratchpad
