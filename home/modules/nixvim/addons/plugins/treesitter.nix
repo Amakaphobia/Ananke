@@ -50,6 +50,9 @@ in
         ];
       };
 
+      # make auto commenting smarter
+      ts-comments.enable = true;
+
       # add treesitter jumps to movement history
       treesitter-textobjects = {
         enable = true;
