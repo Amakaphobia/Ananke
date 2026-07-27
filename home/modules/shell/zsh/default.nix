@@ -1,27 +1,31 @@
-{ ... }:
-
+{ config, lib, ... }:
+let
+  cfg = config.ananke.shell.zsh;
+in
 {
 
-  imports = [ ./addons.nix ];
-  # Zsh
-  programs.zsh = {
-    enable = true;
+  imports = [
+    ./addons.nix
+    ./aliases.nix
+  ];
+  options.ananke.shell.zsh = {
+    enable = lib.mkEnableOption "zsh";
+  };
 
-    autosuggestion.enable = true;
-    enableCompletion = true;
-    syntaxHighlighting.enable = true;
-    autocd = true;
-    history = {
-      size = 10000;
-      save = 10000;
-      path = "$HOME/.zsh_history";
-    };
-    shellAliases = {
-      ll = "ls -lisa";
-      sr = "systemctl reboot";
-      sd = "systemctl poweroff";
-      hh = "systemctl hibernate";
-      chelp = "cat ~/color-info.txt";
+  config = lib.mkIf cfg.enable {
+    programs.zsh = {
+      enable = true;
+
+      # sane defaults
+      autosuggestion.enable = true;
+      enableCompletion = true;
+      syntaxHighlighting.enable = true;
+      autocd = true;
+      history = {
+        size = 10000;
+        save = 10000;
+        path = "$HOME/.zsh_history";
+      };
     };
   };
 }

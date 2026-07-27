@@ -1,0 +1,17 @@
+{ config, lib, ... }:
+let
+  cfg = config.ananke.shell.dave.aliases;
+in
+{
+  options.ananke.shell.dave.aliases.enable = lib.mkEnableOption "Dave's aliases";
+
+  config = lib.mkIf cfg.enable {
+    programs.zsh.shellAliases = {
+      ll = "ls -lisa";
+      sr = "systemctl reboot";
+      sd = "systemctl poweroff";
+      hh = "systemctl hibernate";
+      chelp = "cat ~/color-info.txt";
+    };
+  };
+}

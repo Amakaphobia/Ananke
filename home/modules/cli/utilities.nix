@@ -1,0 +1,37 @@
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
+let
+  cfg = config.ananke.cli.utilities;
+
+  helper = import ../../lib/helper.nix { inherit lib; };
+
+in
+{
+  options.ananke.cli.utilities = {
+    enable = lib.mkEnableOption "utilities";
+
+    pastel.enable = helper.mkDefaultOnOption "pastel";
+    jq.enable = helper.mkDefaultOnOption "jq";
+    lazygit.enable = helper.mkDefaultOnOption "lazygit";
+    fd.enable = helper.mkDefaultOnOption "fd";
+    tldr.enable = helper.mkDefaultOnOption "tldr";
+  };
+
+  config = lib.mkIf cfg.enable {
+    home.packages =
+      # pastel terminal color
+      lib.optional cfg.pastel.enable pkgs.pastel
+      # a jason processor
+      ++ lib.optional cfg.jq.enable pkgs.jq
+      # terminal git
+      ++ lib.optional cfg.lazygit.enable pkgs.lazygit
+      # find ...
+      ++ lib.optional cfg.fd.enable pkgs.fd
+      # funny man
+      ++ lib.optional cfg.tldr.enable pkgs.tldr;
+  };
+}

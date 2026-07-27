@@ -1,5 +1,9 @@
 { pkgs, ... }:
 {
+
+  # TODO:
+  # put git installation here and make the one in home just carry the profile. Git should be installed on system level
+
   # installing system level packages
   environment.systemPackages = with pkgs; [
 

@@ -1,32 +1,26 @@
-{ homeModulesPath, ... }:
+{ ... }:
 {
 
   imports = [
-    # process homeMonitor
-    (homeModulesPath + "/btop.nix")
-    # git
-    (homeModulesPath + "/git.nix")
-    # editor
-    (homeModulesPath + "/nixvim")
-    # stuff
-    (homeModulesPath + "/packages.nix")
-    # ssh
-    (homeModulesPath + "/ssh.nix")
     # custom Scripts
     ../../scripts
-    # shell configuration
-    (homeModulesPath + "/shell")
 
+    # base shell profile
+    ../../profiles/shell/zsh.nix
+    # cli default profile profile
+    ../../profiles/cli
     # hyprland desktop profile
     ../../profiles/desktop/hypr.nix
   ];
 
   config.ananke = {
-    desktop = {
-      profiles = {
-        hypr.enable = true;
-      };
+    profiles = {
+      shell.zsh.enable = true;
+      cli.base.enable = true;
+      desktop.hypr.enable = true;
+    };
 
+    desktop = {
       obsidian.enable = true;
 
       apps = {
