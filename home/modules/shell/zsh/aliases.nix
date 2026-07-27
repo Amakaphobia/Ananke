@@ -1,9 +1,9 @@
 { config, lib, ... }:
 let
-  cfg = config.ananke.shell.dave.aliases;
+  cfg = config.ananke.profiles.shell.zsh.dave.aliases;
 in
 {
-  options.ananke.shell.dave.aliases.enable = lib.mkEnableOption "Dave's aliases";
+  options.ananke.profiles.shell.zsh.dave.aliases.enable = lib.mkEnableOption "Dave's aliases";
 
   config = lib.mkIf cfg.enable {
     programs.zsh.shellAliases = {

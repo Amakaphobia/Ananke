@@ -1,6 +1,6 @@
 { config, lib, ... }:
 let
-  cfg = config.ananke.shell.addons.starship;
+  cfg = config.ananke.shell.addons;
   helper = import ../../../lib/helper.nix { inherit lib; };
 in
 {
@@ -9,7 +9,7 @@ in
     enable = helper.mkDefaultOnOption "starship";
   };
 
-  config = lib.mkIf cfg.enable {
+  config = lib.mkIf (cfg.enable && cfg.starship.enable) {
     programs.starship = {
       enable = true;
 

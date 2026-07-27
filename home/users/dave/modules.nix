@@ -15,7 +15,10 @@
 
   config.ananke = {
     profiles = {
-      shell.zsh.enable = true;
+      shell.zsh = {
+        enable = true;
+        dave.aliases.enable = true;
+      };
       cli.base.enable = true;
       desktop.hypr.enable = true;
     };
