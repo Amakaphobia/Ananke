@@ -11,6 +11,14 @@
     ../../users/dave.nix
   ];
 
-  networking.hostName = "nyx"; # Define your hostname.
-  system.stateVersion = "26.05"; # No changerino!
+  config = {
+    ananke.profiles = {
+      system = {
+        core.enable = true;
+      };
+    };
+
+    networking.hostName = "nyx"; # Define your hostname.
+    system.stateVersion = "26.05"; # No changerino!
+  };
 }
