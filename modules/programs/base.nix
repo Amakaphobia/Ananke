@@ -5,11 +5,12 @@
   ...
 }:
 let
-  cfg = config.ananke.system.base;
+  cfg = config.ananke.system.programs.base;
+
 in
 {
 
-  options.ananke.system.base = {
+  options.ananke.system.programs.base = {
     enable = lib.mkEnableOption "System base";
   };
 

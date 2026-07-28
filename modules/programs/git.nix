@@ -1,9 +1,9 @@
 { config, lib, ... }:
 let
-  cfg = config.ananke.system.git;
+  cfg = config.ananke.system.programs.git;
 in
 {
-  options.ananke.system.git = {
+  options.ananke.system.programs.git = {
     enable = lib.mkEnableOption "git";
   };
   config = lib.mkIf cfg.enable {

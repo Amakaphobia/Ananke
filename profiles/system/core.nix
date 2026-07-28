@@ -15,8 +15,10 @@ in
 
   config = lib.mkIf cfg.enable {
     ananke.system = {
-      base.enable = true;
-      git.enable = true;
+      programs = {
+        base.enable = true;
+        git.enable = true;
+      };
     };
   };
 }
