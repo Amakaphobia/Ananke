@@ -8,12 +8,19 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+    assertions = [
+      {
+        assertion = config.ananke.system.git;
+        message = "Git is not installed at system level. Use config.ananke.system.git = true";
+      }
+    ];
+
     programs = {
       git = {
-        # TODO: Extract this option + sane defaults
-        enable = true;
-        settings = {
+        # git is a system install
+        package = null;
 
+        settings = {
           user.Name = "amakaphobia";
           user.Email = "29711914+Amakaphobia@users.noreply.github.com";
 
@@ -26,80 +33,7 @@ in
             ca = "commit --amend";
             p = "push";
           };
-
-          init.defaultBranch = "main";
-
-          core = {
-            editor = "nvim";
-            autocrlf = "input";
-          };
-
-          pull = {
-            rebase = true;
-          };
-
-          rebase = {
-            autoStash = true;
-            autoSquash = true;
-          };
-
-          push = {
-            default = "simple";
-            autoSetupRemote = true;
-          };
-
-          fetch = {
-            prune = true;
-            pruneTags = true;
-          };
-
-          merge = {
-            conflictStyle = "zdiff3";
-          };
-
-          branch = {
-            sort = "-committerdate";
-          };
-
-          tag = {
-            sort = "version:refname";
-          };
-
-          color = {
-            ui = "auto";
-          };
         };
-
-        ignores = [
-          ".direnv/"
-          ".env"
-          ".env.*"
-          "result"
-          "result-*"
-          ".DS_Store"
-          "*.swp"
-          "*.swo"
-        ];
-
-      };
-      # also git
-      delta = {
-        enable = true;
-        enableGitIntegration = true;
-        options = {
-          navigate = true;
-          side-by-side = true;
-          line-numbers = true;
-        };
-      };
-
-      gh = {
-        enable = true;
-
-        settings = {
-          git_protocol = "ssh";
-        };
-
       };
     };
   };
