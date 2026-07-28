@@ -17,7 +17,7 @@ in
     };
   };
 
-  config = lib.mkIf cfg {
+  config = lib.mkIf (config.ananke.machine.laptop.enable && cfg.enable) {
     # enter hibernation after suspension
     systemd.sleep.settings.Sleep = {
       # enter hibernation after amount of time specified in suspension

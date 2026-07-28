@@ -7,7 +7,7 @@ in
     enable = lib.mkEnableOption "power-profiles-daemon";
   };
 
-  config = lib.mkIf (config.machine.laptop.enable && cfg.enable) {
+  config = lib.mkIf (config.ananke.machine.laptop.enable && cfg.enable) {
     # power-profiles-daemon
     services.power-profiles-daemon.enable = true;
   };

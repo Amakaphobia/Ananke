@@ -1,6 +1,6 @@
 { config, lib, ... }:
 let
-  cfg = config.ananke.system.desktop;
+  cfg = config.ananke.profiles.system.desktop;
 in
 {
   imports = [

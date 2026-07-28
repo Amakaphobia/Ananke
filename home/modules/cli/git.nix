@@ -15,7 +15,7 @@ in
   config = lib.mkIf cfg.enable {
     assertions = [
       {
-        assertion = osConfig.ananke.system.git.enable;
+        assertion = osConfig.ananke.system.programs.git.enable;
         message = "Git is not installed at system level. Use config.ananke.system.git.enable = true";
       }
     ];
