@@ -1,16 +1,28 @@
-{ ... }:
+{ config, lib, ... }:
+let
+  cfg = config.ananke.system.audio.pipewire;
+in
 {
-  security.rtkit.enable = true;
-  # Enable sound with pipewire.
-  services = {
-    pulseaudio.enable = false;
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-      # If you want to use JACK applications, uncomment this
-      #jack.enable = true;
+  options.ananke.system.audio.pipewire = {
+    enable = lib.mkEnableOption "pipewire";
+  };
+
+  config = lib.mkIf cfg.enable {
+    # allow access for audio server
+    security.rtkit.enable = true;
+    services = {
+      # dont want that
+      pulseaudio.enable = false;
+
+      # enable pipewire and alsa
+      pipewire = {
+        enable = true;
+        alsa.enable = true;
+        alsa.support32Bit = true;
+        pulse.enable = true;
+        # If you want to use JACK applications, uncomment this
+        #jack.enable = true;
+      };
     };
   };
 }

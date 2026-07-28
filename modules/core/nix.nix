@@ -1,21 +1,41 @@
-{ ... }:
+{ config, lib, ... }:
+let
+  cfg = config.ananke.system.core.nix;
+in
 {
-  nixpkgs.config.allowUnfree = true;
-  nix = {
-    settings = {
-      # Flakes
-      experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
-      auto-optimise-store = true;
+  options.ananke.system.core.nix = {
+    enable = lib.mkEnableOption "nix base settings";
+    allowGarbageCollection = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "Allow automatic garbage collection weekly older than 2 months. Defaults to true.";
     };
 
-    #automatic weekly garbage colletion, protects the current generation
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 60d";
+    allowUnfree = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "Allow unfree packages. Defaults to true.";
+    };
+  };
+
+  config = lib.mkIf cfg.enable {
+    nixpkgs.config.allowUnfree = cfg.allowUnfree;
+    nix = {
+      settings = {
+        # Flakes
+        experimental-features = [
+          "nix-command"
+          "flakes"
+        ];
+        auto-optimise-store = true;
+      };
+
+      #automatic weekly garbage colletion, protects the current generation
+      gc = {
+        automatic = cfg.allowGarbageCollection;
+        dates = "weekly";
+        options = "--delete-older-than 60d";
+      };
     };
   };
 }

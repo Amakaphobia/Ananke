@@ -1,4 +1,12 @@
-{ ... }:
+{ config, lib, ... }:
+let
+  cfg = config.ananke.system.core.networking;
+in
 {
-  networking.networkmanager.enable = true;
+  options.ananke.system.core.networking = {
+    enable = lib.mkEnableOption "networking";
+  };
+  config = lib.mkIf cfg.enable {
+    networking.networkmanager.enable = true;
+  };
 }

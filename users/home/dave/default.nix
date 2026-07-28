@@ -4,9 +4,8 @@
   imports = [
     ./modules.nix
     ./theme.nix
-
+    ./locale-ger.nix
     ../../../home/themes
-
   ];
 
   home = {

@@ -1,4 +1,7 @@
-{ lib, ... }:
+{ config, lib, ... }:
+let
+  cfg = config.ananke.system.desktop;
+in
 {
   imports = [
     ../../modules/desktop/audio.nix
@@ -9,9 +12,16 @@
     ../../modules/programs/thunar.nix
   ];
 
-  config = {
+  options.ananke.profiles.system.desktop = {
+    enable = lib.mkEnableOption "Basic desktop profile";
+  };
+
+  config = lib.mkIf cfg.enable {
     ananke.system = {
+      displayManager.ly.enable = lib.mkDefault true;
       windowManager.hypr.enable = lib.mkDefault true;
+      audio.pipewire.enable = lib.mkDefault true;
+
       programs = {
         firefox.enable = lib.mkDefault true;
         thunar.enable = lib.mkDefault true;

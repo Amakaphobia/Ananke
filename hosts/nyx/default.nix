@@ -15,6 +15,7 @@
     ananke.profiles = {
       system = {
         core.enable = true;
+        desktop.enable = true;
       };
     };
 
