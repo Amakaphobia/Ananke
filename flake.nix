@@ -58,7 +58,7 @@
 
       legacy = nixpkgs.legacyPackages.${system};
 
-      homeModulesPath = ./home/modules;
+      # homeModulesPath = ./home/modules;
 
       wallpapersPath = ./assets/wallpapers;
     in
@@ -89,11 +89,11 @@
               extraSpecialArgs = {
                 inherit
                   inputs
-                  homeModulesPath
+                  # homeModulesPath
                   wallpapersPath
                   ;
               };
-              users.dave = import ./home/users/dave;
+              users.dave = import ./users/home/dave;
               backupFileExtension = "backup";
             };
           }

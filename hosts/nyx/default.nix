@@ -4,12 +4,11 @@
     ./hardware-configuration.nix
     ./hardware-acceleration.nix
 
-    ../../profiles/core.nix
-    ../../profiles/desktop.nix
-    ../../profiles/laptop.nix
+    ../../profiles/system/core.nix
+    ../../profiles/system/desktop.nix
+    ../../profiles/system/laptop.nix
 
     ../../users/dave.nix
-
   ];
 
   networking.hostName = "nyx"; # Define your hostname.
