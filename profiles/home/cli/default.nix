@@ -4,7 +4,7 @@ let
 in
 {
   imports = [
-    ../../modules/cli
+    ../../../modules/cli
   ];
 
   options.ananke.profiles.cli.base = {

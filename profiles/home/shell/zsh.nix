@@ -3,7 +3,7 @@ let
   cfg = config.ananke.profiles.shell.zsh;
 in
 {
-  imports = [ ../../modules/shell ];
+  imports = [ ../../../modules/shell ];
 
   options.ananke.profiles.shell.zsh = {
     enable = lib.mkEnableOption "zsh profile";
