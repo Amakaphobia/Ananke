@@ -1,6 +1,6 @@
 { pkgs, wallpapersPath, ... }:
 let
-  fonts = import ../../../lib/fontCatalog.nix { inherit pkgs; };
+  fonts = import ../../../home/lib/fontCatalog.nix { inherit pkgs; };
   interfaceSans = fonts.mapleMono;
   interfaceSerif = fonts.lora;
   interfaceMono = fonts.jetBrainsMono;
@@ -10,7 +10,7 @@ in
 
   dave.theme = {
     polarity = "dark";
-    scheme = import ../../../themes/palettes/catppuccin-mocha.nix;
+    scheme = import ../../../home/themes/palettes/catppuccin-mocha.nix;
 
     images = {
       wallpaper = wallpapersPath + "/waifu/AngelBlue.png";

@@ -5,7 +5,7 @@
     ./modules.nix
     ./theme.nix
 
-    ../../../themes
+    ../../../home/themes
 
   ];
 

@@ -3,14 +3,14 @@
 
   imports = [
     # custom Scripts
-    ../../../scripts
+    ../../../home/scripts
 
     # base shell profile
-    ../../../profiles/shell/zsh.nix
+    ../../../profiles/home/shell/zsh.nix
     # cli default profile profile
-    ../../../profiles/cli
+    ../../../profiles/home/cli
     # hyprland desktop profile
-    ../../../profiles/desktop/hypr.nix
+    ../../../profiles/home/desktop/hypr.nix
   ];
 
   config.ananke = {

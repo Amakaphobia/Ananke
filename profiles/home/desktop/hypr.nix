@@ -3,7 +3,7 @@ let
   cfg = config.ananke.profiles.desktop;
 in
 {
-  imports = [ ../../../modules/desktop ];
+  imports = [ ../../../home/modules/desktop ];
 
   options.ananke.profiles.desktop.hypr = {
     enable = lib.mkEnableOption "hyprland powered desktop profile";

@@ -1,7 +1,7 @@
 { ... }:
 {
   imports = [
-    ../../../modules/core
-    ../../../modules/programs/base.nix
+    ../../modules/core
+    ../../modules/programs/base.nix
   ];
 }
