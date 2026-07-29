@@ -4,6 +4,7 @@
   imports = [
     ./modules.nix
     ./theme.nix
+    ./zshAliases.nix
     ../../../home/themes
   ];
 

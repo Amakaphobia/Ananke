@@ -6,7 +6,6 @@ in
 
   imports = [
     ./addons.nix
-    ./aliases.nix
   ];
   options.ananke.shell.zsh = {
     enable = lib.mkEnableOption "zsh";
