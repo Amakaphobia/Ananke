@@ -15,16 +15,5 @@ in
       enable = true;
     };
 
-    programs.zsh.shellAliases = lib.mkIf (!cfg.eza.enableZshIntegration) {
-      ls = "eza --icons=auto --color=auto --group-directories-first";
-
-      ll = "eza --long --header --icons=auto --color=auto --git --group-directories-first";
-
-      la = "eza --all --icons=auto --color=auto --group-directories-first";
-
-      lla = "eza --long --all --header --icons=auto --color=auto --git --group-directories-first";
-
-      lt = "eza --tree --level=2 --icons=auto --color=auto --group-directories-first";
-    };
   };
 }

@@ -10,6 +10,6 @@ in
   };
   config = lib.mkIf cfg.enable {
     ananke.shell.zsh.enable = lib.mkDefault true;
-    ananke.shell.addons.enable = true;
+    ananke.shell.addons.enable = lib.mkDefault true;
   };
 }
