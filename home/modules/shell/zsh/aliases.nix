@@ -7,11 +7,14 @@ in
 
   config = lib.mkIf cfg.enable {
     programs.zsh.shellAliases = {
-      ll = "ls -lisa";
       sr = "systemctl reboot";
       sd = "systemctl poweroff";
       hh = "systemctl hibernate";
       chelp = "cat ~/color-info.txt";
     };
+
+    # eza configures this now
+    programs.zsh.shellAliases = lib.mkIf (!config.ananke.shell.addons.eza.enable) {
+      ll = "ls -lisa";
   };
 }

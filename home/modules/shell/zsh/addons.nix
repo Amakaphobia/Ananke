@@ -13,13 +13,13 @@ in
   config = lib.mkIf cfg.enable {
     programs = {
       #eza
-      eza.enableZshIntegration = cfg.enable && cfg.eza.enable;
+      eza.enableZshIntegration = cfg.eza.enable;
       # FZF
-      fzf.enableZshIntegration = cfg.enable && cfg.fzf.enable;
+      fzf.enableZshIntegration = cfg.fzf.enable;
       # starship
-      starship.enableZshIntegration = cfg.enable && cfg.starship.enable;
+      starship.enableZshIntegration = cfg.starship.enable;
       # zoxide
-      zoxide.enableZshIntegration = cfg.enable && cfg.zoxide.enable;
+      zoxide.enableZshIntegration = cfg.zoxide.enable;
     };
   };
 }
