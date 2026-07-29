@@ -21,7 +21,7 @@ in
     # enter hibernation after suspension
     systemd.sleep.settings.Sleep = {
       # enter hibernation after amount of time specified in suspension
-      HibernateDelaySec = "${cfg.hibernateDelaySeconds}s";
+      HibernateDelaySec = "${toString cfg.hibernateDelaySeconds}s";
       # keep timer on even when laptop is charging
       HibernateOnACPower = cfg.hibernateOnAc;
     };

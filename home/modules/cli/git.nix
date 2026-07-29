@@ -22,6 +22,7 @@ in
 
     programs = {
       git = {
+        enable = true;
         # git is a system install
         package = null;
 

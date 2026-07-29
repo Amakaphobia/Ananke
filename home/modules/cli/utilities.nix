@@ -19,6 +19,7 @@ in
     lazygit.enable = helper.mkDefaultOnOption "lazygit";
     fd.enable = helper.mkDefaultOnOption "fd";
     tldr.enable = helper.mkDefaultOnOption "tldr";
+    nixfmt.enable = helper.mkDefaultOnOption "nixfmt";
   };
 
   config = lib.mkIf cfg.enable {
@@ -32,6 +33,8 @@ in
       # find ...
       ++ lib.optional cfg.fd.enable pkgs.fd
       # funny man
-      ++ lib.optional cfg.tldr.enable pkgs.tldr;
+      ++ lib.optional cfg.tldr.enable pkgs.tldr
+      # nix formatter
+      ++ lib.optional cfg.nixfmt.enable pkgs.nixfmt;
   };
 }

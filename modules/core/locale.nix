@@ -35,7 +35,7 @@ in
       extraLocaleSettings = cfg.i18n.extraLocaleSettings;
     };
 
-    console.keyMap = "de";
+    console.keyMap = cfg.console.keyMap;
   };
 
 }
