@@ -123,6 +123,7 @@ in
               Snacks.terminal.toggle(nil, {
                 win = {
                   position = "float",
+                  border = "rounded",
                 },
               })
             end

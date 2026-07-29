@@ -4,7 +4,7 @@
     ./apps.nix
     ./desktoputilities.nix
     ./hypr
-    ./firefox.nix
+    ./firefox
     ./fuzzel.nix
     ./kitty.nix
     ./screenshot.nix

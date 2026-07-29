@@ -13,7 +13,10 @@ in
     ananke.desktop = {
       hypr.enable = lib.mkDefault true;
       screenshot.enable = lib.mkDefault true;
-      firefox.enable = lib.mkDefault true;
+      firefox = {
+        enable = lib.mkDefault true;
+        webapps.enable = lib.mkDefault true;
+      };
       fuzzel.enable = lib.mkDefault true;
       kitty.enable = lib.mkDefault true;
       swaync.enable = lib.mkDefault true;
