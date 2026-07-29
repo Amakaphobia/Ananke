@@ -4,6 +4,7 @@
   margin: 2px 2px;
 }
 
+#battery.plugged.good,
 #battery.full,
 #battery.charging.good,
 #battery.discharging.good,
