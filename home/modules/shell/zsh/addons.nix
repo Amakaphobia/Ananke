@@ -13,15 +13,13 @@ in
   config = lib.mkIf cfg.enable {
     programs = {
       # eza
-      # I handle shell aliases when I activate my alias profile
-      eza.enableZshIntegration = !config.ananke.profiles.shell.zsh.dave.aliases.enable;
-
+      eza.enableZshIntegration = lib.mkDefault cfg.eza.enable;
       # FZF
-      fzf.enableZshIntegration = cfg.fzf.enable;
+      fzf.enableZshIntegration = lib.mkDefault cfg.fzf.enable;
       # starship
-      starship.enableZshIntegration = cfg.starship.enable;
+      starship.enableZshIntegration = lib.mkDefault cfg.starship.enable;
       # zoxide
-      zoxide.enableZshIntegration = cfg.zoxide.enable;
+      zoxide.enableZshIntegration = lib.mkDefault cfg.zoxide.enable;
     };
   };
 }
