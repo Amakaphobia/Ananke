@@ -6,7 +6,6 @@ in
 {
   options.ananke.shell.addons.eza = {
     enable = helper.mkDefaultOnOption "eza";
-    enableZshIntegration = lib.mkEnableOption "automatic aliases for eza";
   };
 
   config = lib.mkIf (cfg.enable && cfg.eza.enable) {

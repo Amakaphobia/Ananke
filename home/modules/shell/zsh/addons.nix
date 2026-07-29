@@ -14,7 +14,7 @@ in
     programs = {
       # eza
       # I handle shell aliases when I activate my alias profile
-      eza.enableZshIntegration = !config.ananke.profiles.shell.zsh.dave.aliases;
+      eza.enableZshIntegration = !config.ananke.profiles.shell.zsh.dave.aliases.enable;
 
       # FZF
       fzf.enableZshIntegration = cfg.fzf.enable;
