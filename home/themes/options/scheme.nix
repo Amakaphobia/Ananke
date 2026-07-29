@@ -9,7 +9,7 @@ let
   # 6 hexadecimals
   hexColor = types.strMatching "[0-9a-fA-F]{6}";
 
-  theme = config.dave.theme;
+  theme = config.ananke.modules.theme;
 
   layout = import ../palettes/palette-layout.nix;
   inherit (layout) terminalColorRoles semanticColorRoles;
@@ -54,7 +54,7 @@ let
 in
 {
   # create global color scheme
-  options.dave.theme.scheme = mkOption {
+  options.ananke.modules.theme.scheme = mkOption {
     description = "global desktop color scheme.";
 
     type = types.submodule {

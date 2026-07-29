@@ -4,7 +4,7 @@ let
 in
 {
   # light or dark
-  options.dave.theme.polarity = mkOption {
+  options.ananke.modules.theme.polarity = mkOption {
     type = types.enum [
       "light"
       "dark"

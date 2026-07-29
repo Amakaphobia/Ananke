@@ -8,7 +8,7 @@ let
 in
 {
 
-  dave.theme = {
+  ananke.modules.theme = {
     polarity = "dark";
     scheme = import ../../../home/themes/palettes/catppuccin-mocha.nix;
 

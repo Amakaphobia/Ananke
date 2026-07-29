@@ -3,7 +3,7 @@ let
   inherit (lib) mkOption types;
 in
 {
-  options.dave.theme.icons = mkOption {
+  options.ananke.modules.theme.icons = mkOption {
     description = "Desktop icon theme.";
 
     type = types.submodule {

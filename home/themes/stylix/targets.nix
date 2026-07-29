@@ -22,11 +22,6 @@
       # menu
       fuzzel.enable = true;
 
-      # editor
-      nixvim = {
-        enable = false;
-        plugin = "mini.base16";
-      };
       # firefox
       firefox = {
         enable = true;
