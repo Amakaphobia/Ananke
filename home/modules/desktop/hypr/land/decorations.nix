@@ -5,7 +5,7 @@ let
   colorsLib = import ../../../../lib/colors.nix {
     inherit lib;
   };
-  colors = config.dave.theme.scheme.roles;
+  colors = config.ananke.modules.theme.scheme.roles;
 
   border1 = (colorsLib.hyprRgba colors.accent "ff");
   border2 = (colorsLib.hyprRgba colors.info "ff");

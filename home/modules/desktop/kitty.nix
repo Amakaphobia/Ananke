@@ -8,7 +8,7 @@ let
   colorsLib = import ../../lib/colors.nix {
     inherit lib;
   };
-  colors = config.dave.theme.scheme.roles;
+  colors = config.ananke.modules.theme.scheme.roles;
 in
 {
   options.ananke.desktop.kitty = {
@@ -31,7 +31,7 @@ in
         };
 
         # keep manual control of colors because stylix doesnt map as well
-        settings = colorsLib.toKitty config.dave.theme.scheme.terminal // {
+        settings = colorsLib.toKitty config.ananke.modules.theme.scheme.terminal // {
           foreground = colorsLib.hex colors.foreground;
           background = colorsLib.hex colors.background;
 

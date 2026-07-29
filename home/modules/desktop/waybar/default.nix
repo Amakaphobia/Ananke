@@ -7,7 +7,7 @@
 }:
 let
   cfg = config.ananke.desktop.waybar;
-  theme = config.dave.theme.scheme;
+  theme = config.ananke.modules.theme.scheme;
 
   fonts = import ../../../lib/fontCatalog.nix { inherit pkgs; };
   clockFont = fonts.mapleMono.package;

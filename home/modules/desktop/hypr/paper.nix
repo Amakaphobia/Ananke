@@ -1,6 +1,7 @@
 { config, lib, ... }:
 let
   cfg = config.ananke.desktop.hypr;
+  path = config.ananke.modules.theme.images.wallpaper;
 in
 {
   options.ananke.desktop.hypr = {
@@ -26,7 +27,7 @@ in
           {
             fit_mode = "cover";
             monitor = cfg.monitor;
-            path = "${config.dave.theme.images.wallpaper}";
+            inherit path;
           }
 
         ];

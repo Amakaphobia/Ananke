@@ -1,7 +1,7 @@
 { config, lib, ... }:
 let
   cfg = config.ananke.desktop.fuzzel;
-  theme = config.dave.theme;
+  theme = config.ananke.modules.theme;
   colors = theme.scheme.roles;
 in
 {

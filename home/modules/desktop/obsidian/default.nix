@@ -1,6 +1,7 @@
 { config, lib, ... }:
 let
   cfg = config.ananke.desktop.obsidian;
+  fonts = config.ananke.modules.theme.fonts;
 in
 {
   imports = [
@@ -66,9 +67,9 @@ in
             appearance = {
               theme = "obsidian";
 
-              interfaceFontFamily = config.dave.theme.fonts.sansSerif.name;
-              textFontFamily = config.dave.theme.fonts.serif.name;
-              monospaceFontFamily = config.dave.theme.fonts.monospace.name;
+              interfaceFontFamily = fonts.sansSerif.name;
+              textFontFamily = fonts.serif.name;
+              monospaceFontFamily = fonts.monospace.name;
             };
           };
         };

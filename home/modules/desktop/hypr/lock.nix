@@ -4,7 +4,8 @@ let
   colorsLib = import ../../../lib/colors.nix {
     inherit lib;
   };
-  colors = config.dave.theme.scheme.roles;
+  theme = config.ananke.modules.theme;
+  colors = theme.scheme.roles;
 in
 {
   options.ananke.desktop.hypr.lock = {
@@ -35,7 +36,7 @@ in
         background = [
           {
             monitor = "";
-            path = "${config.dave.theme.images.lockscreen}";
+            path = "${theme.images.lockscreen}";
           }
         ];
 
@@ -51,7 +52,7 @@ in
             dots_center = true;
             fade_on_empty = false;
 
-            font_family = config.dave.theme.fonts.sansSerif.name;
+            font_family = theme.fonts.sansSerif.name;
             font_color = colorsLib.hyprRgb colors.foreground;
             inner_color = colorsLib.hyprRgb colors.background;
             outer_color = colorsLib.hyprRgb colors.accent;
