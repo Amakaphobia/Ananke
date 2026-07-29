@@ -12,10 +12,16 @@
   ];
 
   config = {
-    ananke.profiles = {
-      system = {
-        core.enable = true;
-        desktop.enable = true;
+    ananke = {
+
+      system.core.locale.ger.enable = true;
+      machine.laptop.enable = true;
+
+      profiles = {
+        system = {
+          core.enable = true;
+          desktop.enable = true;
+        };
       };
     };
 

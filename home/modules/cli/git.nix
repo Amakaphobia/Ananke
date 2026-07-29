@@ -16,7 +16,7 @@ in
     assertions = [
       {
         assertion = osConfig.ananke.system.programs.git.enable;
-        message = "Git is not installed at system level. Use config.ananke.system.git.enable = true";
+        message = "Git is not installed at system level. Use config.ananke.system.programs.git.enable = true";
       }
     ];
 
