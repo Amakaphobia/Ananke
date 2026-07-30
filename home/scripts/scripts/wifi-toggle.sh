@@ -1,10 +1,15 @@
 #!/usr/bin/env bash
 set -eou pipefail
 
-wifi_state=$(nmcli radio wifi)
-
-if [ "${wifi_state}" == "enabled" ]; then
+case "$(nmcli radio wifi)" in
+enabled)
   nmcli radio wifi off
-else
+  ;;
+disabled)
   nmcli radio wifi on
-fi
+  ;;
+*)
+  echo "Could not determine Wi-Fi state" >&2
+  exit 1
+  ;;
+esac
