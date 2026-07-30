@@ -26,6 +26,8 @@
     desktop = {
       obsidian.enable = true;
 
+      firefox.webapps.excalidraw.enable = true;
+
       apps = {
         enable = true;
 
@@ -39,7 +41,7 @@
       hypr.commands = {
         menu = "fuzzel-once";
         hyprLayoutToggle = "hyprland-toggle-layout";
-        barToggle = "toggle-waybar";
+        barToggle = "waybar-toggle";
         lockScreen = "hyprlock-once";
         screenshotRegion = "screenshot-region";
         screenshotComplete = "screenshot-complete";

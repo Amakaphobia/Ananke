@@ -1,16 +1,16 @@
 { config, lib, ... }:
 let
   ff = config.ananke.desktop.firefox;
-  cfg = ff.webapps.excallidraw;
+  cfg = ff.webapps.excalidraw;
 in
 {
-  options.ananke.desktop.firefox.webapps.excallidraw = {
-    enable = lib.mkEnableOption "Excallidraw";
+  options.ananke.desktop.firefox.webapps.excalidraw = {
+    enable = lib.mkEnableOption "Excalidraw";
   };
 
   config = lib.mkIf (ff.enable && ff.webapps.enable && cfg.enable) {
     programs.firefox = {
-      profiles.excallidraw = {
+      profiles.excalidraw = {
         id = 1;
         isDefault = false;
 
@@ -44,7 +44,7 @@ in
       # execute firefox (-P selects profile) --name,--class sets window class for wayland or x11, new window and the url
       exec = "firefox -P excalidraw --name excalidraw --class excalidraw --new-window https://excalidraw.com";
 
-      icon = ../assets/icons/excalidraw.svg;
+      icon = ../../../../../assets/icons/excalidraw.svg;
 
       terminal = false;
 

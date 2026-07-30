@@ -1,6 +1,6 @@
 { ... }:
 {
   imports = [
-    ./excallidraw.nix
+    ./excalidraw.nix
   ];
 }
