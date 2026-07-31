@@ -1,17 +1,17 @@
-{ self, ... }:
+{ paths, ... }:
 let
-  profsys = "${self}/profiles/system";
+  profsys = paths.profiles + "/system";
 in
 {
   imports = [
     ./hardware-configuration.nix
     ./hardware-acceleration.nix
 
-    "${profsys}/core.nix"
-    "${profsys}/desktop.nix"
-    "${profsys}/laptop.nix"
+    (profsys + "/core.nix")
+    (profsys + "/desktop.nix")
+    (profsys + "/laptop.nix")
 
-    "${self}/users/dave.nix"
+    (paths.users + "/dave.nix")
   ];
 
   config = {

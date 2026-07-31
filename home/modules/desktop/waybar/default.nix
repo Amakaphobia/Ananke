@@ -3,17 +3,17 @@
   pkgs,
   inputs,
   lib,
-  self,
+  paths,
   ...
 }:
 let
   cfg = config.ananke.desktop.waybar;
   theme = config.ananke.modules.theme.scheme;
 
-  fonts = import "${self}/lib/fontCatalog.nix" { inherit pkgs; };
+  fonts = import (paths.lib + "/fontCatalog.nix") { inherit pkgs; };
   clockFont = fonts.mapleMono.package;
 
-  colorsLib = import "${self}/lib/colors.nix" {
+  colorsLib = import (paths.lib + "/colors.nix") {
     inherit lib;
   };
 

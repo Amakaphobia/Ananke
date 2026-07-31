@@ -1,12 +1,12 @@
 {
   config,
   lib,
-  self,
+  paths,
   ...
 }:
 let
   cfg = config.ananke.desktop.kitty;
-  colorsLib = import "${self}/lib/colors.nix" {
+  colorsLib = import (paths.lib + "/colors.nix") {
     inherit lib;
   };
   colors = config.ananke.modules.theme.scheme.roles;

@@ -1,12 +1,12 @@
 {
   config,
   lib,
-  self,
+  paths,
   ...
 }:
 let
   cfg = config.ananke.desktop.hypr;
-  colorsLib = import "${self}/lib/colors.nix" {
+  colorsLib = import (paths.lib + "/colors.nix") {
     inherit lib;
   };
   theme = config.ananke.modules.theme;

@@ -1,11 +1,10 @@
-{ pkgs, self, ... }:
+{ pkgs, paths, ... }:
 let
-  fonts = import "${self}/lib/fontCatalog.nix" { inherit pkgs; };
+  fonts = import (paths.lib + "/fontCatalog.nix") { inherit pkgs; };
   interfaceSans = fonts.mapleMono;
   interfaceSerif = fonts.lora;
   interfaceMono = fonts.jetBrainsMono;
   interfaceEmoji = fonts.notoEmoji;
-  wallpapersPath = "${self}/assets/wallpapers";
 in
 {
 
@@ -14,8 +13,8 @@ in
     scheme = import ../../../home/themes/palettes/catppuccin-mocha.nix;
 
     images = {
-      wallpaper = wallpapersPath + "/waifu/AngelBlue.png";
-      lockscreen = wallpapersPath + "/waifu/purplegirl.jpeg";
+      wallpaper = paths.wallpaper + "/waifu/AngelBlue.png";
+      lockscreen = paths.wallpaper + "/waifu/purplegirl.jpeg";
     };
 
     fonts = {

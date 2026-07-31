@@ -1,12 +1,12 @@
 {
   config,
   lib,
-  self,
+  paths,
   ...
 }:
 let
   cfg = config.ananke.system.core.locale;
-  helper = import "${self}/lib/helper.nix" { inherit lib; };
+  helper = import (paths.lib + "/helper.nix") { inherit lib; };
 in
 {
   options.ananke.system.core.locale = {
