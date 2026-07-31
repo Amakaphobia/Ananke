@@ -4,10 +4,10 @@ let
 in
 {
   imports = [
-    ../../modules/hardware/hibernation.nix
-    ../../modules/hardware/power-profiles.nix
-    ../../modules/hardware/touchpad.nix
-    ../../modules/hardware/lidswitch.nix
+    ../../modules/system/hardware/hibernation.nix
+    ../../modules/system/hardware/power-profiles.nix
+    ../../modules/system/hardware/touchpad.nix
+    ../../modules/system/hardware/lidswitch.nix
   ];
 
   options.ananke.machine.laptop = {

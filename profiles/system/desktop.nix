@@ -4,12 +4,12 @@ let
 in
 {
   imports = [
-    ../../modules/desktop/audio.nix
-    ../../modules/desktop/display-manager/ly.nix
-    ../../modules/desktop/window-manager/hyprland.nix
+    ../../modules/system/desktop/audio.nix
+    ../../modules/system/desktop/display-manager/ly.nix
+    ../../modules/system/desktop/window-manager/hyprland.nix
 
-    ../../modules/programs/firefox.nix
-    ../../modules/programs/thunar.nix
+    ../../modules/system/programs/firefox.nix
+    ../../modules/system/programs/thunar.nix
   ];
 
   options.ananke.profiles.system.desktop = {

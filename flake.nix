@@ -98,7 +98,28 @@
           nur.modules.nixos.default
         ];
       };
-      checks.${system}.nyx = self.nixosConfigurations.nyx.config.system.build.toplevel;
+      checks.${system} = {
+        # Fail when committed Nix files are not formatted.
+        formatting =
+          legacy.runCommand "check-formatting"
+            {
+              nativeBuildInputs = [ legacy.nixfmt-tree ];
+            }
+            ''
+              cp -r ${self} source
+              chmod -R u+w source
+              cd source
+
+              # check fails if formatter needs to be invoked
+              treefmt --ci
+
+              # if formatter does not find anything, this line is executed, creating a file proving everything is formatted right
+              touch "$out"
+            '';
+
+        # Build the complete NixOS configuration, Home Manager configuration.
+        nyx = self.nixosConfigurations.nyx.config.system.build.toplevel;
+      };
 
       formatter.${system} = legacy.nixfmt-tree;
     };

@@ -4,9 +4,9 @@ let
 in
 {
   imports = [
-    ../../modules/core
-    ../../modules/programs/base.nix
-    ../../modules/programs/git.nix
+    ../../modules/system/core
+    ../../modules/system/programs/base.nix
+    ../../modules/system/programs/git.nix
   ];
 
   options.ananke.profiles.system.core = {
