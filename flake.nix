@@ -67,6 +67,7 @@
         hosts = ./hosts;
         scripts = ./scripts;
         lib = ./lib;
+        themes = ./themes;
       };
     in
     {

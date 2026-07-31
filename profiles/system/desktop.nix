@@ -1,15 +1,19 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  paths,
+  ...
+}:
 let
   cfg = config.ananke.profiles.system.desktop;
 in
 {
   imports = [
-    ../../modules/system/desktop/audio.nix
-    ../../modules/system/desktop/display-manager/ly.nix
-    ../../modules/system/desktop/window-manager/hyprland.nix
-
-    ../../modules/system/programs/firefox.nix
-    ../../modules/system/programs/thunar.nix
+    (paths.modules + "/system/desktop/audio.nix")
+    (paths.modules + "/system/desktop/display-manager/ly.nix")
+    (paths.modules + "/system/desktop/window-manager/hyprland.nix")
+    (paths.modules + "/system/programs/firefox.nix")
+    (paths.modules + "/system/programs/thunar.nix")
   ];
 
   options.ananke.profiles.system.desktop = {

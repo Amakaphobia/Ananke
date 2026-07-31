@@ -64,6 +64,11 @@ in
           description = "Human-readable theme name.";
         };
 
+        author = mkOption {
+          type = types.str;
+          description = "name of the author";
+        };
+
         palette = mkOption {
           type = types.attrsOf hexColor;
           description = "Raw named color palette.";

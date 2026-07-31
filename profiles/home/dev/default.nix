@@ -1,10 +1,15 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  paths,
+  ...
+}:
 let
   cfg = config.ananke.profiles.dev;
 in
 {
   imports = [
-    ../../../home/modules/dev
+    (paths.modules + "/home/dev")
   ];
   options.ananke.profiles.dev = {
     enable = lib.mkEnableOption "Dev tools";

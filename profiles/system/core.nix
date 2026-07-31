@@ -1,12 +1,17 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  paths,
+  ...
+}:
 let
   cfg = config.ananke.profiles.system.core;
 in
 {
   imports = [
-    ../../modules/system/core
-    ../../modules/system/programs/base.nix
-    ../../modules/system/programs/git.nix
+    (paths.modules + "/system/core")
+    (paths.modules + "/system/programs/base.nix")
+    (paths.modules + "/system/programs/git.nix")
   ];
 
   options.ananke.profiles.system.core = {

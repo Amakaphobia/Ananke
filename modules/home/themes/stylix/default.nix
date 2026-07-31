@@ -20,7 +20,7 @@ in
 
     base16Scheme = {
       scheme = theme.scheme.name;
-      author = "Catppuccin";
+      author = theme.scheme.author;
 
       base00 = colors.background;
       base01 = colors.surface;

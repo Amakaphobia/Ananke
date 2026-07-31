@@ -1,9 +1,14 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  paths,
+  ...
+}:
 let
   cfg = config.ananke.profiles.desktop;
 in
 {
-  imports = [ ../../../home/modules/desktop ];
+  imports = [ (paths.modules + "/home/desktop") ];
 
   options.ananke.profiles.desktop.hypr = {
     enable = lib.mkEnableOption "hyprland powered desktop profile";

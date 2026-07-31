@@ -1,11 +1,11 @@
-{ ... }:
+{ paths, ... }:
 
 {
   imports = [
     ./modules.nix
     ./theme.nix
     ./zshAliases.nix
-    ../../../home/themes
+    (paths.modules + "/home/themes")
   ];
 
   home = {

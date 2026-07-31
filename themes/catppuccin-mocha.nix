@@ -30,6 +30,7 @@ let
 in
 {
   name = "catppuccin-mocha";
+  author = "catppuccin";
 
   inherit palette;
 

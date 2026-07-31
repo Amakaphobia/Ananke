@@ -1,10 +1,15 @@
-{ config, lib, ... }:
+{
+  config,
+  paths,
+  lib,
+  ...
+}:
 let
   cfg = config.ananke.profiles.cli.base;
 in
 {
   imports = [
-    ../../../home/modules/cli
+    (paths.modules + "/home/cli")
   ];
 
   options.ananke.profiles.cli.base = {

@@ -1,9 +1,14 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  paths,
+  ...
+}:
 let
   cfg = config.ananke.profiles.shell.zsh;
 in
 {
-  imports = [ ../../../home/modules/shell ];
+  imports = [ (paths.modules + "/home/shell") ];
 
   options.ananke.profiles.shell.zsh = {
     enable = lib.mkEnableOption "zsh profile";

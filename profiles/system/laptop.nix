@@ -1,13 +1,18 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  paths,
+  ...
+}:
 let
   cfg = config.ananke.machine.laptop;
 in
 {
   imports = [
-    ../../modules/system/hardware/hibernation.nix
-    ../../modules/system/hardware/power-profiles.nix
-    ../../modules/system/hardware/touchpad.nix
-    ../../modules/system/hardware/lidswitch.nix
+    (paths.modules + "/system/hardware/hibernation.nix")
+    (paths.modules + "/system/hardware/power-profiles.nix")
+    (paths.modules + "/system/hardware/touchpad.nix")
+    (paths.modules + "/system/hardware/lidswitch.nix")
   ];
 
   options.ananke.machine.laptop = {

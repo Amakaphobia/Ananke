@@ -10,7 +10,7 @@ in
 
   ananke.modules.theme = {
     polarity = "dark";
-    scheme = import ../../../home/themes/palettes/catppuccin-mocha.nix;
+    scheme = import (paths.themes + "/catppuccin-mocha.nix");
 
     images = {
       wallpaper = paths.wallpaper + "/waifu/AngelBlue.png";
