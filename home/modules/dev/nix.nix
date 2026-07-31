@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.modules.ananke.dev.nix;
+  cfg = config.ananke.modules.dev.nix;
 in
 {
   options.ananke.modules.dev.nix = {
