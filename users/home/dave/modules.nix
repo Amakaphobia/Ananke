@@ -1,18 +1,15 @@
-{ ... }:
+{ paths, ... }:
 {
 
   imports = [
-    # custom Scripts
-    ../../../home/scripts
-
     # base shell profile
-    ../../../profiles/home/shell/zsh.nix
+    (paths.profiles + "/home/shell/zsh.nix")
     # cli default profile profile
-    ../../../profiles/home/cli
+    (paths.profiles + "/home/cli")
     # hyprland desktop profile
-    ../../../profiles/home/desktop/hypr.nix
+    (paths.profiles + "/home/desktop/hypr.nix")
     # dev profile
-    ../../../profiles/home/dev
+    (paths.profiles + "/home/dev")
   ];
 
   config.ananke = {

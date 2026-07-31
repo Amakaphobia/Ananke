@@ -1,17 +1,16 @@
-{ lib, ... }:
+{ lib, paths, ... }:
 let
   sessionPath = "$HOME/.local/bin";
-  scriptsDirectory = ./scripts;
 
   shellScripts = lib.filterAttrs (name: type: type == "regular" && lib.hasSuffix ".sh" name) (
-    builtins.readDir scriptsDirectory
+    builtins.readDir paths.scripts
   );
 in
 {
   home.file = lib.mapAttrs' (
     filename: _:
     lib.nameValuePair ".local/bin/${lib.removeSuffix ".sh" filename}" {
-      source = scriptsDirectory + "/${filename}";
+      source = paths.scripts + "/${filename}";
       executable = true;
     }
   ) shellScripts;

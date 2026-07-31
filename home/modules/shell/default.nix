@@ -1,4 +1,7 @@
 { ... }:
 {
-  imports = [ ./zsh ];
+  imports = [
+    ./zsh
+    ./script-reader.nix
+  ];
 }
