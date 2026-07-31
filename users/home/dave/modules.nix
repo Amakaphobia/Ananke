@@ -11,6 +11,8 @@
     ../../../profiles/home/cli
     # hyprland desktop profile
     ../../../profiles/home/desktop/hypr.nix
+    # dev profile
+    ../../../profiles/home/dev
   ];
 
   config.ananke = {
@@ -21,6 +23,7 @@
       };
       cli.base.enable = true;
       desktop.hypr.enable = true;
+      dev.enable = true;
     };
 
     desktop = {
