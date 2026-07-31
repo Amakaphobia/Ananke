@@ -1,15 +1,20 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  self,
+  ...
+}:
 let
   cfg = config.ananke.desktop.hypr;
 
-  colorsLib = import ../../../../lib/colors.nix {
+  colorsLib = import "${self}/lib/colors.nix" {
     inherit lib;
   };
   colors = config.ananke.modules.theme.scheme.roles;
 
-  border1 = (colorsLib.hyprRgba colors.accent "ff");
-  border2 = (colorsLib.hyprRgba colors.info "ff");
-  borderInactive = (colorsLib.hyprRgba colors.surface "dd");
+  border1 = colorsLib.hyprRgba colors.accent "ff";
+  border2 = colorsLib.hyprRgba colors.info "ff";
+  borderInactive = colorsLib.hyprRgba colors.surface "dd";
 in
 {
   wayland.windowManager.hyprland.settings = lib.mkIf cfg.enable {

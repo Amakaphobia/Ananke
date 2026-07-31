@@ -1,10 +1,11 @@
-{ pkgs, wallpapersPath, ... }:
+{ pkgs, self, ... }:
 let
-  fonts = import ../../../home/lib/fontCatalog.nix { inherit pkgs; };
+  fonts = import "${self}/lib/fontCatalog.nix" { inherit pkgs; };
   interfaceSans = fonts.mapleMono;
   interfaceSerif = fonts.lora;
   interfaceMono = fonts.jetBrainsMono;
   interfaceEmoji = fonts.notoEmoji;
+  wallpapersPath = "${self}/assets/wallpapers";
 in
 {
 

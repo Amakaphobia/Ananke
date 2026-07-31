@@ -1,6 +1,6 @@
-{ pkgs, ... }:
+{ pkgs, self, ... }:
 let
-  fonts = import ../lib/fontCatalog.nix { inherit pkgs; };
+  fonts = import "${self}/lib/fontCatalog.nix" { inherit pkgs; };
   notoComplete = [
     fonts.notoSans.package
     fonts.notoEmoji.package

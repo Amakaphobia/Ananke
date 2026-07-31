@@ -57,8 +57,6 @@
       system = "x86_64-linux";
 
       legacy = nixpkgs.legacyPackages.${system};
-
-      wallpapersPath = ./assets/wallpapers;
     in
     {
       nixosConfigurations.nyx = nixpkgs.lib.nixosSystem {
@@ -87,8 +85,7 @@
               extraSpecialArgs = {
                 inherit
                   inputs
-                  # homeModulesPath
-                  wallpapersPath
+                  self
                   ;
               };
               users.dave = import ./users/home/dave;

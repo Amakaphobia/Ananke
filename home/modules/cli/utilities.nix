@@ -2,12 +2,13 @@
   pkgs,
   config,
   lib,
+  self,
   ...
 }:
 let
   cfg = config.ananke.cli.utilities;
 
-  helper = import ../../lib/helper.nix { inherit lib; };
+  helper = import "${self}/lib/helper.nix" { inherit lib; };
 
 in
 {

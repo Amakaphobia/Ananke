@@ -1,7 +1,12 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  self,
+  ...
+}:
 let
   cfg = config.ananke.desktop.hypr;
-  colorsLib = import ../../../lib/colors.nix {
+  colorsLib = import "${self}/lib/colors.nix" {
     inherit lib;
   };
   theme = config.ananke.modules.theme;

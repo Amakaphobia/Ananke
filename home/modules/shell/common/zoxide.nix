@@ -1,7 +1,12 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  self,
+  ...
+}:
 let
   cfg = config.ananke.shell.addons;
-  helper = import ../../../lib/helper.nix { inherit lib; };
+  helper = import "${self}/lib/helper.nix" { inherit lib; };
 in
 {
   options.ananke.shell.addons.zoxide = {
