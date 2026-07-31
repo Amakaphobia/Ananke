@@ -58,8 +58,6 @@
 
       legacy = nixpkgs.legacyPackages.${system};
 
-      # homeModulesPath = ./home/modules;
-
       wallpapersPath = ./assets/wallpapers;
     in
     {
@@ -100,6 +98,7 @@
           nur.modules.nixos.default
         ];
       };
+      checks.${system}.nyx = self.nixosConfigurations.nyx.config.system.build.toplevel;
 
       formatter.${system} = legacy.nixfmt-tree;
     };
