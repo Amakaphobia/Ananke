@@ -21,7 +21,6 @@ in
   config = lib.mkIf cfg.enable {
     ananke.system = {
       core = {
-        systemd.enable = lib.mkDefault true;
         locale.enable = lib.mkDefault true;
         networking.enable = lib.mkDefault true;
         nix.enable = lib.mkDefault true;
@@ -32,5 +31,6 @@ in
         git.enable = lib.mkDefault true;
       };
     };
+    ananke.modules.system.core.systemdBoot.enable = lib.mkDefault true;
   };
 }

@@ -8,7 +8,7 @@ in
   ];
 
   options.ananke.shell.addons = {
-    enable = lib.mkEnableOption "zsh addons";
+    enable = lib.mkEnableOption "shell addons";
   };
   config = lib.mkIf cfg.enable {
     programs = {

@@ -17,8 +17,6 @@ in
 
   config = lib.mkIf cfg.enable {
     ananke.modules.dev = {
-      enable = lib.mkDefault true;
-
       # enable basic shell and nix tooling by default
       nix.enable = lib.mkDefault true;
       shell.enable = lib.mkDefault true;

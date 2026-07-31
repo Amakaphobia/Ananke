@@ -1,4 +1,9 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  paths,
+  ...
+}:
 let
   ff = config.ananke.desktop.firefox;
   cfg = ff.webapps.excalidraw;
@@ -44,7 +49,7 @@ in
       # execute firefox (-P selects profile) --name,--class sets window class for wayland or x11, new window and the url
       exec = "firefox -P excalidraw --name excalidraw --class excalidraw --new-window https://excalidraw.com";
 
-      icon = ../../../../../assets/icons/excalidraw.svg;
+      icon = paths.icons + "/excalidraw.svg";
 
       terminal = false;
 
