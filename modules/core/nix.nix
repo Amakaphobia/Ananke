@@ -20,6 +20,13 @@ in
 
   config = lib.mkIf cfg.enable {
     nixpkgs.config.allowUnfree = cfg.allowUnfree;
+
+    programs.nh = {
+      enable = true;
+
+    };
+    environment.variables.NH_SEARCH_CHANNEL = "nixos-${config.system.nixos.release}";
+
     nix = {
       settings = {
         # Flakes
