@@ -19,5 +19,8 @@ in
       nixvim.enable = lib.mkDefault true;
       ssh-agent.enable = lib.mkDefault true;
     };
+    ananke.modules.cli = {
+      yazi.enable = lib.mkDefault true;
+    };
   };
 }

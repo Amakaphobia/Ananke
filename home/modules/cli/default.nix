@@ -6,5 +6,6 @@
     ./nixvim
     ./ssh.nix
     ./utilities.nix
+    ./yazi.nix
   ];
 }
