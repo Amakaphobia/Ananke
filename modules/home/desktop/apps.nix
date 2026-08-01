@@ -13,7 +13,6 @@ in
 
     geany.enable = lib.mkEnableOption "Geany";
     vlc.enable = lib.mkEnableOption "vlc";
-    spotify.enable = lib.mkEnableOption "Spotify";
     gimp.enable = lib.mkEnableOption "Gimp";
     imv.enable = lib.mkEnableOption "imv";
   };

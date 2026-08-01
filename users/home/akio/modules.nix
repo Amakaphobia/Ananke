@@ -10,6 +10,8 @@
     (paths.profiles + "/home/desktop/hypr.nix")
     # dev profile
     (paths.profiles + "/home/dev")
+    # media players
+    (paths.profiles + "/profiles/home/desktop/media.nix")
   ];
 
   config.ananke = {
@@ -20,8 +22,11 @@
           akio.aliases.enable = true;
         };
         cli.base.enable = true;
-        desktop.hypr.enable = true;
         dev.enable = true;
+        desktop = {
+          hypr.enable = true;
+          media.enable = true;
+        };
       };
 
     };

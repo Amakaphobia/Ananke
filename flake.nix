@@ -3,6 +3,11 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-26.05";
 
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -98,6 +103,7 @@
               sharedModules = [
                 stylix.homeModules.stylix
                 inputs.nixvim.homeModules.nixvim
+                inputs.spicetify-nix.nixosModules.spicetify
               ];
               extraSpecialArgs = {
                 inherit
