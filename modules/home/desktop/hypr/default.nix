@@ -28,7 +28,7 @@ in
     assertions = [
       {
         assertion = osConfig.ananke.system.desktop.windowManager.hypr.enable;
-        message = "Hyprland needs to be installed on system level, add: ananke.system.windowManager.hypr.enable";
+        message = "Hyprland needs to be installed on system level, add: ananke.system.desktop.windowManager.hypr.enable";
       }
     ];
 

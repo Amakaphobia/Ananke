@@ -23,7 +23,7 @@ in
     assertions = [
       {
         assertion = osConfig.ananke.system.desktop.programs.firefox.enable;
-        message = "Firefox needs to be installed at system level, add config.ananke.system.programs.firefox.enable";
+        message = "Firefox needs to be installed at system level, add config.ananke.system.desktop.programs.firefox.enable";
       }
     ];
 

@@ -16,7 +16,7 @@ in
     assertions = [
       {
         assertion = osConfig.ananke.system.desktop.programs.thunar.enable;
-        message = "Thunar needs to be installed at system level. -> config.ananke.system.programs.thunar.enable = true;";
+        message = "Thunar needs to be installed at system level. -> config.ananke.system.desktop.programs.thunar.enable = true;";
       }
     ];
     xfconf.settings.thunar = {

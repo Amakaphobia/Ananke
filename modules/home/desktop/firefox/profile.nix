@@ -33,8 +33,8 @@ in
                 url = "https://wiki.nixos.org/";
               }
               {
-                name = "ananka";
-                url = "https://github.com/amakaphobia/nixos-dotfiles";
+                name = "Ananke";
+                url = "https://github.com/amakaphobia/nixos-dotfiles/";
               }
               {
                 name = "Home Manager Options";
@@ -42,16 +42,11 @@ in
               }
               {
                 name = "NixOS Packages";
-                url = "https://search.nixos.org/packages";
-              }
-              "separator"
-              {
-                name = "My NixOS repository";
-                url = "https://github.com/Amakaphobia/Nixos-Dotfiles";
+                url = "https://search.nixos.org/packages/";
               }
               {
                 name = "Nerdfont Cheat Sheet";
-                url = "https://www.nerdfonts.com/cheat-sheet";
+                url = "https://www.nerdfonts.com/cheat-sheet/";
               }
             ];
           }
