@@ -11,7 +11,7 @@
     # dev profile
     (paths.profiles + "/home/dev")
     # media players
-    (paths.profiles + "/profiles/home/desktop/media.nix")
+    (paths.profiles + "/home/desktop/media.nix")
   ];
 
   config.ananke = {
@@ -43,8 +43,6 @@
           geany.enable = true;
           gimp.enable = true;
           imv.enable = true;
-          vlc.enable = true;
-          spotify.enable = true;
         };
 
         hypr.commands = {
