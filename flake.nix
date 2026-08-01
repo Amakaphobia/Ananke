@@ -126,6 +126,44 @@
               touch "$out"
             '';
 
+        # Fail when statix finds Nix antipatterns.
+        statix =
+          legacy.runCommand "check-statix"
+            {
+              nativeBuildInputs = [ legacy.statix ];
+            }
+            ''
+              cd ${self}
+
+              statixLog="$TMPDIR/statix.log"
+
+              set +e
+              statix check . > "$statixLog" 2>&1
+              statixStatus=$?
+              set -e
+
+              cat "$statixLog"
+
+              if [ "$statixStatus" -ne 0 ] || [ -s "$statixLog" ]; then
+                exit 1
+              fi
+
+              touch "$out"
+            '';
+
+        # Fail when deadnix finds unused Nix code.
+        deadnix =
+          legacy.runCommand "check-deadnix"
+            {
+              nativeBuildInputs = [ legacy.deadnix ];
+            }
+            ''
+              cd ${self}
+
+              deadnix --fail .
+
+              touch "$out"
+            '';
         # Build the complete NixOS configuration, Home Manager configuration.
         nyx = self.nixosConfigurations.nyx.config.system.build.toplevel;
       };
