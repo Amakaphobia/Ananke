@@ -17,7 +17,7 @@ in
       settings."github.com" = {
         # git@github.com:owner/repo
         User = "git";
-        IdentityFile = "~/.ssh/id_ed25519";
+        IdentityFile = "~/.ssh/id_ed25519_github";
         # allow to remember key for 1 hour after first unlock
         AddKeysToAgent = "1h";
       };
