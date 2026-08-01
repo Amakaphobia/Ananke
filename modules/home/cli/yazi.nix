@@ -1,9 +1,9 @@
 { config, lib, ... }:
 let
-  cfg = config.ananke.modules.cli.yazi;
+  cfg = config.ananke.home.cli.yazi;
 in
 {
-  options.ananke.modules.cli.yazi = {
+  options.ananke.home.cli.yazi = {
     enable = lib.mkEnableOption "Yazi";
   };
 

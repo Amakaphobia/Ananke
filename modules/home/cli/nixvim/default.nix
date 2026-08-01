@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.ananke.cli.nixvim;
+  cfg = config.ananke.home.cli.nixvim;
 in
 {
   imports = [
@@ -16,7 +16,7 @@ in
     ./autocmds.nix
   ];
 
-  options.ananke.cli.nixvim = {
+  options.ananke.home.cli.nixvim = {
     enable = lib.mkEnableOption "Nixvim";
   };
 

@@ -6,13 +6,13 @@
   ...
 }:
 let
-  cfg = config.ananke.cli.utilities;
+  cfg = config.ananke.home.cli.utilities;
 
   helper = import (paths.lib + "/helper.nix") { inherit lib; };
 
 in
 {
-  options.ananke.cli.utilities = {
+  options.ananke.home.cli.utilities = {
     enable = lib.mkEnableOption "utilities";
 
     pastel.enable = helper.mkDefaultOnOption "pastel";

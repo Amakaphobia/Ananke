@@ -1,7 +1,7 @@
 { config, lib, ... }:
 let
   colors = config.lib.stylix.colors.withHashtag;
-  cfg = config.ananke.cli.nixvim.enable;
+  cfg = config.ananke.home.cli.nixvim.enable;
   # Create one transparent Lualine theme mode.
   # "NONE" means that Lualine does not paint a background.
   transparentMode = accent: {

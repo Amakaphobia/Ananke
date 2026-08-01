@@ -1,9 +1,9 @@
 { config, lib, ... }:
 let
-  cfg = config.ananke.system.programs.thunar;
+  cfg = config.ananke.system.desktop.programs.thunar;
 in
 {
-  options.ananke.system.programs.thunar = {
+  options.ananke.system.desktop.programs.thunar = {
     enable = lib.mkEnableOption "Install Thunar";
   };
 

@@ -17,14 +17,12 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    ananke.cli = {
+    ananke.home.cli = {
       utilities.enable = lib.mkDefault true;
       btop.enable = lib.mkDefault true;
       git.enable = lib.mkDefault true;
       nixvim.enable = lib.mkDefault true;
       ssh-agent.enable = lib.mkDefault true;
-    };
-    ananke.modules.cli = {
       yazi.enable = lib.mkDefault true;
     };
   };

@@ -15,7 +15,7 @@ in
   config = lib.mkIf cfg.enable {
     assertions = [
       {
-        assertion = osConfig.ananke.system.programs.thunar.enable;
+        assertion = osConfig.ananke.system.desktop.programs.thunar.enable;
         message = "Thunar needs to be installed at system level. -> config.ananke.system.programs.thunar.enable = true;";
       }
     ];

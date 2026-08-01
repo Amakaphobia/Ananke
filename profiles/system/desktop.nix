@@ -21,7 +21,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    ananke.system = {
+    ananke.system.desktop = {
       displayManager.ly.enable = lib.mkDefault true;
       windowManager.hypr.enable = lib.mkDefault true;
       audio.pipewire.enable = lib.mkDefault true;

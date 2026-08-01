@@ -27,7 +27,7 @@ in
   config = lib.mkIf cfg.enable {
     assertions = [
       {
-        assertion = osConfig.ananke.system.windowManager.hypr.enable;
+        assertion = osConfig.ananke.system.desktop.windowManager.hypr.enable;
         message = "Hyprland needs to be installed on system level, add: ananke.system.windowManager.hypr.enable";
       }
     ];

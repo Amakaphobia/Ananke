@@ -1,9 +1,9 @@
 { config, lib, ... }:
 let
-  cfg = config.ananke.cli.ssh-agent;
+  cfg = config.ananke.home.cli.ssh-agent;
 in
 {
-  options.ananke.cli.ssh-agent = {
+  options.ananke.home.cli.ssh-agent = {
     enable = lib.mkEnableOption "ssh-agent";
   };
 
