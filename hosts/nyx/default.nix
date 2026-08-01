@@ -14,7 +14,6 @@ in
     (profhard + "/laptop.nix")
 
     (paths.users + "/akio.nix")
-    (paths.users + "/dave.nix")
   ];
 
   config = {
