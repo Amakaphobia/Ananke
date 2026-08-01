@@ -2,7 +2,7 @@
 let
   cfg = config.ananke.profiles.shell.zsh.dave.aliases;
   addons = config.ananke.shell.addons;
-  ezaEnabled = (addons.enable && addons.eza.enable);
+  ezaEnabled = addons.enable && addons.eza.enable;
 in
 {
   options.ananke.profiles.shell.zsh.dave.aliases.enable = lib.mkEnableOption "Dave's aliases";

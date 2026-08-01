@@ -21,5 +21,5 @@ rec {
     );
 
   # Kitty's settings use ordinary #rrggbb strings.
-  toKitty = colors: lib.mapAttrs (_name: color: hex color) colors;
+  toKitty = colors: lib.mapAttrs (_name: hex) colors;
 }

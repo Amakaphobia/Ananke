@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
 
   config.stylix = {
     targets = {
