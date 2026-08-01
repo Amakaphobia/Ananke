@@ -15,6 +15,48 @@ in
       id = 0;
       isDefault = true;
 
+      bookmarks = {
+        force = true;
+
+        settings = [
+          {
+            name = "Nix tools";
+            toolbar = true;
+
+            bookmarks = [
+              {
+                name = "NixOS";
+                url = "https://nixos.org/";
+              }
+              {
+                name = "NixOS Wiki";
+                url = "https://wiki.nixos.org/";
+              }
+              {
+                name = "ananka";
+                url = "https://github.com/amakaphobia/nixos-dotfiles";
+              }
+              {
+                name = "Home Manager Options";
+                url = "https://nix-community.github.io/home-manager/options/";
+              }
+              {
+                name = "NixOS Packages";
+                url = "https://search.nixos.org/packages";
+              }
+              "separator"
+              {
+                name = "My NixOS repository";
+                url = "https://github.com/Amakaphobia/Nixos-Dotfiles";
+              }
+              {
+                name = "Nerdfont Cheat Sheet";
+                url = "https://www.nerdfonts.com/cheat-sheet";
+              }
+            ];
+          }
+        ];
+      };
       # make ddg the default
       search = {
         force = true;
