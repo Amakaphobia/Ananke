@@ -7,7 +7,7 @@ in
     enable = lib.mkEnableOption "lidswitch";
   };
 
-  config = lib.mkIf (config.ananke.profiles.hardware.laptop.enable && cfg.enable) {
+  config = lib.mkIf cfg.enable {
     services.logind.settings.Login = {
       HandleLidSwitch = "suspend-then-hibernate";
       HandleLidSwitchExternalPower = "suspend-then-hibernate";

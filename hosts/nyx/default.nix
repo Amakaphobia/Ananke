@@ -1,6 +1,7 @@
 { paths, ... }:
 let
   profsys = paths.profiles + "/system";
+  profhard = paths.profiles + "/hardware";
 in
 {
   imports = [
@@ -9,7 +10,8 @@ in
 
     (profsys + "/core.nix")
     (profsys + "/desktop.nix")
-    (profsys + "/laptop.nix")
+
+    (profhard + "/laptop.nix")
 
     (paths.users + "/dave.nix")
   ];

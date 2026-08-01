@@ -6,7 +6,7 @@ in
   options.ananke.hardware.laptop.touchpad = {
     enable = lib.mkEnableOption "touchpad";
   };
-  config = lib.mkIf (config.ananke.profiles.hardware.laptop.enable && cfg.enable) {
+  config = lib.mkIf cfg.enable {
     # Enable touchpad support (enabled default in most desktopManager).
     services.libinput.enable = true;
   };
