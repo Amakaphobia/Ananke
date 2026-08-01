@@ -28,10 +28,9 @@
             content = {
               type = "luks";
               name = "crypted";
+              passwordFile = "/tmp/nyx-luks-passphrase";
 
               settings = {
-                # Needed only while Disko creates the LUKS volume.
-                keyFile = "/tmp/nyx-luks-passphrase";
 
                 # Conservative privacy default.
                 allowDiscards = false;
