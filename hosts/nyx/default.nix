@@ -13,7 +13,8 @@ in
 
     (profhard + "/laptop.nix")
 
-    (paths.users + "/dave.nix")
+    (paths.users + "/akio.nix")
+    (paths.users + "/rename-admin.nix")
   ];
 
   config = {

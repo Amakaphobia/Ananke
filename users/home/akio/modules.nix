@@ -17,7 +17,7 @@
       home = {
         shell.zsh = {
           enable = true;
-          dave.aliases.enable = true;
+          akio.aliases.enable = true;
         };
         cli.base.enable = true;
         desktop.hypr.enable = true;

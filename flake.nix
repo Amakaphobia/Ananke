@@ -100,7 +100,7 @@
                   paths
                   ;
               };
-              users.dave = import ./users/home/dave;
+              users.akio = import ./users/home/akio;
               backupFileExtension = "backup";
             };
           }

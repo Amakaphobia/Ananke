@@ -4,9 +4,9 @@
   ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users."dave" = {
+  users.users."akio" = {
     isNormalUser = true;
-    description = "dave";
+    description = "akio";
     extraGroups = [
       "networkmanager"
       "wheel"
