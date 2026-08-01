@@ -59,6 +59,7 @@ in
       };
 
       keymaps = [
+        # files
         {
           mode = "n";
           key = "<leader>e";
@@ -76,6 +77,13 @@ in
           key = "<leader>fg";
           action.__raw = "function() Snacks.picker.grep() end";
           options.desc = "Grep files";
+        }
+        # buffer
+        {
+          mode = "n";
+          key = "<leader>bb";
+          action.__raw = "function() Snacks.picker.buffers() end";
+          options.desc = "Open buffer list";
         }
         {
           mode = "n";
