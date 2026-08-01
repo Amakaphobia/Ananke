@@ -28,7 +28,7 @@ let
 in
 {
   # create font options
-  options.ananke.modules.theme.fonts = mkOption {
+  options.ananke.theme.fonts = mkOption {
     description = "Font families used by the desktop.";
 
     type = types.submodule {

@@ -19,7 +19,7 @@ in
     enable = helper.mkDefaultOnOption "shell scripts";
   };
 
-  config = lib.mkIf (config.ananke.shell.addons.enable && cfg.enable) {
+  config = lib.mkIf (config.ananke.home.shell.addons.enable && cfg.enable) {
     home.file = lib.mapAttrs' (
       filename: _:
       lib.nameValuePair ".local/bin/${lib.removeSuffix ".sh" filename}" {

@@ -4,7 +4,7 @@ let
 in
 {
   # create user options for wallpaper and lockscreen
-  options.ananke.modules.theme.images = mkOption {
+  options.ananke.theme.images = mkOption {
     description = "images used by the theme";
     type = types.submodule {
 

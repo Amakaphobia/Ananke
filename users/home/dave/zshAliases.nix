@@ -1,11 +1,11 @@
 { config, lib, ... }:
 let
-  cfg = config.ananke.profiles.shell.zsh.dave.aliases;
-  addons = config.ananke.shell.addons;
+  cfg = config.ananke.profiles.home.shell.zsh.dave.aliases;
+  addons = config.ananke.home.shell.addons;
   ezaEnabled = addons.enable && addons.eza.enable;
 in
 {
-  options.ananke.profiles.shell.zsh.dave.aliases.enable = lib.mkEnableOption "Dave's aliases";
+  options.ananke.profiles.home.shell.zsh.dave.aliases.enable = lib.mkEnableOption "Dave's aliases";
 
   config = lib.mkIf cfg.enable {
     programs = {

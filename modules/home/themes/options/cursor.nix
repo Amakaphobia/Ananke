@@ -4,7 +4,7 @@ let
 in
 {
   # cursor
-  options.ananke.modules.theme.cursor = mkOption {
+  options.ananke.theme.cursor = mkOption {
     description = "Desktop cursor theme.";
 
     type = types.submodule {

@@ -54,7 +54,7 @@ let
 in
 {
   # create global color scheme
-  options.ananke.modules.theme.scheme = mkOption {
+  options.ananke.theme.scheme = mkOption {
     description = "global desktop color scheme.";
 
     type = types.submodule {

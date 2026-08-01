@@ -14,13 +14,16 @@
 
   config.ananke = {
     profiles = {
-      shell.zsh = {
-        enable = true;
-        dave.aliases.enable = true;
+      home = {
+        shell.zsh = {
+          enable = true;
+          dave.aliases.enable = true;
+        };
+        cli.base.enable = true;
+        desktop.hypr.enable = true;
+        dev.enable = true;
       };
-      cli.base.enable = true;
-      desktop.hypr.enable = true;
-      dev.enable = true;
+
     };
 
     desktop = {
