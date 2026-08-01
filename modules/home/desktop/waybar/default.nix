@@ -18,6 +18,14 @@ let
   };
 
   colorCss = colorsLib.toGtkCss theme.roles;
+
+  # make sh available during build
+  waybarPackage =
+    inputs.waybar.packages.${pkgs.stdenv.hostPlatform.system}.default.overrideAttrs
+      (oldAttrs: {
+        nativeCheckInputs = (oldAttrs.nativeCheckInputs or [ ]) ++ [ pkgs.bash ];
+      });
+
   waybarConfig = pkgs.runCommand "waybar-config-${theme.name}" { } ''
     mkdir -p "$out"
 
@@ -39,9 +47,9 @@ in
     ];
     programs.waybar = {
       enable = true;
+      package = waybarPackage;
       # autostart:
       systemd.enable = true;
-      package = inputs.waybar.packages.${pkgs.stdenv.hostPlatform.system}.default;
     };
 
     xdg.configFile."waybar".source = waybarConfig;
