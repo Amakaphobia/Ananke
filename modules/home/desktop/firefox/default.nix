@@ -5,14 +5,14 @@
   ...
 }:
 let
-  cfg = config.ananke.desktop.firefox;
+  cfg = config.ananke.home.desktop.firefox;
 in
 {
   imports = [
     ./profile.nix
     ./webapps
   ];
-  options.ananke.desktop.firefox = {
+  options.ananke.home.desktop.firefox = {
     enable = lib.mkEnableOption "Firefox profile";
     webapps = {
       enable = lib.mkEnableOption "Webapps";

@@ -6,7 +6,7 @@
   ...
 }:
 let
-  cfg = config.ananke.desktop.hypr;
+  cfg = config.ananke.home.desktop.hypr;
 in
 {
   # hypr ecosystem:
@@ -18,7 +18,7 @@ in
   ];
 
   # create a master switch and a hyprshutdown option
-  options.ananke.desktop.hypr = {
+  options.ananke.home.desktop.hypr = {
     enable = lib.mkEnableOption "The ananke Hypr ecosystem";
     shutdown.enable = lib.mkEnableOption "hyprshutdown";
     polkitAgent.enable = lib.mkEnableOption "hyprpolkitagent";
@@ -33,7 +33,7 @@ in
     ];
 
     # set default packages from the hypr ecosystem
-    ananke.desktop.hypr = {
+    ananke.home.desktop.hypr = {
       shutdown.enable = lib.mkDefault true;
       polkitAgent.enable = lib.mkDefault true;
       idle.enable = lib.mkDefault true;

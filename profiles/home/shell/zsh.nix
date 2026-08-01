@@ -5,12 +5,12 @@
   ...
 }:
 let
-  cfg = config.ananke.profiles.shell.zsh;
+  cfg = config.ananke.profiles.home.shell.zsh;
 in
 {
   imports = [ (paths.modules + "/home/shell") ];
 
-  options.ananke.profiles.shell.zsh = {
+  options.ananke.profiles.home.shell.zsh = {
     enable = lib.mkEnableOption "zsh profile";
   };
   config = lib.mkIf cfg.enable {

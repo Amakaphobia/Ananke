@@ -9,7 +9,7 @@ let
   # 6 hexadecimals
   hexColor = types.strMatching "[0-9a-fA-F]{6}";
 
-  theme = config.ananke.modules.theme;
+  theme = config.ananke.theme;
 
   layout = import ../palettes/palette-layout.nix;
   inherit (layout) terminalColorRoles semanticColorRoles;

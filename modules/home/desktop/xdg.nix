@@ -1,9 +1,9 @@
 { config, lib, ... }:
 let
-  cfg = config.ananke.desktop.xdgMimeApps;
+  cfg = config.ananke.home.desktop.xdgMimeApps;
 in
 {
-  options.ananke.desktop.xdgMimeApps = {
+  options.ananke.home.desktop.xdgMimeApps = {
     enable = lib.mkEnableOption "prefered applications";
   };
 

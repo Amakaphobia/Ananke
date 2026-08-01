@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.ananke.desktop.obsidian;
+  cfg = config.ananke.home.desktop.obsidian;
   dataview = pkgs.stdenvNoCC.mkDerivation rec {
 
     pname = "obsidian-dataview";

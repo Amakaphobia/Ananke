@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.ananke.desktop.hypr;
+  cfg = config.ananke.home.desktop.hypr;
   grim = lib.escapeRegex (lib.getExe pkgs.grim);
 
   portal = lib.escapeRegex (

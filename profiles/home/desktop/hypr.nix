@@ -5,17 +5,17 @@
   ...
 }:
 let
-  cfg = config.ananke.profiles.desktop;
+  cfg = config.ananke.profiles.home.desktop;
 in
 {
   imports = [ (paths.modules + "/home/desktop") ];
 
-  options.ananke.profiles.desktop.hypr = {
+  options.ananke.profiles.home.desktop.hypr = {
     enable = lib.mkEnableOption "hyprland powered desktop profile";
   };
 
   config = lib.mkIf cfg.hypr.enable {
-    ananke.desktop = {
+    ananke.home.desktop = {
       hypr.enable = lib.mkDefault true;
       screenshot.enable = lib.mkDefault true;
       firefox = {

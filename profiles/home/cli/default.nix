@@ -5,14 +5,14 @@
   ...
 }:
 let
-  cfg = config.ananke.profiles.cli.base;
+  cfg = config.ananke.profiles.home.cli.base;
 in
 {
   imports = [
     (paths.modules + "/home/cli")
   ];
 
-  options.ananke.profiles.cli.base = {
+  options.ananke.profiles.home.cli.base = {
     enable = lib.mkEnableOption "Default profile";
   };
 

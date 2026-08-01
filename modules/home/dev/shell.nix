@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.ananke.modules.dev.shell;
+  cfg = config.ananke.home.dev.shell;
 in
 {
-  options.ananke.modules.dev.shell = {
+  options.ananke.home.dev.shell = {
     enable = lib.mkEnableOption "shell tools";
   };
 

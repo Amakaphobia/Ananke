@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.ananke.desktop.obsidian;
+  cfg = config.ananke.home.desktop.obsidian;
 
   relativeLineNumbers = pkgs.stdenvNoCC.mkDerivation rec {
     pname = "obsidian-relative-line-numbers";

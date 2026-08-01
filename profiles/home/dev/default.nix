@@ -5,18 +5,18 @@
   ...
 }:
 let
-  cfg = config.ananke.profiles.dev;
+  cfg = config.ananke.profiles.home.dev;
 in
 {
   imports = [
     (paths.modules + "/home/dev")
   ];
-  options.ananke.profiles.dev = {
+  options.ananke.profiles.home.dev = {
     enable = lib.mkEnableOption "Dev tools";
   };
 
   config = lib.mkIf cfg.enable {
-    ananke.modules.dev = {
+    ananke.home.dev = {
       # enable basic shell and nix tooling by default
       nix.enable = lib.mkDefault true;
       shell.enable = lib.mkDefault true;

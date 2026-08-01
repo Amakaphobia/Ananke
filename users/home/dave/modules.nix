@@ -26,28 +26,30 @@
 
     };
 
-    desktop = {
-      obsidian.enable = true;
+    home = {
+      desktop = {
+        obsidian.enable = true;
 
-      firefox.webapps.excalidraw.enable = true;
+        firefox.webapps.excalidraw.enable = true;
 
-      apps = {
-        enable = true;
+        apps = {
+          enable = true;
 
-        geany.enable = true;
-        gimp.enable = true;
-        imv.enable = true;
-        vlc.enable = true;
-        spotify.enable = true;
-      };
+          geany.enable = true;
+          gimp.enable = true;
+          imv.enable = true;
+          vlc.enable = true;
+          spotify.enable = true;
+        };
 
-      hypr.commands = {
-        menu = "fuzzel-once";
-        hyprLayoutToggle = "hyprland-toggle-layout";
-        barToggle = "waybar-toggle";
-        lockScreen = "hyprlock-once";
-        screenshotRegion = "screenshot-region";
-        screenshotComplete = "screenshot-complete";
+        hypr.commands = {
+          menu = "fuzzel-once";
+          hyprLayoutToggle = "hyprland-toggle-layout";
+          barToggle = "waybar-toggle";
+          lockScreen = "hyprlock-once";
+          screenshotRegion = "screenshot-region";
+          screenshotComplete = "screenshot-complete";
+        };
       };
     };
   };

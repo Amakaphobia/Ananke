@@ -8,7 +8,7 @@ let
 in
 {
 
-  ananke.theme.akio = {
+  ananke.theme = {
     polarity = "dark";
     scheme = import (paths.themes + "/catppuccin-mocha.nix");
 

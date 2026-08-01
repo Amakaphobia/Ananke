@@ -1,6 +1,6 @@
 { config, lib, ... }:
 let
-  cfg = config.ananke.desktop.hypr;
+  cfg = config.ananke.home.desktop.hypr;
 
   mainMod = "SUPER";
 
@@ -41,7 +41,7 @@ let
   ) (lib.range 1 10);
 in
 {
-  options.ananke.desktop.hypr.commands = {
+  options.ananke.home.desktop.hypr.commands = {
     terminal = lib.mkOption {
       type = lib.types.str;
       default = "kitty";

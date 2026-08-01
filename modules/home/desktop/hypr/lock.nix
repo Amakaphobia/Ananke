@@ -5,15 +5,15 @@
   ...
 }:
 let
-  cfg = config.ananke.desktop.hypr;
+  cfg = config.ananke.home.desktop.hypr;
   colorsLib = import (paths.lib + "/colors.nix") {
     inherit lib;
   };
-  theme = config.ananke.modules.theme;
+  theme = config.ananke.theme;
   colors = theme.scheme.roles;
 in
 {
-  options.ananke.desktop.hypr.lock = {
+  options.ananke.home.desktop.hypr.lock = {
     enable = lib.mkEnableOption "wether to install hyprlock";
   };
 

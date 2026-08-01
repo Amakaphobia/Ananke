@@ -1,6 +1,6 @@
 { config, ... }:
 let
-  theme = config.ananke.theme.akio;
+  theme = config.ananke.theme;
   colors = theme.scheme.roles;
   terminal = theme.scheme.terminal;
 in

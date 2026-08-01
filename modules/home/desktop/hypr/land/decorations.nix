@@ -5,12 +5,12 @@
   ...
 }:
 let
-  cfg = config.ananke.desktop.hypr;
+  cfg = config.ananke.home.desktop.hypr;
 
   colorsLib = import (paths.lib + "/colors.nix") {
     inherit lib;
   };
-  colors = config.ananke.modules.theme.scheme.roles;
+  colors = config.ananke.theme.scheme.roles;
 
   border1 = colorsLib.hyprRgba colors.accent "ff";
   border2 = colorsLib.hyprRgba colors.info "ff";

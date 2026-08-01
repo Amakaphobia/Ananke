@@ -1,7 +1,7 @@
 { config, lib, ... }:
 let
-  cfg = config.ananke.desktop.obsidian;
-  fonts = config.ananke.modules.theme.fonts;
+  cfg = config.ananke.home.desktop.obsidian;
+  fonts = config.ananke.theme.fonts;
 in
 {
   imports = [
@@ -10,7 +10,7 @@ in
     ./themes/anuppuccin.nix
   ];
 
-  options.ananke.desktop.obsidian = {
+  options.ananke.home.desktop.obsidian = {
     enable = lib.mkEnableOption "Obsidian";
   };
 

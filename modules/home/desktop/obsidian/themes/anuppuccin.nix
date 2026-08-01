@@ -26,7 +26,7 @@ let
     '';
   };
 
-  cfg = config.ananke.desktop.obsidian;
+  cfg = config.ananke.home.desktop.obsidian;
 in
 {
   config = lib.mkIf cfg.enable {

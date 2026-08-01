@@ -1,6 +1,6 @@
 { config, lib, ... }:
 let
-  cfg = config.ananke.desktop.hypr;
+  cfg = config.ananke.home.desktop.hypr;
   mkBezier = name: points: {
     _args = [
       name

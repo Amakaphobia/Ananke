@@ -5,11 +5,11 @@
   ...
 }:
 let
-  ff = config.ananke.desktop.firefox;
+  ff = config.ananke.home.desktop.firefox;
   cfg = ff.webapps.excalidraw;
 in
 {
-  options.ananke.desktop.firefox.webapps.excalidraw = {
+  options.ananke.home.desktop.firefox.webapps.excalidraw = {
     enable = lib.mkEnableOption "Excalidraw";
   };
 

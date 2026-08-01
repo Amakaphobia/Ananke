@@ -5,11 +5,11 @@
   ...
 }:
 let
-  cfg = config.ananke.desktop.utilities;
+  cfg = config.ananke.home.desktop.utilities;
 in
 {
 
-  options.ananke.desktop.utilities = {
+  options.ananke.home.desktop.utilities = {
     enable = lib.mkEnableOption "Desktop Utilities";
     wl-clipboard.enable = lib.mkOption {
       type = lib.types.bool;

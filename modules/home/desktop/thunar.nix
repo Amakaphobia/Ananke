@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.ananke.desktop.thunar;
+  cfg = config.ananke.home.desktop.thunar;
 in
 {
-  options.ananke.desktop.thunar = {
+  options.ananke.home.desktop.thunar = {
     enable = lib.mkEnableOption "Configure thunar for user";
   };
 
