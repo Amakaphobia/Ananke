@@ -4,7 +4,7 @@
       type = "disk";
 
       # Use a stable by-id path, not /dev/nvme0n1.
-      device = "/dev/disk/by-id/dev/disk/by-id/nvme-eui.8ce38e05011f83aa";
+      device = "/dev/disk/by-id/nvme-eui.8ce38e05011f83aa";
 
       content = {
         type = "gpt";
