@@ -14,7 +14,9 @@ in
     enable = lib.mkEnableOption "zsh profile";
   };
   config = lib.mkIf cfg.enable {
-    ananke.shell.zsh.enable = lib.mkDefault true;
-    ananke.shell.addons.enable = lib.mkDefault true;
+    ananke.home.shell = {
+      zsh.enable = lib.mkDefault true;
+      addons.enable = lib.mkDefault true;
+    };
   };
 }

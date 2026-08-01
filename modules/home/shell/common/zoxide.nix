@@ -5,11 +5,11 @@
   ...
 }:
 let
-  cfg = config.ananke.shell.addons;
+  cfg = config.ananke.home.shell.addons;
   helper = import (paths.lib + "/helper.nix") { inherit lib; };
 in
 {
-  options.ananke.shell.addons.zoxide = {
+  options.ananke.home.shell.addons.zoxide = {
     enable = helper.mkDefaultOnOption "zoxide";
   };
   config = lib.mkIf (cfg.enable && cfg.zoxide.enable) {

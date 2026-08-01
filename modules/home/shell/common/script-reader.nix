@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.ananke.modules.home.shell.scripts;
+  cfg = config.ananke.home.shell.scripts;
   helper = import (paths.lib + "/helper.nix") { inherit lib; };
 
   sessionPath = "$HOME/.local/bin";
@@ -15,7 +15,7 @@ let
   );
 in
 {
-  options.ananke.modules.home.shell.scripts = {
+  options.ananke.home.shell.scripts = {
     enable = helper.mkDefaultOnOption "shell scripts";
   };
 

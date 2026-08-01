@@ -1,13 +1,13 @@
 { config, lib, ... }:
 let
-  cfg = config.ananke.shell.zsh;
+  cfg = config.ananke.home.shell.zsh;
 in
 {
 
   imports = [
     ./addons.nix
   ];
-  options.ananke.shell.zsh = {
+  options.ananke.home.shell.zsh = {
     enable = lib.mkEnableOption "zsh";
   };
 

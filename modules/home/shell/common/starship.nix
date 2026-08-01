@@ -5,12 +5,12 @@
   ...
 }:
 let
-  cfg = config.ananke.shell.addons;
+  cfg = config.ananke.home.shell.addons;
   helper = import (paths.lib + "/helper.nix") { inherit lib; };
 in
 {
 
-  options.ananke.shell.addons.starship = {
+  options.ananke.home.shell.addons.starship = {
     enable = helper.mkDefaultOnOption "starship";
   };
 
