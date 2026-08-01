@@ -12,7 +12,6 @@ in
     enable = lib.mkEnableOption "Apps";
 
     geany.enable = lib.mkEnableOption "Geany";
-    vlc.enable = lib.mkEnableOption "vlc";
     gimp.enable = lib.mkEnableOption "Gimp";
     imv.enable = lib.mkEnableOption "imv";
   };
@@ -20,8 +19,6 @@ in
   config = lib.mkIf cfg.enable {
     home.packages =
       lib.optional cfg.geany.enable pkgs.geany
-      ++ lib.optional cfg.vlc.enable pkgs.vlc
-      ++ lib.optional cfg.spotify.enable pkgs.spotify
       ++ lib.optional cfg.gimp.enable pkgs.gimp
       ++ lib.optional cfg.imv.enable pkgs.imv;
   };

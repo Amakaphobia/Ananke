@@ -13,7 +13,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = pkgs.vlc;
+    home.packages = [ pkgs.vlc ];
   };
 
 }

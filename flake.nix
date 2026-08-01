@@ -103,7 +103,7 @@
               sharedModules = [
                 stylix.homeModules.stylix
                 inputs.nixvim.homeModules.nixvim
-                inputs.spicetify-nix.nixosModules.spicetify
+                inputs.spicetify-nix.homeManagerModules.spicetify
               ];
               extraSpecialArgs = {
                 inherit
