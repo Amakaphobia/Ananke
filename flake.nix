@@ -12,6 +12,10 @@
       url = "github:NixOS/nixos-hardware";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     stylix = {
       url = "github:nix-community/stylix/release-26.05";
@@ -82,6 +86,7 @@
         };
         modules = [
           nixos-hardware.nixosModules.lenovo-thinkpad-x13-intel
+          inputs.disko.nixosModules.disko
 
           ./hosts/nyx
 

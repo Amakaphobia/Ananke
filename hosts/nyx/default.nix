@@ -7,6 +7,7 @@ in
   imports = [
     ./hardware-configuration.nix
     ./hardware-acceleration.nix
+    ./disk-config.nix
 
     (profsys + "/core.nix")
     (profsys + "/desktop.nix")
