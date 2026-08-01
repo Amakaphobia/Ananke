@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.ananke.machine.laptop;
+  cfg = config.ananke.profiles.hardware.laptop;
 in
 {
   imports = [
@@ -15,7 +15,7 @@ in
     (paths.modules + "/system/hardware/lidswitch.nix")
   ];
 
-  options.ananke.machine.laptop = {
+  options.ananke.profiles.hardware.laptop = {
     enable = lib.mkOption {
       type = lib.types.bool;
       default = false;
@@ -24,7 +24,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    ananke.machine.laptop = {
+    ananke.hardware.laptop = {
       hibernation.enable = lib.mkDefault true;
       lidswitch.enable = lib.mkDefault true;
       power-profiles-daemon.enable = lib.mkDefault true;

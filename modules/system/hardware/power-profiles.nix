@@ -1,13 +1,13 @@
 { config, lib, ... }:
 let
-  cfg = config.ananke.machine.laptop.power-profiles-daemon;
+  cfg = config.ananke.hardware.laptop.power-profiles-daemon;
 in
 {
-  options.ananke.machine.laptop.power-profiles-daemon = {
+  options.ananke.hardware.laptop.power-profiles-daemon = {
     enable = lib.mkEnableOption "power-profiles-daemon";
   };
 
-  config = lib.mkIf (config.ananke.machine.laptop.enable && cfg.enable) {
+  config = lib.mkIf (config.ananke.profiles.hardware.laptop.enable && cfg.enable) {
     # power-profiles-daemon
     services.power-profiles-daemon.enable = true;
   };

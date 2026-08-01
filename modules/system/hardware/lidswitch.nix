@@ -1,13 +1,13 @@
 { config, lib, ... }:
 let
-  cfg = config.ananke.machine.laptop.lidswitch;
+  cfg = config.ananke.hardware.laptop.lidswitch;
 in
 {
-  options.ananke.machine.laptop.lidswitch = {
+  options.ananke.hardware.laptop.lidswitch = {
     enable = lib.mkEnableOption "lidswitch";
   };
 
-  config = lib.mkIf (config.ananke.machine.laptop.enable && cfg.enable) {
+  config = lib.mkIf (config.ananke.profiles.hardware.laptop.enable && cfg.enable) {
     services.logind.settings.Login = {
       HandleLidSwitch = "suspend-then-hibernate";
       HandleLidSwitchExternalPower = "suspend-then-hibernate";

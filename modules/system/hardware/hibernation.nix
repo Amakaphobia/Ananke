@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.ananke.machine.laptop.hibernation;
+  cfg = config.ananke.hardware.laptop.hibernation;
 in
 {
-  options.ananke.machine.laptop.hibernation = {
+  options.ananke.hardware.laptop.hibernation = {
     enable = lib.mkEnableOption "hibernation";
     hibernateDelaySeconds = lib.mkOption {
       type = lib.types.ints.positive;
@@ -17,7 +17,7 @@ in
     };
   };
 
-  config = lib.mkIf (config.ananke.machine.laptop.enable && cfg.enable) {
+  config = lib.mkIf (config.ananke.profiles.hardware.laptop.enable && cfg.enable) {
     # enter hibernation after suspension
     systemd.sleep.settings.Sleep = {
       # enter hibernation after amount of time specified in suspension

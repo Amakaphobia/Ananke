@@ -18,9 +18,9 @@ in
     ananke = {
 
       system.core.locale.ger.enable = true;
-      machine.laptop.enable = true;
 
       profiles = {
+        hardware.laptop.enable = true;
         system = {
           core.enable = true;
           desktop.enable = true;
