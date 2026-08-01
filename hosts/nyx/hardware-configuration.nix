@@ -26,24 +26,6 @@
     extraModulePackages = [ ];
   };
 
-  # fileSystems."/" = {
-  #   device = "/dev/disk/by-uuid/9a1928af-a054-42a8-bbbb-d434f51cff73";
-  #   fsType = "ext4";
-  # };
-  #
-  # fileSystems."/boot" = {
-  #   device = "/dev/disk/by-uuid/CE79-965A";
-  #   fsType = "vfat";
-  #   options = [
-  #     "fmask=0077"
-  #     "dmask=0077"
-  #   ];
-  # };
-  #
-  # swapDevices = [
-  #   { device = "/dev/disk/by-uuid/643f145f-d484-47be-9642-13c353163d88"; }
-  # ];
-
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.npu.enable = true;
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
