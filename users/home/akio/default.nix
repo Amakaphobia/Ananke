@@ -5,6 +5,7 @@
     ./modules.nix
     ./theme.nix
     ./zshAliases.nix
+    ./ssh-settings.nix
     (paths.modules + "/home/themes")
   ];
 

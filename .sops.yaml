@@ -1,0 +1,10 @@
+keys:
+  - &admin_akio age19p0fct2l8srjc7gyhcx385hppru8egke4tmaphknqs3rs7h4w43sy8rtpk
+  - &host_nyx age1mut5tr2uyslwu87cfw64ty9z0zrq8mxc3jj3sjmvsm0kxhygtprqapwh0m
+
+creation_rules:
+  - path_regex: ^secrets/nyx\.yaml$
+    key_groups:
+      - age:
+          - *admin_akio
+          - *host_nyx

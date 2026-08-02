@@ -21,7 +21,10 @@
           enable = true;
           akio.aliases.enable = true;
         };
-        cli.base.enable = true;
+        cli = {
+          base.enable = true;
+          ssh.akio.enable = true;
+        };
         dev.enable = true;
         desktop = {
           hypr.enable = true;

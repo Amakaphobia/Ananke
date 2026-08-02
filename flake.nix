@@ -3,11 +3,6 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-26.05";
 
-    spicetify-nix = {
-      url = "github:Gerg-L/spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -17,8 +12,14 @@
       url = "github:NixOS/nixos-hardware";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     disko = {
       url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -49,6 +50,13 @@
       url = "github:yokoffing/Betterfox/152.0";
       flake = false;
     };
+
+    # customizable spotify wrapper
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   # @ syntax : name all of it inputs, but pull out the named variables and make them locally available
@@ -68,6 +76,7 @@
       legacy = nixpkgs.legacyPackages.${system};
 
       paths = {
+        root = ./.;
         wallpaper = ./assets/wallpapers;
         icons = ./assets/icons;
         profiles = ./profiles;
@@ -92,6 +101,7 @@
         modules = [
           nixos-hardware.nixosModules.lenovo-thinkpad-x13-intel
           inputs.disko.nixosModules.disko
+          inputs.sops-nix.nixosModules.sops
 
           ./hosts/nyx
 

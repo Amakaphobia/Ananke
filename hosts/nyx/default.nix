@@ -9,8 +9,11 @@ in
     ./hardware-acceleration.nix
     ./disk-config.nix
 
+    ./secrets.nix
+
     (profsys + "/core.nix")
     (profsys + "/desktop.nix")
+    (profsys + "/homeNetwork.nix")
 
     (profhard + "/laptop.nix")
 
@@ -25,7 +28,10 @@ in
       profiles = {
         hardware.laptop.enable = true;
         system = {
-          core.enable = true;
+          core = {
+            enable = true;
+            networking.home.enable = true;
+          };
           desktop.enable = true;
         };
       };
