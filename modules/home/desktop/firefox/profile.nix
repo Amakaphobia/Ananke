@@ -25,10 +25,6 @@ in
 
             bookmarks = [
               {
-                name = "NixOS";
-                url = "https://nixos.org/";
-              }
-              {
                 name = "NixOS Wiki";
                 url = "https://wiki.nixos.org/";
               }
@@ -37,16 +33,16 @@ in
                 url = "https://github.com/amakaphobia/nixos-dotfiles/";
               }
               {
-                name = "Home Manager Options";
-                url = "https://nix-community.github.io/home-manager/options/";
-              }
-              {
                 name = "NixOS Packages";
                 url = "https://search.nixos.org/packages/";
               }
               {
+                name = "Home Manager Options";
+                url = "https://home-manager-options.extranix.com/";
+              }
+              {
                 name = "Nerdfont Cheat Sheet";
-                url = "https://www.nerdfonts.com/cheat-sheet/";
+                url = "https://www.nerdfonts.com/cheat-sheet";
               }
             ];
           }
