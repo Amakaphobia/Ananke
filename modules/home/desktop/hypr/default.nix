@@ -15,6 +15,7 @@ in
     ./idle.nix
     ./paper.nix
     ./lock.nix
+    ./sunset.nix
   ];
 
   # create a master switch and a hyprshutdown option
@@ -39,6 +40,7 @@ in
       idle.enable = lib.mkDefault true;
       lock.enable = lib.mkDefault true;
       paper.enable = lib.mkDefault true;
+      sunset.enable = lib.mkDefault true;
     };
 
     # enable hyprpolkit
