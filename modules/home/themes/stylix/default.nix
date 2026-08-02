@@ -7,6 +7,9 @@ in
 {
   imports = [ ./targets.nix ];
 
+  # tell gtk to use system theme
+  config.gtk.colorScheme = theme.polarity;
+
   config.stylix = {
     enable = true;
     autoEnable = false;
@@ -17,7 +20,6 @@ in
       enable = true;
       inherit (theme.icons) package dark light;
     };
-
     base16Scheme = {
       scheme = theme.scheme.name;
       author = theme.scheme.author;
