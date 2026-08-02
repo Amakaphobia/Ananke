@@ -12,6 +12,8 @@
     (paths.profiles + "/home/dev")
     # media players
     (paths.profiles + "/home/desktop/media.nix")
+    # office tools
+    (paths.profiles + "/home/desktop/office.nix")
   ];
 
   config.ananke = {
@@ -29,6 +31,7 @@
         desktop = {
           hypr.enable = true;
           media.enable = true;
+          office.enable = true;
         };
       };
 

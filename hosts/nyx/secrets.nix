@@ -14,7 +14,6 @@
       "wifi/home/password" = { };
 
       "ssh/github-private" = {
-        format = "yaml";
         owner = config.users.users.akio.name;
         group = config.users.users.akio.group;
         mode = "0400";
