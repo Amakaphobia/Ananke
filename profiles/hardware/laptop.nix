@@ -9,6 +9,7 @@ let
 in
 {
   imports = [
+    (paths.modules + "/system/hardware/bluetooth.nix")
     (paths.modules + "/system/hardware/hibernation.nix")
     (paths.modules + "/system/hardware/power-profiles.nix")
     (paths.modules + "/system/hardware/touchpad.nix")
@@ -16,19 +17,19 @@ in
   ];
 
   options.ananke.profiles.hardware.laptop = {
-    enable = lib.mkOption {
-      type = lib.types.bool;
-      default = false;
-      description = "true when machine is a laptop";
-    };
+    enable = lib.mkEnableOption "Laptop Profile";
+    bluetooth.enable = lib.mkEnableOption "Bluetooth support";
   };
 
   config = lib.mkIf cfg.enable {
-    ananke.hardware.laptop = {
-      hibernation.enable = lib.mkDefault true;
-      lidswitch.enable = lib.mkDefault true;
-      power-profiles-daemon.enable = lib.mkDefault true;
-      touchpad.enable = lib.mkDefault true;
+    ananke.hardware = {
+      bluetooth.enable = cfg.bluetooth.enable;
+      laptop = {
+        hibernation.enable = lib.mkDefault true;
+        lidswitch.enable = lib.mkDefault true;
+        power-profiles-daemon.enable = lib.mkDefault true;
+        touchpad.enable = lib.mkDefault true;
+      };
     };
   };
 }

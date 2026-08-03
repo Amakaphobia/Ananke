@@ -26,7 +26,10 @@ in
       system.core.locale.ger.enable = true;
 
       profiles = {
-        hardware.laptop.enable = true;
+        hardware.laptop = {
+          enable = true;
+          bluetooth.enable = true;
+        };
         system = {
           core = {
             enable = true;
