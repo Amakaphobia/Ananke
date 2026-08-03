@@ -14,7 +14,9 @@ in
         sr = "systemctl reboot";
         sd = "systemctl poweroff";
         hh = "systemctl hibernate";
+        lg = "lazygit";
         chelp = "cat ~/color-info.txt";
+        ff = "clear && fastfetch";
       }
 
       #handle shell aliases for eza or no eza

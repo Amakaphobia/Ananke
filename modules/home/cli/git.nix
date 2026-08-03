@@ -38,6 +38,7 @@ in
             cm = "commit -m";
             ca = "commit --amend";
             p = "push";
+            pfwl = "push --force-with-lease";
           };
           init.defaultBranch = "main";
 
