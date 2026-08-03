@@ -21,6 +21,7 @@ in
     fd.enable = helper.mkDefaultOnOption "fd";
     tldr.enable = helper.mkDefaultOnOption "tldr";
     nixfmt.enable = helper.mkDefaultOnOption "nixfmt";
+    nix-tree.enable = helper.mkDefaultOnOption "nix-tree";
   };
 
   config = lib.mkIf cfg.enable {
@@ -36,6 +37,8 @@ in
       # funny man
       ++ lib.optional cfg.tldr.enable pkgs.tldr
       # nix formatter
-      ++ lib.optional cfg.nixfmt.enable pkgs.nixfmt;
+      ++ lib.optional cfg.nixfmt.enable pkgs.nixfmt
+      # display dependency graph
+      ++ lib.optional cfg.nix-tree.enable pkgs.nix-tree;
   };
 }

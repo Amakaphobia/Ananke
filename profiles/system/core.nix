@@ -12,6 +12,7 @@ in
     (paths.modules + "/system/core")
     (paths.modules + "/system/programs/base.nix")
     (paths.modules + "/system/programs/git.nix")
+    (paths.modules + "/system/programs/diagnosticSuite.nix")
   ];
 
   options.ananke.profiles.system.core = {
@@ -30,6 +31,7 @@ in
       programs = {
         base.enable = lib.mkDefault true;
         git.enable = lib.mkDefault true;
+        diagnosticSuite.enable = lib.mkDefault true;
       };
     };
   };

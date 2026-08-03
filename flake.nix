@@ -23,12 +23,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # nix-index-database comma
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     stylix = {
       url = "github:nix-community/stylix/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # nixvim for 26.05
     nixvim = {
       url = "github:nix-community/nixvim/nixos-26.05";
     };
@@ -114,6 +119,7 @@
                 stylix.homeModules.stylix
                 inputs.nixvim.homeModules.nixvim
                 inputs.spicetify-nix.homeManagerModules.spicetify
+                inputs.nix-index-database.homeModules.nix-index
               ];
               extraSpecialArgs = {
                 inherit
