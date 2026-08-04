@@ -134,65 +134,11 @@
           nur.modules.nixos.default
         ];
       };
-      checks.${system} = {
-        # Fail when committed Nix files are not formatted.
-        formatting =
-          legacy.runCommand "check-formatting"
-            {
-              nativeBuildInputs = [ legacy.nixfmt-tree ];
-            }
-            ''
-              cp -r ${self} source
-              chmod -R u+w source
-              cd source
+      checks.${system} = import ./checks {
+        inherit self paths;
 
-              # check fails if formatter needs to be invoked
-              treefmt --ci
-
-              # if formatter does not find anything, this line is executed, creating a file proving everything is formatted right
-              touch "$out"
-            '';
-
-        # Fail when statix finds Nix antipatterns.
-        statix =
-          legacy.runCommand "check-statix"
-            {
-              nativeBuildInputs = [ legacy.statix ];
-            }
-            ''
-              cd ${self}
-
-              statixLog="$TMPDIR/statix.log"
-
-              set +e
-              statix check . > "$statixLog" 2>&1
-              statixStatus=$?
-              set -e
-
-              cat "$statixLog"
-
-              if [ "$statixStatus" -ne 0 ] || [ -s "$statixLog" ]; then
-                exit 1
-              fi
-
-              touch "$out"
-            '';
-
-        # Fail when deadnix finds unused Nix code.
-        deadnix =
-          legacy.runCommand "check-deadnix"
-            {
-              nativeBuildInputs = [ legacy.deadnix ];
-            }
-            ''
-              cd ${self}
-
-              deadnix --fail .
-
-              touch "$out"
-            '';
-        # Build the complete NixOS configuration, Home Manager configuration.
-        nyx = self.nixosConfigurations.nyx.config.system.build.toplevel;
+        pkgs = legacy;
+        nixosConfiguration = self.nixosConfigurations.nyx;
       };
 
       formatter.${system} = legacy.nixfmt-tree;
