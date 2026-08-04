@@ -16,6 +16,7 @@ in
     enable = lib.mkEnableOption "utilities";
 
     pastel.enable = helper.mkDefaultOnOption "pastel";
+    just.enable = helper.mkDefaultOnOption "just";
     jq.enable = helper.mkDefaultOnOption "jq";
     lazygit.enable = helper.mkDefaultOnOption "lazygit";
     fd.enable = helper.mkDefaultOnOption "fd";
@@ -30,6 +31,8 @@ in
       lib.optional cfg.pastel.enable pkgs.pastel
       # a jason processor
       ++ lib.optional cfg.jq.enable pkgs.jq
+      # just
+      ++ lib.optional cfg.just.enable pkgs.just
       # terminal git
       ++ lib.optional cfg.lazygit.enable pkgs.lazygit
       # find ...

@@ -40,6 +40,7 @@ in
             css
             java
             json
+            just
             lua
             markdown
             markdown-inline
