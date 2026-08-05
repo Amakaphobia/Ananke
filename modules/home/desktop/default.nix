@@ -3,6 +3,7 @@
   imports = [
     ./apps.nix
     ./desktoputilities.nix
+    ./health-notification.nix
     ./hypr
     ./firefox
     ./fuzzel.nix

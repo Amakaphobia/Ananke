@@ -8,7 +8,9 @@ let
   cfg = config.ananke.profiles.home.desktop;
 in
 {
-  imports = [ (paths.modules + "/home/desktop") ];
+  imports = [
+    (paths.modules + "/home/desktop")
+  ];
 
   options.ananke.profiles.home.desktop.hypr = {
     enable = lib.mkEnableOption "hyprland powered desktop profile";
@@ -17,6 +19,11 @@ in
   config = lib.mkIf cfg.hypr.enable {
     ananke.home.desktop = {
       hypr.enable = lib.mkDefault true;
+
+      services = {
+        serviceCheck.enable = lib.mkDefault false;
+      };
+
       screenshot.enable = lib.mkDefault true;
       firefox = {
         enable = lib.mkDefault true;

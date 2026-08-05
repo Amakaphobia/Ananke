@@ -111,7 +111,17 @@ set -e
 
 # if default action was choses put command into clipboard
 if [[ "$selected_action" == "default" ]]; then
-  printf '%s\n' "$clipboard_text" | wl-copy
+  wl_copy="$(command -v wl-copy)"
+
+  systemd-run \
+    --user \
+    --quiet \
+    --collect \
+    -- \
+    "$wl_copy" \
+    --foreground \
+    -- \
+    "$clipboard_text"
 # else if notify-sends exit code was != 0 log it
 elif ((notify_status != 0)); then
   printf 'Could not deliver the desktop notification.\n'
