@@ -130,6 +130,7 @@ in
         darkreader
         hover-zoom-plus
         reddit-enhancement-suite
+        browserpass
       ];
 
       # override githubs code views with my font stack

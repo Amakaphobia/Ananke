@@ -4,6 +4,7 @@ _: {
     ./comma.nix
     ./git.nix
     ./nixvim
+    ./pass.nix
     ./ssh.nix
     ./utilities.nix
     ./yazi.nix
