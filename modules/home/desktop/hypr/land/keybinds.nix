@@ -88,6 +88,11 @@ in
       default = "echo 'No command defined.'";
       description = "Screenshot";
     };
+    hyprSunsetToggle = lib.mkOption {
+      type = lib.types.str;
+      default = "echo 'No command defined.'";
+      description = "hyprsunset-toggle";
+    };
   };
   config = lib.mkIf cfg.enable {
     wayland.windowManager.hyprland.settings.bind = workspaceBinds ++ [
@@ -101,6 +106,8 @@ in
 
       # Waybar
       (mkBind "${mainMod} + SHIFT + W" (exec cfg.commands.barToggle))
+      # hyprsunset
+      (mkBind "${mainMod} + SHIFT + E" (exec cfg.commands.hyprSunsetToggle))
 
       # Screenshots
       (mkBind "${mainMod} + Print" (exec cfg.commands.screenshotRegion))

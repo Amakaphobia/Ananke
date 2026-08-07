@@ -58,6 +58,7 @@
           lockScreen = "hyprlock-once";
           screenshotRegion = "screenshot-region";
           screenshotComplete = "screenshot-complete";
+          hyprSunsetToggle = "hyprsunset-toggle";
         };
       };
     };
