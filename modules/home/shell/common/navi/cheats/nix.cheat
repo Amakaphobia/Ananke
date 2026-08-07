@@ -1,0 +1,35 @@
+% nixos, rebuild
+
+# Perform a NixOS rebuild
+sudo nixos-rebuild <operation> --flake <flake>#<host>
+
+$ operation: printf '%s\n' switch boot test build --- --prevent-extra
+$ host: printf '%s\n' nyx
+$ flake: printf '%s\n' . ~/nixos-config ~/Projects/dotfiles/ananke ~/Projects/dotfiles/feature
+
+
+% nix, flake, implicit-dependency
+
+# Show flake metadata
+nix flake metadata <flake_file>
+
+$ config_root: printf '%s\n' "$HOME/Projects/dotfiles/ananke" "$HOME/Projects/dotfiles/feature"
+$ flake_file: printf '%s\n' "<config_root>/flake.nix"
+
+% multiline, shell
+
+# Build and then show the resulting system generation
+nixos-rebuild build --flake <config_root>#<host> \
+  && readlink ./result
+
+$ config_root: printf '%s\n' "$HOME/Projects/dotfiles/ananke" "$HOME/Projects/dotfiles/feature"
+
+% multiline, markdown
+
+# Show information about the current system
+```sh
+printf 'Kernel:\n'
+uname -r
+printf '\nNixOS generation:\n'
+readlink /run/current-system
+```
