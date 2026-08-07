@@ -31,14 +31,14 @@ in
           user.Email = "29711914+Amakaphobia@users.noreply.github.com";
 
           alias = {
-            s = "status --short --branch";
             st = "status";
             a = "add --all";
-            c = "commit";
+            cam = "commit --all --message";
             cm = "commit -m";
             ca = "commit --amend";
-            p = "push";
             pfwl = "push --force-with-lease";
+            l = "log --oneline --decorate --graph --max-count 10";
+            mffo = "merge --ff-only";
           };
           init.defaultBranch = "main";
 
