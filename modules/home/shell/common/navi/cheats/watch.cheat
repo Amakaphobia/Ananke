@@ -1,0 +1,10 @@
+% watch, monitoring
+
+# Run command every second
+watch -n 1 <command>
+
+# Run command repeatedly at a custom interval
+watch -n <seconds> <command>
+
+# Highlight changes between runs
+watch -d -n 1 <command>

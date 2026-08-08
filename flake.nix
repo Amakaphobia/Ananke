@@ -3,65 +3,64 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-26.05";
 
-    home-manager = {
-      url = "github:nix-community/home-manager/release-26.05";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
+    # hardware config
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    impermanence = {
+      url = "github:nix-community/impermanence";
 
+      # using "" because I dont want the devolepment packages
+      inputs.nixpkgs.follows = "";
+      inputs.home-manager.follows = "";
+    };
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # home
+    home-manager = {
+      url = "github:nix-community/home-manager/release-26.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # nix-index-database comma
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     stylix = {
       url = "github:nix-community/stylix/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     nixvim = {
       url = "github:nix-community/nixvim/nixos-26.05";
     };
-
     # make firefox addons available via the nur overlay
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     # temporarily pin this commit. It fixes waybar hyprland lua interaction
     waybar = {
       url = "github:Alexays/Waybar/05945748dccce28bf96d26d8f64a9e69a8dd49ba";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     # load betterfox
     betterfox = {
       url = "github:yokoffing/Betterfox/152.0";
       flake = false;
     };
-
     # customizable spotify wrapper
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
   };
 
   # @ syntax : name all of it inputs, but pull out the named variables and make them locally available
@@ -107,6 +106,7 @@
           nixos-hardware.nixosModules.lenovo-thinkpad-x13-intel
           inputs.disko.nixosModules.disko
           inputs.sops-nix.nixosModules.sops
+          inputs.impermanence.nixosModules.impermanence
 
           ./hosts/nyx
 

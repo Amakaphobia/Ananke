@@ -8,6 +8,7 @@ in
     ./hardware-configuration.nix
     ./hardware-acceleration.nix
     ./disk-config.nix
+    ./impermanence.nix
 
     ./secrets.nix
 

@@ -1,0 +1,6 @@
+% files, multi
+
+# Show several selected files
+bat <files>
+
+$ files: find . -type f -print --- --multi --expand

@@ -1,8 +1,6 @@
-; =====================================================================
-; Personal NixOS / Linux examples
 ;
-; Lines beginning with ; are editor comments and ignored by Navi.
-; =====================================================================
+; Systemd
+;
 
 
 % systemd, common
@@ -26,6 +24,21 @@ systemctl status <unit>
 sudo systemctl restart <unit>
 
 
+% systemd, scope, dependency
+
+# Show service status in either system or user scope
+systemctl <scope_flag> status <unit>
+
+$ scope: printf '%s\n' system user --- --prevent-extra
+$ scope_flag: if [ "$scope" = user ]; then printf '%s\n' --user; else printf '%s\n' ''; fi
+$ unit: if [ "$scope" = user ]; then systemctl --user list-unit-files --type=service --no-legend; else systemctl list-unit-files --type=service --no-legend; fi | awk '{print $1}'
+
+
+;
+; journal
+;
+
+
 % journal, systemd
 @ systemd, common
 
@@ -39,30 +52,3 @@ journalctl -fu <unit>
 journalctl -p <priority>
 
 $ priority: printf '%s\n' emerg alert crit err warning notice info debug --- --prevent-extra
-
-% systemd, scope, dependency
-
-# Show service status in either system or user scope
-systemctl <scope_flag> status <unit>
-
-$ scope: printf '%s\n' system user --- --prevent-extra
-$ scope_flag: if [ "$scope" = user ]; then printf '%s\n' --user; else printf '%s\n' ''; fi
-$ unit: if [ "$scope" = user ]; then systemctl --user list-unit-files --type=service --no-legend; else systemctl list-unit-files --type=service --no-legend; fi | awk '{print $1}'
-
-
-% files, multi
-
-# Show several selected files
-bat <files>
-
-$ files: find . -type f -print --- --multi --expand
-
-
-% processes, columns
-
-# Inspect a process
-ps -fp <pid>
-
-$ pid: ps -eo user,pid,comm --- --column 2 --header-lines 1 --delimiter '\s+'
-
-
