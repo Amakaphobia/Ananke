@@ -3,9 +3,12 @@
   sops = {
     defaultSopsFile = paths.root + "/secrets/nyx.yaml";
 
-    age.keyFile = "/var/lib/sops-nix/key.txt";
+    age.keyFile = "/persist/var/lib/sops-nix/key.txt";
 
     secrets = {
+      "users/akio/password" = {
+        neededForUsers = true;
+      };
 
       # wifi profile:
 

@@ -1,16 +1,21 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   imports = [
   ];
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.mutableUsers = false;
+
   users.users."akio" = {
     isNormalUser = true;
     description = "akio";
+
+    hashedPasswordFile = config.sops.secrets."users/akio/password".path;
+
     extraGroups = [
       "networkmanager"
       "wheel"
     ];
+
     shell = pkgs.zsh;
   };
 }
