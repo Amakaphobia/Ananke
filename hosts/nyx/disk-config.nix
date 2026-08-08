@@ -28,7 +28,7 @@
             content = {
               type = "luks";
               name = "crypted";
-              passwordFile = "/tmp/nyx-luks-passphrase";
+              askPassword = true;
 
               settings = {
 
