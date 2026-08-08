@@ -1,0 +1,22 @@
+% choices, mapped-value
+
+# Demonstrate converting a displayed choice into another value
+printf 'Chosen value: %s\n' <boolean>
+
+$ boolean: printf '%s\n' false true --- --map "grep -q true && echo 1 || echo 0"
+
+
+% files, preview
+
+# Open a file
+nvim <file>
+
+$ file: find . -type f -print --- --preview 'sed -n "1,80p" {}' --preview-window 'right:60%' --header 'Select a file'
+
+
+% files, initial-query
+
+# Inspect a file
+bat <file>
+
+$ file: find . -type f -print --- --query '.nix'

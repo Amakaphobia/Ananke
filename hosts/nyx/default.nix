@@ -46,8 +46,6 @@ in
     home-manager.users.akio.ananke.home.desktop.services.serviceCheck.enable =
       config.ananke.profiles.system.health.enable;
 
-    # stop that wifi error from corrupting LY interface
-    boot.consoleLogLevel = 3;
     networking.hostName = "nyx"; # Define your hostname.
     system.stateVersion = "26.05"; # No changerino!
   };

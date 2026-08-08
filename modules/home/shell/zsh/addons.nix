@@ -16,6 +16,8 @@ in
       eza.enableZshIntegration = lib.mkDefault cfg.eza.enable;
       # FZF
       fzf.enableZshIntegration = lib.mkDefault cfg.fzf.enable;
+      # navi
+      navi.enableZshIntegration = lib.mkDefault cfg.navi.enable;
       # starship
       starship.enableZshIntegration = lib.mkDefault cfg.starship.enable;
       # make zsh command duration and exit status available to starship

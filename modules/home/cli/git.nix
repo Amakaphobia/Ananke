@@ -33,6 +33,7 @@ in
           alias = {
             st = "status";
             a = "add --all";
+            cam = "commit --all --message";
             cm = "commit -m";
             ca = "commit --amend";
             pfwl = "push --force-with-lease";
