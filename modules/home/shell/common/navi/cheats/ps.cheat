@@ -1,0 +1,6 @@
+% processes, columns
+
+# Inspect a process
+ps -fp <pid>
+
+$ pid: ps -eo user,pid,comm --- --column 2 --header-lines 1 --delimiter '\s+'
