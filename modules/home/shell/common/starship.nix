@@ -41,7 +41,7 @@ in
         format = ''
           [┌](bold fg:purple) $os[ ─ ](bold fg:purple)$username$hostname$nix_shell $fill''${custom.command_success}''${custom.command_failure}[ ┘ ](bold fg:purple)
           [│](bold fg:purple) $directory $git_branch$git_status
-          [└─](bold fg:purple) $character 
+          [└─\(](bold fg:purple)[ $time ](bold fg:blue)[\)](bold fg:purple)$character 
         '';
         fill = {
           symbol = "─";
@@ -115,8 +115,14 @@ in
         character = {
           disabled = false;
           format = "$symbol";
-          success_symbol = "[ -->](purple)";
+          success_symbol = "[-->](purple)";
           error_symbol = "[ :](bold red)";
+        };
+
+        time = {
+          disabled = false;
+          format = "[$time]($style)";
+          style = "bold blue";
         };
 
         # display time colored based on exit state
