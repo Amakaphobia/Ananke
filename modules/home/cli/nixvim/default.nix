@@ -9,11 +9,12 @@ let
 in
 {
   imports = [
-    ./theme/catppuccin.nix
-    ./options.nix
-    ./keymaps.nix
     ./addons
     ./autocmds.nix
+    ./diagnostics.nix
+    ./keymaps.nix
+    ./options.nix
+    ./theme/catppuccin.nix
   ];
 
   options.ananke.home.cli.nixvim = {

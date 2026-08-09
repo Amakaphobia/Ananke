@@ -8,6 +8,7 @@ in
     ./blink-cmp.nix
     ./colorizer.nix
     ./conform-nvim.nix
+    ./flash.nix
     ./lualine.nix
     ./markdown.nix
     ./mini-ai.nix
@@ -15,6 +16,7 @@ in
     ./mini-surround.nix
     ./nvim-lint.nix
     ./snacks.nix
+    ./todo-comments.nix
     ./treesitter.nix
     ./whichkey.nix
   ];

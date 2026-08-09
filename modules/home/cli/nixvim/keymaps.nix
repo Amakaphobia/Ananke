@@ -49,6 +49,45 @@ in
         options.desc = "Move selection up";
       }
 
+      # large cursor jumps
+
+      {
+        mode = [
+          "v"
+          "n"
+        ];
+        key = "<C-d>";
+        action = "<C-d>zz";
+        options.desc = "Half page down, center";
+      }
+      {
+        mode = [
+          "v"
+          "n"
+        ];
+        key = "<C-u>";
+        action = "<C-u>zz";
+        options.desc = "Half page up, center";
+      }
+      {
+        mode = [
+          "v"
+          "n"
+        ];
+        key = "G";
+        action = "Gzz";
+        options.desc = "End of file, center";
+      }
+      {
+        mode = [
+          "v"
+          "n"
+        ];
+        key = "gg";
+        action = "ggzz";
+        options.desc = "Beginning of file, center";
+      }
+
       # easier navigation through wrapped lines
       {
         mode = [
@@ -196,7 +235,7 @@ in
         key = "]d";
         action.__raw = ''
           function()
-            vim.diagnostic.jump({ count = 1, float = true })
+            vim.diagnostic.jump({ count = 1 })
           end
         '';
         options.desc = "Next diagnostic";
@@ -206,7 +245,7 @@ in
         key = "[d";
         action.__raw = ''
           function()
-            vim.diagnostic.jump({ count = -1, float = true })
+            vim.diagnostic.jump({ count = -1 })
           end
         '';
         options.desc = "Previous diagnostic";

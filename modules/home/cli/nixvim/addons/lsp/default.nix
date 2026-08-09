@@ -33,8 +33,22 @@ in
         {
           mode = "n";
           key = "gr";
-          lspBufAction = "references";
+          action.__raw = "function() Snacks.picker.lsp_references() end";
           options.desc = "Find references";
+        }
+
+        {
+          mode = "n";
+          key = "<leader>ss";
+          action.__raw = "function() Snacks.picker.lsp_symbols() end";
+          options.desc = "Search document symbols";
+        }
+
+        {
+          mode = "n";
+          key = "<leader>sS";
+          action.__raw = "function() Snacks.picker.lsp_workspace_symbols() end";
+          options.desc = "Search workspace symbols";
         }
         {
           mode = "n";
@@ -60,7 +74,7 @@ in
         {
           mode = "n";
           key = "gi";
-          lspBufAction = "implementation";
+          action.__raw = "function() Snacks.picker.lsp_implementations() end";
           options.desc = "Go to implementation";
         }
         {

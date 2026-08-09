@@ -11,6 +11,7 @@ in
         settings = {
 
           explorer.enabled = true;
+          input.enabled = true;
 
           picker = {
             enabled = true;
@@ -21,6 +22,13 @@ in
 
               # Close picker after opening a file
               jump.close = true;
+
+              # Refresh filesystem and git state whenever explorer opens
+              on_show = config.lib.nixvim.mkRaw ''
+                function(picker)
+                  require("snacks.explorer.actions").actions.explorer_update(picker)
+                end
+              '';
             };
           };
 
@@ -39,7 +47,10 @@ in
           words = {
             enabled = true;
 
-            # turn it off for nix files, because it shits out 50 loglines per minute full of errors
+            # TODO: 090820206 remove filter block when upstream is fixed
+
+            # nixd logs repeated documentHighlight errors for some cursor positions
+            # keep filer until nixd#687 is fixed.
             filter = config.lib.nixvim.mkRaw ''
               function(buf)
                 return vim.bo[buf].filetype ~= "nix"
@@ -111,6 +122,38 @@ in
             end
           '';
           options.desc = "Previous reference";
+        }
+        # search
+        {
+          mode = "n";
+          key = "<leader>sd";
+          action.__raw = "function() Snacks.picker.diagnostics() end";
+          options.desc = "Search diagnostics";
+        }
+        {
+          mode = "n";
+          key = "<leader>st";
+          action.__raw = "function() Snacks.picker.todo_comments() end";
+          options.desc = "Search todos";
+        }
+        {
+          mode = "n";
+          key = "<leader>sk";
+          action.__raw = "function() Snacks.picker.keymaps() end";
+          options.desc = "Search keymaps";
+        }
+        {
+          mode = "n";
+          key = "<leader>sh";
+          action.__raw = "function() Snacks.picker.help() end";
+          options.desc = "Search help";
+        }
+        # git
+        {
+          mode = "n";
+          key = "<leader>gs";
+          action.__raw = "function() Snacks.picker.git_status() end";
+          options.desc = "Git status";
         }
         # notifications
         {

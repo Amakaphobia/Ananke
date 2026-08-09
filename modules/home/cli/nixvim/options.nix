@@ -10,13 +10,18 @@ in
       relativenumber = true;
       signcolumn = "yes";
       cursorline = true;
-      scrolloff = 4;
+      scrolloff = 12;
 
       # Indentation
       expandtab = true;
       shiftwidth = 2;
       tabstop = 2;
       softtabstop = 2;
+      shiftround = true;
+
+      # Whitespace
+      list = true;
+      listchars = "tab:» ,trail:·,lead:·,nbsp:␣";
 
       # Folding
       foldlevel = 99;
@@ -39,11 +44,15 @@ in
       linebreak = true;
       # carry indentation over
       breakindent = true;
+      showbreak = "↪ ";
+      colorcolumn = "101";
 
       # Split directions
       splitbelow = true;
       splitright = true;
 
+      # lualine shows the mode I am in
+      showmode = false;
       # substitution preview
       inccommand = "nosplit";
 
