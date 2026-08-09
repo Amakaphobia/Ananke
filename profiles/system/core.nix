@@ -27,6 +27,7 @@ in
         networking.enable = lib.mkDefault true;
         nix.enable = lib.mkDefault true;
         printing.enable = lib.mkDefault true;
+        sudo.enable = lib.mkDefault true;
       };
       programs = {
         base.enable = lib.mkDefault true;
