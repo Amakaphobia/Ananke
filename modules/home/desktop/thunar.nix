@@ -20,7 +20,15 @@ in
       }
     ];
     xfconf.settings.thunar = {
+      # look
+      "default-view" = "ThunarIconView";
+      "misc-text-beside-icons" = true;
       "misc-highlighting-enabled" = false;
+      "misc-thumbnail-draw-frames" = false;
+      # behavior
+      "misc-middle-click-in-tab" = true;
+      "misc-show-delete-action" = true;
+      "misc-single-click" = false;
     };
   };
 }
