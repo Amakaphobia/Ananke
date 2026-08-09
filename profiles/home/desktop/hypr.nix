@@ -30,6 +30,7 @@ in
         webapps.enable = lib.mkDefault true;
       };
       fuzzel.enable = lib.mkDefault true;
+      kdeconnect.enable = lib.mkDefault true;
       kitty.enable = lib.mkDefault true;
       swaync.enable = lib.mkDefault true;
       thunar.enable = lib.mkDefault true;
@@ -37,7 +38,5 @@ in
       waybar.enable = lib.mkDefault true;
       xdgMimeApps.enable = lib.mkDefault true;
     };
-
-    # other desktop programs here
   };
 }

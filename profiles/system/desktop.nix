@@ -14,6 +14,7 @@ in
     (paths.modules + "/system/desktop/window-manager/hyprland.nix")
     (paths.modules + "/system/programs/firefox.nix")
     (paths.modules + "/system/programs/thunar.nix")
+    (paths.modules + "/system/desktop/kde/connect.nix")
   ];
 
   options.ananke.profiles.system.desktop = {
@@ -27,6 +28,7 @@ in
       audio.pipewire.enable = lib.mkDefault true;
 
       programs = {
+        kde.connect.enable = lib.mkDefault true;
         firefox.enable = lib.mkDefault true;
         thunar.enable = lib.mkDefault true;
       };

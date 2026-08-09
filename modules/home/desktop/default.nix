@@ -7,6 +7,7 @@
     ./hypr
     ./firefox
     ./fuzzel.nix
+    ./kdeConnect.nix
     ./kitty.nix
     ./screenshot.nix
     ./swaync.nix
