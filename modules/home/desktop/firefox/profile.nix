@@ -29,16 +29,20 @@ in
                 url = "https://wiki.nixos.org/";
               }
               {
-                name = "Ananke";
-                url = "https://github.com/amakaphobia/nixos-dotfiles/";
-              }
-              {
                 name = "NixOS Packages";
                 url = "https://search.nixos.org/packages/";
               }
               {
                 name = "Home Manager Options";
                 url = "https://home-manager-options.extranix.com/";
+              }
+              {
+                name = "Nixvim Documentation";
+                url = "https://nix-community.github.io/nixvim/";
+              }
+              {
+                name = "Ananke";
+                url = "https://github.com/amakaphobia/ananke/";
               }
               {
                 name = "Nerdfont Cheat Sheet";
@@ -113,7 +117,8 @@ in
         "extensions.abuseReport.enabled" = false; # dont show report abuse button
         "extensions.formautofill.creditCards.enabled" = false; # dont autofill credit cards
         "identity.fxaccounts.enabled" = false; # disable firefoxes login
-
+        # disable picture in picture mode
+        "media.videocontrols.picture-in-picture.video-toggle.enabled" = false;
         # block drm media
         "media.eme.enabled" = false;
 
@@ -126,11 +131,12 @@ in
 
       # Add ons go here
       extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
-        ublock-origin
+        browserpass
         darkreader
         hover-zoom-plus
         reddit-enhancement-suite
-        browserpass
+        ublock-origin
+        vimium
       ];
 
       # override githubs code views with my font stack
