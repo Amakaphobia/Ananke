@@ -327,6 +327,20 @@
         "type": "indirect"
       }
     },
+    "nixpkgs-unstable": {
+      "locked": {
+        "lastModified": 1786384358,
+        "narHash": "sha256-OETwiymkMwunF+pfL25DzLMF2/YpMcJUjVd9qZ0YdsM=",
+        "rev": "2fcb964de67fcf60b43471c55d5d99e61a9ccb5a",
+        "type": "tarball",
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1051473.2fcb964de67f/nixexprs.tar.xz"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "ref": "nixos-unstable",
+        "type": "indirect"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1781216227,
@@ -419,6 +433,7 @@
         "nix-index-database": "nix-index-database",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-unstable": "nixpkgs-unstable",
         "nixvim": "nixvim",
         "nur": "nur",
         "sops-nix": "sops-nix",

@@ -2,6 +2,7 @@
   description = "First Flake";
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-26.05";
+    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
     # hardware config
     nixos-hardware = {
@@ -78,6 +79,7 @@
       system = "x86_64-linux";
 
       legacy = nixpkgs.legacyPackages.${system};
+      pkgsUnstable = inputs.nixpkgs-unstable.legacyPackages.${system};
 
       paths = {
         root = ./.;
@@ -100,6 +102,7 @@
           inherit
             inputs
             paths
+            pkgsUnstable
             ;
         };
         modules = [
@@ -125,6 +128,7 @@
                 inherit
                   inputs
                   paths
+                  pkgsUnstable
                   ;
               };
               users.akio = import ./users/home/akio;
