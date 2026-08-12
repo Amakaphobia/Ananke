@@ -6,11 +6,10 @@ in
   wayland.windowManager.hyprland.settings = lib.mkIf cfg.enable {
     config = {
       input = {
-        kb_layout = "de";
-        # -- this disables needing to press ticks and backticks twice for on character
-        kb_variant = "nodeadkeys";
+        kb_layout = "ananke-de";
+        kb_variant = "";
         kb_model = "";
-        kb_options = "caps:swapescape";
+        kb_options = "";
         kb_rules = "";
 
         # -- 0 -> click to focus

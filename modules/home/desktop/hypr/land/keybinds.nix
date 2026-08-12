@@ -39,61 +39,28 @@ let
       ))
     ]
   ) (lib.range 1 10);
+
+  mkCommandOption =
+    default: description:
+    lib.mkOption {
+      type = lib.types.str;
+      inherit default description;
+    };
 in
 {
   options.ananke.home.desktop.hypr.commands = {
-    terminal = lib.mkOption {
-      type = lib.types.str;
-      default = "kitty";
-      description = "The command that opens the terminal. Default kitty.";
-    };
 
-    menu = lib.mkOption {
-      type = lib.types.str;
-      default = "fuzzel";
-      description = "command that opens the menu. Default fuzzel.";
-    };
-
-    fileManager = lib.mkOption {
-      type = lib.types.str;
-      default = "thunar";
-      description = "command that opens the FileManager. Default thunar.";
-    };
-
-    hyprLayoutToggle = lib.mkOption {
-      type = lib.types.str;
-      default = "echo 'No command defined.'";
-      description = "toggle different layouts";
-    };
-
-    barToggle = lib.mkOption {
-      type = lib.types.str;
-      default = "echo 'No command defined.'";
-      description = "command that toggles the statusbar.";
-    };
-
-    lockScreen = lib.mkOption {
-      type = lib.types.str;
-      default = "echo 'No command defined.'";
-      description = "Opens the lockscreen if the lockscreen is not open yet.";
-    };
-
-    screenshotRegion = lib.mkOption {
-      type = lib.types.str;
-      default = "echo 'No command defined.'";
-      description = "Screenshots a region";
-    };
-    screenshotComplete = lib.mkOption {
-      type = lib.types.str;
-      default = "echo 'No command defined.'";
-      description = "Screenshot";
-    };
-    hyprSunsetToggle = lib.mkOption {
-      type = lib.types.str;
-      default = "echo 'No command defined.'";
-      description = "hyprsunset-toggle";
-    };
+    terminal = mkCommandOption "kitty" "Command that opens the Terminal. Default kitty";
+    menu = mkCommandOption "fuzzel" "Command that opens the menu. Default fuzzel.";
+    fileManager = mkCommandOption "thunar" "Command that opens the FileManager. Default thunar.";
+    hyprLayoutToggle = mkCommandOption "echo 'No command defined.'" "toggle different layouts";
+    barToggle = mkCommandOption "echo 'No command defined.'" "command that toggles the statusbar.";
+    lockScreen = mkCommandOption "echo 'No command defined.'" "Opens the lockscreen if the lockscreen is not open yet.";
+    screenshotRegion = mkCommandOption "echo 'No command defined.'" "Screenshots a region";
+    screenshotComplete = mkCommandOption "echo 'No command defined.'" "Screenshot";
+    hyprSunsetToggle = mkCommandOption "echo 'No command defined.'" "hyprsunset-toggle";
   };
+
   config = lib.mkIf cfg.enable {
     wayland.windowManager.hyprland.settings.bind = workspaceBinds ++ [
       # Applications
@@ -189,11 +156,11 @@ in
       })
       (mkFlaggedBind "XF86AudioMute" (exec "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle") {
         locked = true;
-        repeating = true;
+        repeating = false;
       })
       (mkFlaggedBind "XF86AudioMicMute" (exec "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle") {
         locked = true;
-        repeating = true;
+        repeating = false;
       })
 
       # Brightness
@@ -207,16 +174,13 @@ in
       })
 
       # Media
-      (mkFlaggedBind "XF86AudioNext" (exec "playerctl next") {
+      (mkFlaggedBind "${mainMod} + PERIOD" (exec "playerctl next") {
         locked = true;
       })
-      (mkFlaggedBind "XF86AudioPause" (exec "playerctl play-pause") {
+      (mkFlaggedBind "${mainMod} + COMMA" (exec "playerctl play-pause") {
         locked = true;
       })
-      (mkFlaggedBind "XF86AudioPlay" (exec "playerctl play-pause") {
-        locked = true;
-      })
-      (mkFlaggedBind "XF86AudioPrev" (exec "playerctl previous") {
+      (mkFlaggedBind "${mainMod} + SHIFT + PERIOD" (exec "playerctl previous") {
         locked = true;
       })
     ];

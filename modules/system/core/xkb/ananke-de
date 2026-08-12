@@ -1,0 +1,50 @@
+partial alphanumeric_keys
+xkb_symbols "ananke-de" {
+    // no dead keys and swap ESC with CAPSLOCK
+    include "de(nodeadkeys)"
+    include "capslock(swapescape)"
+
+    // swap ß and \
+    key <AE11> {
+        type[Group1] = "FOUR_LEVEL",
+        symbols[Group1] = [
+            backslash,
+            question,
+            ssharp,
+            U1E9E
+      ]
+    };
+  
+    // move parens to ü
+    key <AD11> {
+        type[Group1] = "FOUR_LEVEL",
+        symbols[Group1] = [
+            parenleft,
+            parenright,
+            udiaeresis,
+            Udiaeresis
+        ]
+    };
+
+    // move brackets to ö
+    key <AC10> {
+        type[group1] = "FOUR_LEVEL",
+        symbols[group1] = [
+            bracketleft,
+            bracketright,
+            odiaeresis,
+            Odiaeresis
+        ]
+    };
+
+    // move braces to ä
+    key <AC11> {
+        type[Group1] = "FOUR_LEVEL",
+        symbols[Group1] = [
+            braceleft,
+            braceright,
+            adiaeresis,
+            Adiaeresis
+        ]
+    };
+};
