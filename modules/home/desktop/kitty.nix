@@ -39,9 +39,16 @@ in
           selection_foreground = colorsLib.hex colors.background;
           selection_background = colorsLib.hex colors.foreground;
 
+          # cursor
           cursor = colorsLib.hex colors.accent;
           cursor_text_color = colorsLib.hex colors.background;
 
+          cursor_trail = 100;
+          cursor_trail_decay = "0.05 0.20";
+          cursor_trail_start_threshold = 3;
+          cursor_trail_color = colorsLib.hex colors.foregroundMuted;
+
+          # other colors
           url_color = colorsLib.hex colors.info;
 
           active_border_color = colorsLib.hex colors.accent;
