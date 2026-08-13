@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   paths,
   ...
 }:
@@ -8,21 +9,11 @@ let
   cfg = config.ananke.home.shell.addons;
   helper = import (paths.lib + "/helper.nix") { inherit lib; };
 
-  timerCommand = ''
-    ms="$ANANKE_CMD_DURATION"
-    if (( ms < 1000 )); then
-        printf '%dms' "$ms"
+  timerPackage = pkgs.writeShellApplication {
+    name = "ananke-starship-timer";
 
-    elif (( ms < 60000 )); then
-        printf '%.1fs' "$(( ms / 1000.0 ))"
-
-    else
-        minutes=$(( ms / 60000 ))
-        seconds=$(( (ms % 60000) / 1000 ))
-
-        printf '%dm%02ds' "$minutes" "$seconds"
-    fi
-  '';
+    text = builtins.readFile ./starshiptimer.sh;
+  };
 in
 {
 
@@ -129,16 +120,14 @@ in
         custom = {
           command_success = {
             when = ''[ -n "$ANANKE_CMD_STATUS" ] && [ "$ANANKE_CMD_STATUS" -eq 0 ]'';
-            command = timerCommand;
-
+            command = "${timerPackage}/bin/ananke-starship-timer";
             format = "[ 󰅐 $output]($style)";
             style = "fg:green";
           };
 
           command_failure = {
             when = ''[ -n "$ANANKE_CMD_STATUS" ] && [ "$ANANKE_CMD_STATUS" -ne 0 ]'';
-            command = timerCommand;
-
+            command = "${timerPackage}/bin/ananke-starship-timer";
             format = "[ 󱡦 $output]($style)";
             style = "fg:red";
           };

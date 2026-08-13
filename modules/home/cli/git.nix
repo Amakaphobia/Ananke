@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  osConfig,
   ...
 }:
 let
@@ -13,18 +12,9 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    assertions = [
-      {
-        assertion = osConfig.ananke.system.programs.git.enable;
-        message = "Git is not installed at system level. Use config.ananke.system.programs.git.enable = true";
-      }
-    ];
-
     programs = {
       git = {
         enable = true;
-        # git is a system install
-        package = null;
 
         settings = {
           user.Name = "amakaphobia";
@@ -63,7 +53,6 @@ in
 
           fetch = {
             prune = true;
-            pruneTags = true;
           };
 
           merge = {

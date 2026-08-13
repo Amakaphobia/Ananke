@@ -22,10 +22,8 @@ in
       curl
       unzip
       zip
-      tree
       ripgrep
       gnutar
-      bat
       procps
       killall
 
@@ -37,7 +35,6 @@ in
       fzf
       lua51Packages.luarocks
       lua5_1
-      fastfetch
 
       # general purpose library with datastructure, process, file/path, desktop utilities
       glib
