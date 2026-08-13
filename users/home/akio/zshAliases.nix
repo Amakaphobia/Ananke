@@ -17,6 +17,7 @@ in
         lg = "lazygit";
         chelp = "cat ~/color-info.txt";
         ff = "clear && fastfetch";
+        ta = "tmux-sessionizer";
       }
 
       #handle shell aliases for eza or no eza

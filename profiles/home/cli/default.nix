@@ -25,6 +25,7 @@ in
       nixvim.enable = lib.mkDefault true;
       pass.enable = lib.mkDefault true;
       ssh-agent.enable = lib.mkDefault true;
+      tmux.enable = lib.mkDefault true;
       yazi.enable = lib.mkDefault true;
     };
   };
