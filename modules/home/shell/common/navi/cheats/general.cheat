@@ -1,0 +1,5 @@
+% cli, glob expansion
+
+# Include hidden files
+
+mv /somefolder/*(D) /destination
