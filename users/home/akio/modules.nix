@@ -28,7 +28,10 @@
     dev.enable = true;
     desktop = {
       hypr.enable = true;
-      media.enable = true;
+      media = {
+        enable = true;
+        tidal.enable = true;
+      };
       office.enable = true;
 
       firefox.webapps = {

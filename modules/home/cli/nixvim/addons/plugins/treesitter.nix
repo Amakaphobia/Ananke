@@ -38,6 +38,7 @@ in
           grammarPackages = with config.programs.nixvim.plugins.treesitter.package.builtGrammars; [
             bash
             css
+            haskell
             java
             json
             just
@@ -65,6 +66,10 @@ in
           };
         };
       };
+
+      extraConfigLua = lib.mkAfter ''
+        vim.treesitter.language.register("haskell", "tidal")
+      '';
 
       keymaps = [
         # Functions

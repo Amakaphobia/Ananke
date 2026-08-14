@@ -42,6 +42,11 @@
     nixvim = {
       url = "github:nix-community/nixvim/nixos-26.05";
     };
+    # tidal integration
+    vim-tidal = {
+      url = "github:tidalcycles/vim-tidal";
+      flake = false;
+    };
     # make firefox addons available via the nur overlay
     nur = {
       url = "github:nix-community/NUR";

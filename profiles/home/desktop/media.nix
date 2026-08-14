@@ -21,6 +21,7 @@ in
       vlc.enable = lib.mkDefault true;
       spicetify.enable = lib.mkDefault true;
       spotify-player.enable = lib.mkDefault true;
+      tidal.enable = lib.mkDefault false;
     };
   };
 }
