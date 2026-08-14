@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.ananke.home.cli.pass;
+  cfg = config.ananke.profiles.home.cli.pass;
 in
 {
-  options.ananke.home.cli.pass = {
+  options.ananke.profiles.home.cli.pass = {
     enable = lib.mkEnableOption "pass";
   };
 

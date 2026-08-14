@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.ananke.home.dev.nix;
+  cfg = config.ananke.profiles.home.dev.nix;
 in
 {
-  options.ananke.home.dev.nix = {
+  options.ananke.profiles.home.dev.nix = {
     enable = lib.mkEnableOption "nix tools";
   };
 

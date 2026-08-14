@@ -1,9 +1,9 @@
 { config, lib, ... }:
 let
-  cfg = config.ananke.hardware.bluetooth;
+  cfg = config.ananke.profiles.hardware.bluetooth;
 in
 {
-  options.ananke.hardware.bluetooth = {
+  options.ananke.profiles.hardware.bluetooth = {
     enable = lib.mkEnableOption "Bluetooth support";
   };
 

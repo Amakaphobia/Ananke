@@ -1,9 +1,9 @@
 { config, lib, ... }:
 let
-  cfg = config.ananke.hardware.laptop.lidswitch;
+  cfg = config.ananke.profiles.hardware.laptop.lidswitch;
 in
 {
-  options.ananke.hardware.laptop.lidswitch = {
+  options.ananke.profiles.hardware.laptop.lidswitch = {
     enable = lib.mkEnableOption "lidswitch";
   };
 

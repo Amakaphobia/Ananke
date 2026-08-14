@@ -1,14 +1,14 @@
 { config, lib, ... }:
 let
-  cfg = config.ananke.system.core.locale.ger;
+  cfg = config.ananke.profiles.system.core.locale.ger;
 in
 {
-  options.ananke.system.core.locale.ger = {
+  options.ananke.profiles.system.core.locale.ger = {
     enable = lib.mkEnableOption "Sensible german locale overrides";
   };
 
   config = lib.mkIf cfg.enable {
-    ananke.system.core.locale = {
+    ananke.profiles.system.core.locale = {
       time.timeZone = "Europe/Berlin";
 
       i18n.extraLocaleSettings = {

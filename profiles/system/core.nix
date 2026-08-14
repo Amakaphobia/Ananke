@@ -19,7 +19,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    ananke.system = {
+    ananke.profiles.system = {
       core = {
         systemdBoot.enable = lib.mkDefault true;
         locale.enable = lib.mkDefault true;

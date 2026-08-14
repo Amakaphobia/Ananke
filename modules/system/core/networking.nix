@@ -1,9 +1,9 @@
 { config, lib, ... }:
 let
-  cfg = config.ananke.system.core.networking;
+  cfg = config.ananke.profiles.system.core.networking;
 in
 {
-  options.ananke.system.core.networking = {
+  options.ananke.profiles.system.core.networking = {
     enable = lib.mkEnableOption "networking";
   };
   config = lib.mkIf cfg.enable {

@@ -16,7 +16,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    ananke.home.dev = {
+    ananke.profiles.home.dev = {
       # enable basic shell and nix tooling by default
       nix.enable = lib.mkDefault true;
       shell.enable = lib.mkDefault true;

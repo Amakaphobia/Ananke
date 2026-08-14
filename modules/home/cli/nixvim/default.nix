@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.ananke.home.cli.nixvim;
+  cfg = config.ananke.profiles.home.cli.nixvim;
 in
 {
   imports = [
@@ -17,7 +17,7 @@ in
     ./theme/catppuccin.nix
   ];
 
-  options.ananke.home.cli.nixvim = {
+  options.ananke.profiles.home.cli.nixvim = {
     enable = lib.mkEnableOption "Nixvim";
   };
 

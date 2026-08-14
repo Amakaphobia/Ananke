@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.ananke.home.cli.yazi;
+  cfg = config.ananke.profiles.home.cli.yazi;
 in
 {
-  options.ananke.home.cli.yazi = {
+  options.ananke.profiles.home.cli.yazi = {
     enable = lib.mkEnableOption "Yazi";
   };
 

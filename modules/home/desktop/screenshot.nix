@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.ananke.home.desktop.screenshot;
+  cfg = config.ananke.profiles.home.desktop.screenshot;
 in
 {
-  options.ananke.home.desktop.screenshot = {
+  options.ananke.profiles.home.desktop.screenshot = {
     enable = lib.mkEnableOption "Screenshot tooling";
   };
 

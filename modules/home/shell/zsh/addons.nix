@@ -1,13 +1,13 @@
 { config, lib, ... }:
 let
-  cfg = config.ananke.home.shell.addons;
+  cfg = config.ananke.profiles.home.shell.addons;
 in
 {
   imports = [
     ../common
   ];
 
-  options.ananke.home.shell.addons = {
+  options.ananke.profiles.home.shell.addons = {
     enable = lib.mkEnableOption "shell addons";
   };
   config = lib.mkIf cfg.enable {

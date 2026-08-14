@@ -1,9 +1,9 @@
 { config, lib, ... }:
 let
-  cfg = config.ananke.system.desktop.audio.pipewire;
+  cfg = config.ananke.profiles.system.desktop.audio.pipewire;
 in
 {
-  options.ananke.system.desktop.audio.pipewire = {
+  options.ananke.profiles.system.desktop.audio.pipewire = {
     enable = lib.mkEnableOption "pipewire";
   };
 

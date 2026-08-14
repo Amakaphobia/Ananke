@@ -1,9 +1,9 @@
 { config, lib, ... }:
 let
-  cfg = config.ananke.system.core.systemdBoot;
+  cfg = config.ananke.profiles.system.core.systemdBoot;
 in
 {
-  options.ananke.system.core.systemdBoot = {
+  options.ananke.profiles.system.core.systemdBoot = {
     enable = lib.mkEnableOption "systemd";
   };
 

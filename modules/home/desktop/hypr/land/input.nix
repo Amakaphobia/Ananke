@@ -1,6 +1,6 @@
 { config, lib, ... }:
 let
-  cfg = config.ananke.home.desktop.hypr;
+  cfg = config.ananke.profiles.home.desktop.hypr;
 in
 {
   wayland.windowManager.hyprland.settings = lib.mkIf cfg.enable {

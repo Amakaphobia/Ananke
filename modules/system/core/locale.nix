@@ -5,11 +5,11 @@
   ...
 }:
 let
-  cfg = config.ananke.system.core.locale;
+  cfg = config.ananke.profiles.system.core.locale;
   helper = import (paths.lib + "/helper.nix") { inherit lib; };
 in
 {
-  options.ananke.system.core.locale = {
+  options.ananke.profiles.system.core.locale = {
     enable = lib.mkEnableOption "locale";
 
     time.timeZone = helper.mkStringFallbackOption "Europe/Berlin" "your timezone";

@@ -5,18 +5,18 @@
   ...
 }:
 let
-  cfg = config.ananke.home.desktop.hypr;
+  cfg = config.ananke.profiles.home.desktop.hypr;
   colorsLib = import (paths.lib + "/colors.nix") {
     inherit lib;
   };
-  theme = config.ananke.theme;
+  theme = config.ananke.profiles.home.theme;
   colors = theme.scheme.roles;
   font_family = theme.fonts.sansSerif.name;
   font_color = colorsLib.hyprRgb colors.foreground;
   clock_color = colorsLib.hyprRgba colors.accentAlt "99";
 in
 {
-  options.ananke.home.desktop.hypr.lock = {
+  options.ananke.profiles.home.desktop.hypr.lock = {
     enable = lib.mkEnableOption "wether to install hyprlock";
   };
 

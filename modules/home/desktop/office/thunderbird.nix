@@ -4,10 +4,10 @@
   ...
 }:
 let
-  cfg = config.ananke.home.desktop.thunderbird;
+  cfg = config.ananke.profiles.home.desktop.office.thunderbird;
 in
 {
-  options.ananke.home.desktop.thunderbird = {
+  options.ananke.profiles.home.desktop.office.thunderbird = {
     enable = lib.mkEnableOption "Thunderbird";
     default.enable = lib.mkEnableOption "Thunderbird as default mail client.";
   };

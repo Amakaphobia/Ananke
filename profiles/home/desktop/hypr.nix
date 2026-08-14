@@ -17,18 +17,17 @@ in
   };
 
   config = lib.mkIf cfg.hypr.enable {
-    ananke.home.desktop = {
-      hypr.enable = lib.mkDefault true;
-
+    ananke.profiles.home.desktop = {
       services = {
         serviceCheck.enable = lib.mkDefault false;
       };
 
       screenshot.enable = lib.mkDefault true;
+
       firefox = {
         enable = lib.mkDefault true;
-        webapps.enable = lib.mkDefault true;
       };
+
       fuzzel.enable = lib.mkDefault true;
       kdeconnect.enable = lib.mkDefault true;
       kitty.enable = lib.mkDefault true;

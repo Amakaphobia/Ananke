@@ -1,9 +1,9 @@
 { config, lib, ... }:
 let
-  cfg = config.ananke.home.cli.btop;
+  cfg = config.ananke.profiles.home.cli.btop;
 in
 {
-  options.ananke.home.cli.btop = {
+  options.ananke.profiles.home.cli.btop = {
     enable = lib.mkEnableOption "btop";
   };
 

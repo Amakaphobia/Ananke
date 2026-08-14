@@ -1,9 +1,9 @@
 { config, lib, ... }:
 let
-  cfg = config.ananke.system.core.nix;
+  cfg = config.ananke.profiles.system.core.nix;
 in
 {
-  options.ananke.system.core.nix = {
+  options.ananke.profiles.system.core.nix = {
     enable = lib.mkEnableOption "nix base settings";
     allowGarbageCollection = lib.mkOption {
       type = lib.types.bool;

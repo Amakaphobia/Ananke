@@ -1,6 +1,6 @@
 { config, lib, ... }:
 let
-  cfg = config.ananke.home.desktop.xdgMimeApps;
+  cfg = config.ananke.profiles.home.desktop.xdgMimeApps;
   applications = {
     browser = [ "firefox.desktop" ];
     imageViewer = [ "imv.desktop" ];
@@ -24,7 +24,7 @@ let
   };
 in
 {
-  options.ananke.home.desktop.xdgMimeApps = {
+  options.ananke.profiles.home.desktop.xdgMimeApps = {
     enable = lib.mkEnableOption "prefered applications";
   };
 

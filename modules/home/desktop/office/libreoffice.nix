@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.ananke.home.desktop.libreoffice;
+  cfg = config.ananke.profiles.home.desktop.office.libreoffice;
 in
 {
-  options.ananke.home.desktop.libreoffice = {
+  options.ananke.profiles.home.desktop.office.libreoffice = {
     enable = lib.mkEnableOption "LibreOffice";
   };
 

@@ -1,10 +1,10 @@
 { config, lib, ... }:
 let
-  cfg = config.ananke.home.desktop.hypr;
-  path = toString config.ananke.theme.images.wallpaper;
+  cfg = config.ananke.profiles.home.desktop.hypr;
+  path = toString config.ananke.profiles.home.theme.images.wallpaper;
 in
 {
-  options.ananke.home.desktop.hypr = {
+  options.ananke.profiles.home.desktop.hypr = {
     monitor = lib.mkOption {
       type = lib.types.str;
       default = "";

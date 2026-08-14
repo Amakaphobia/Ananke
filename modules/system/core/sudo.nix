@@ -1,9 +1,9 @@
 { config, lib, ... }:
 let
-  cfg = config.ananke.system.core.sudo;
+  cfg = config.ananke.profiles.system.core.sudo;
 in
 {
-  options.ananke.system.core.sudo = {
+  options.ananke.profiles.system.core.sudo = {
     enable = lib.mkEnableOption "sudo configuration";
   };
 

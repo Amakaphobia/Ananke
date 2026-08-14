@@ -1,9 +1,9 @@
 { config, lib, ... }:
 let
-  cfg = config.ananke.system.desktop.displayManager.ly;
+  cfg = config.ananke.profiles.system.desktop.displayManager.ly;
 in
 {
-  options.ananke.system.desktop.displayManager.ly = {
+  options.ananke.profiles.system.desktop.displayManager.ly = {
     enable = lib.mkEnableOption "ly";
   };
 

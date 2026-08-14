@@ -1,7 +1,7 @@
 { config, lib, ... }:
 let
   cfg = config.ananke.profiles.home.shell.zsh.akio.aliases;
-  addons = config.ananke.home.shell.addons;
+  addons = config.ananke.profiles.home.shell.addons;
   ezaEnabled = addons.enable && addons.eza.enable;
 in
 {

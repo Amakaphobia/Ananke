@@ -1,6 +1,7 @@
 { config, lib, ... }:
 let
-  cfg = config.ananke.home.desktop.hypr;
+  cfg = config.ananke.profiles.home.desktop.hypr;
+  cmds = cfg.commands;
 
   mainMod = "SUPER";
 
@@ -48,7 +49,7 @@ let
     };
 in
 {
-  options.ananke.home.desktop.hypr.commands = {
+  options.ananke.profiles.home.desktop.hypr.commands = {
 
     terminal = mkCommandOption "kitty" "Command that opens the Terminal. Default kitty";
     menu = mkCommandOption "fuzzel" "Command that opens the menu. Default fuzzel.";
@@ -64,21 +65,21 @@ in
   config = lib.mkIf cfg.enable {
     wayland.windowManager.hyprland.settings.bind = workspaceBinds ++ [
       # Applications
-      (mkBind "${mainMod} + R" (exec cfg.commands.terminal))
-      (mkBind "${mainMod} + SPACE" (exec cfg.commands.menu))
-      (mkBind "${mainMod} + E" (exec cfg.commands.fileManager))
+      (mkBind "${mainMod} + R" (exec cmds.terminal))
+      (mkBind "${mainMod} + SPACE" (exec cmds.menu))
+      (mkBind "${mainMod} + E" (exec cmds.fileManager))
 
       # Lockscreen
-      (mkBind "${mainMod} + CTRL + L" (exec cfg.commands.lockScreen))
+      (mkBind "${mainMod} + CTRL + L" (exec cmds.lockScreen))
 
       # Waybar
-      (mkBind "${mainMod} + SHIFT + W" (exec cfg.commands.barToggle))
+      (mkBind "${mainMod} + SHIFT + W" (exec cmds.barToggle))
       # hyprsunset
-      (mkBind "${mainMod} + SHIFT + E" (exec cfg.commands.hyprSunsetToggle))
+      (mkBind "${mainMod} + SHIFT + E" (exec cmds.hyprSunsetToggle))
 
       # Screenshots
-      (mkBind "${mainMod} + Print" (exec cfg.commands.screenshotRegion))
-      (mkBind "${mainMod} + SHIFT + Print" (exec cfg.commands.screenshotComplete))
+      (mkBind "${mainMod} + Print" (exec cmds.screenshotRegion))
+      (mkBind "${mainMod} + SHIFT + Print" (exec cmds.screenshotComplete))
 
       #
       # Window Management
@@ -124,7 +125,7 @@ in
       # Next workspace
       (mkBind "${mainMod} + RETURN" (lua ''hl.dsp.focus({ workspace = "e+1" })''))
       # Toggle between scrolling and master
-      (mkBind "${mainMod} + SHIFT + SPACE" (exec cfg.commands.hyprLayoutToggle))
+      (mkBind "${mainMod} + SHIFT + SPACE" (exec cmds.hyprLayoutToggle))
 
       #
       # Scratchpad

@@ -5,14 +5,14 @@
   ...
 }:
 let
-  cfg = config.ananke.home.desktop.kitty;
+  cfg = config.ananke.profiles.home.desktop.kitty;
   colorsLib = import (paths.lib + "/colors.nix") {
     inherit lib;
   };
-  colors = config.ananke.theme.scheme.roles;
+  colors = config.ananke.profiles.home.theme.scheme.roles;
 in
 {
-  options.ananke.home.desktop.kitty = {
+  options.ananke.profiles.home.desktop.kitty = {
     enable = lib.mkEnableOption "Kitty";
   };
 
@@ -32,7 +32,7 @@ in
         };
 
         # keep manual control of colors because stylix doesnt map as well
-        settings = colorsLib.toKitty config.ananke.theme.scheme.terminal // {
+        settings = colorsLib.toKitty config.ananke.profiles.home.theme.scheme.terminal // {
           foreground = colorsLib.hex colors.foreground;
           background = colorsLib.hex colors.background;
 

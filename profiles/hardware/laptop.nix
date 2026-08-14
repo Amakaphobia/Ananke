@@ -22,7 +22,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    ananke.hardware = {
+    ananke.profiles.hardware = {
       bluetooth.enable = cfg.bluetooth.enable;
       laptop = {
         hibernation.enable = lib.mkDefault true;

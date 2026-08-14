@@ -5,9 +5,9 @@
   ...
 }:
 let
-  cfg = config.ananke.home.cli.tmux;
+  cfg = config.ananke.profiles.home.cli.tmux;
 
-  colors = config.ananke.theme.scheme.roles;
+  colors = config.ananke.profiles.home.theme.scheme.roles;
   hex = color: "#${color}";
 
   sessionizerPackage = pkgs.writeShellApplication {
@@ -23,7 +23,7 @@ let
   };
 in
 {
-  options.ananke.home.cli.tmux = {
+  options.ananke.profiles.home.cli.tmux = {
     enable = lib.mkEnableOption "tmux";
   };
 

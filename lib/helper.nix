@@ -1,14 +1,16 @@
 { lib, ... }:
-{
+let
+  # make boolean install option
+  mkOption =
+    name: value:
+    lib.mkOption {
+      description = "Whether to install ${name}";
+      default = value;
+      type = lib.types.bool;
+    };
   # Like mkEnableOption but defaults to true;
 
-  mkDefaultOnOption =
-    package:
-    lib.mkOption {
-      type = lib.types.bool;
-      default = true;
-      description = "Whether to install ${package}";
-    };
+  mkDefaultOnOption = name: mkOption name true;
 
   mkStringFallbackOption =
     fallback: description:
@@ -17,4 +19,7 @@
       default = fallback;
       inherit description;
     };
+in
+{
+  inherit mkOption mkDefaultOnOption mkStringFallbackOption;
 }

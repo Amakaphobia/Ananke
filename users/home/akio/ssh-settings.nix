@@ -11,8 +11,8 @@ in
   config = lib.mkIf cfg.enable {
     assertions = [
       {
-        assertion = config.ananke.home.cli.ssh-agent.enable;
-        message = "SSH is not installed. See: config.ananke.home.cli.ssh-agent.enable";
+        assertion = config.ananke.profiles.home.cli.ssh-agent.enable;
+        message = "SSH is not installed. See: config.ananke.profiles.home.cli.ssh-agent.enable";
       }
     ];
 

@@ -1,11 +1,11 @@
 { config, lib, ... }:
 
 let
-  cfg = config.ananke.home.desktop.swaync;
+  cfg = config.ananke.profiles.home.desktop.swaync;
   popupOpacity = toString config.stylix.opacity.popups;
 in
 {
-  options.ananke.home.desktop.swaync = {
+  options.ananke.profiles.home.desktop.swaync = {
     enable = lib.mkEnableOption "swaync";
   };
 

@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.ananke.hardware.laptop.hibernation;
+  cfg = config.ananke.profiles.hardware.laptop.hibernation;
 in
 {
-  options.ananke.hardware.laptop.hibernation = {
+  options.ananke.profiles.hardware.laptop.hibernation = {
     enable = lib.mkEnableOption "hibernation";
     hibernateDelaySeconds = lib.mkOption {
       type = lib.types.ints.positive;

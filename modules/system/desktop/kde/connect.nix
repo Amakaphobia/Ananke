@@ -1,9 +1,9 @@
 { config, lib, ... }:
 let
-  cfg = config.ananke.system.desktop.programs.kde.connect;
+  cfg = config.ananke.profiles.system.desktop.programs.kde.connect;
 in
 {
-  options.ananke.system.desktop.programs.kde.connect = {
+  options.ananke.profiles.system.desktop.programs.kde.connect = {
     enable = lib.mkEnableOption "Kde Connect";
   };
 

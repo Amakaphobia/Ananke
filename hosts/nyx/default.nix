@@ -25,8 +25,6 @@ in
   config = {
     ananke = {
 
-      system.core.locale.ger.enable = true;
-
       profiles = {
         hardware.laptop = {
           enable = true;
@@ -35,6 +33,7 @@ in
         system = {
           core = {
             enable = true;
+            locale.ger.enable = true;
             networking.home.enable = true;
           };
           health.enable = true;
@@ -44,7 +43,7 @@ in
       };
     };
 
-    home-manager.users.akio.ananke.home.desktop.services.serviceCheck.enable =
+    home-manager.users.akio.ananke.profiles.home.desktop.services.serviceCheck.enable =
       config.ananke.profiles.system.health.enable;
 
     networking.hostName = "nyx"; # Define your hostname.

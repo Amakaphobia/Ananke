@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.ananke.home.desktop.apps;
+  cfg = config.ananke.profiles.home.desktop.apps;
 in
 {
-  options.ananke.home.desktop.apps = {
+  options.ananke.profiles.home.desktop.apps = {
     enable = lib.mkEnableOption "Apps";
 
     geany.enable = lib.mkEnableOption "Geany";

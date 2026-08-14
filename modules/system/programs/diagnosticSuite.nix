@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.ananke.system.programs.diagnosticSuite;
+  cfg = config.ananke.profiles.system.programs.diagnosticSuite;
 in
 {
-  options.ananke.system.programs.diagnosticSuite = {
+  options.ananke.profiles.system.programs.diagnosticSuite = {
     enable = lib.mkEnableOption "System diagnostic tools";
   };
 

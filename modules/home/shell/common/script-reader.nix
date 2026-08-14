@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.ananke.home.shell.scripts;
+  cfg = config.ananke.profiles.home.shell.scripts;
   helper = import (paths.lib + "/helper.nix") { inherit lib; };
 
   sessionPath = "$HOME/.local/bin";
@@ -15,11 +15,11 @@ let
   );
 in
 {
-  options.ananke.home.shell.scripts = {
+  options.ananke.profiles.home.shell.scripts = {
     enable = helper.mkDefaultOnOption "shell scripts";
   };
 
-  config = lib.mkIf (config.ananke.home.shell.addons.enable && cfg.enable) {
+  config = lib.mkIf (config.ananke.profiles.home.shell.addons.enable && cfg.enable) {
     home.file = lib.mapAttrs' (
       filename: _:
       lib.nameValuePair ".local/bin/${lib.removeSuffix ".sh" filename}" {

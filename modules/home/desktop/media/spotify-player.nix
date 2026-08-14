@@ -5,16 +5,16 @@
   ...
 }:
 let
-  cfg = config.ananke.home.desktop.media.spotify-player;
+  cfg = config.ananke.profiles.home.desktop.media.spotify-player;
 
-  theme = config.ananke.theme;
+  theme = config.ananke.profiles.home.theme;
   colors = theme.scheme.roles;
   terminal = theme.scheme.terminal;
 
   hex = color: "#${color}";
 in
 {
-  options.ananke.home.desktop.media.spotify-player = {
+  options.ananke.profiles.home.desktop.media.spotify-player = {
     enable = lib.mkEnableOption "spotify-player";
   };
 

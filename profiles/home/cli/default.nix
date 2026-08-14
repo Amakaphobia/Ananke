@@ -12,21 +12,24 @@ in
     (paths.modules + "/home/cli")
   ];
 
-  options.ananke.profiles.home.cli.base = {
-    enable = lib.mkEnableOption "Default profile";
+  options.ananke.profiles.home.cli = {
+    base = {
+      enable = lib.mkEnableOption "Default profile";
+    };
   };
 
   config = lib.mkIf cfg.enable {
-    ananke.home.cli = {
-      utilities.enable = lib.mkDefault true;
+    ananke.profiles.home.cli = {
       btop.enable = lib.mkDefault true;
       comma.enable = lib.mkDefault true;
       git.enable = lib.mkDefault true;
-      nixvim.enable = lib.mkDefault true;
       pass.enable = lib.mkDefault true;
+      nixvim.enable = lib.mkDefault true;
       ssh-agent.enable = lib.mkDefault true;
       tmux.enable = lib.mkDefault true;
+      utilities.enable = lib.mkDefault true;
       yazi.enable = lib.mkDefault true;
+
     };
   };
 }

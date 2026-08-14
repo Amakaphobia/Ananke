@@ -7,8 +7,8 @@
   ...
 }:
 let
-  cfg = config.ananke.home.desktop.waybar;
-  theme = config.ananke.theme.scheme;
+  cfg = config.ananke.profiles.home.desktop.waybar;
+  theme = config.ananke.profiles.home.theme.scheme;
 
   fonts = import (paths.lib + "/fontCatalog.nix") { inherit pkgs; };
   clockFont = fonts.mapleMono.package;
@@ -36,7 +36,7 @@ let
   '';
 in
 {
-  options.ananke.home.desktop.waybar = {
+  options.ananke.profiles.home.desktop.waybar = {
     enable = lib.mkEnableOption "Waybar";
   };
 

@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.ananke.home.desktop.media.vlc;
+  cfg = config.ananke.profiles.home.desktop.media.vlc;
 in
 {
-  options.ananke.home.desktop.media.vlc = {
+  options.ananke.profiles.home.desktop.media.vlc = {
     enable = lib.mkEnableOption "vlc-player";
   };
 

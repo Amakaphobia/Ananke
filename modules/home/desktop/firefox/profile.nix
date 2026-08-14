@@ -6,7 +6,7 @@
   ...
 }:
 let
-  cfg = config.ananke.home.desktop.firefox;
+  cfg = config.ananke.profiles.home.desktop.firefox;
 in
 {
   programs.firefox = lib.mkIf cfg.enable {

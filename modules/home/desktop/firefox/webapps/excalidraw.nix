@@ -5,15 +5,16 @@
   ...
 }:
 let
-  ff = config.ananke.home.desktop.firefox;
-  cfg = ff.webapps.excalidraw;
+  ff = config.ananke.profiles.home.desktop.firefox;
+  wa = ff.webapps;
+  cfg = wa.excalidraw;
 in
 {
-  options.ananke.home.desktop.firefox.webapps.excalidraw = {
+  options.ananke.profiles.home.desktop.firefox.webapps.excalidraw = {
     enable = lib.mkEnableOption "Excalidraw";
   };
 
-  config = lib.mkIf (ff.enable && ff.webapps.enable && cfg.enable) {
+  config = lib.mkIf (ff.enable && wa.enable && cfg.enable) {
     programs.firefox = {
       profiles.excalidraw = {
         id = 1;

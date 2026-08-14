@@ -1,15 +1,15 @@
 { config, lib, ... }:
 let
-  cfg = config.ananke.home.desktop.hypr;
+  cfg = config.ananke.profiles.home.desktop.hypr;
 in
 {
   imports = [
     ./land
   ];
 
-  # automatically basic land when hypr is enabled
   config.wayland.windowManager.hyprland = lib.mkIf cfg.enable {
     enable = lib.mkDefault true; # Enable home manager module for hyprland
+
     # hyprland is already owned by config.nix at system level:
     package = null;
     portalPackage = null;

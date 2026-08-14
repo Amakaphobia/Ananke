@@ -9,7 +9,7 @@ let
   # 6 hexadecimals
   hexColor = types.strMatching "[0-9a-fA-F]{6}";
 
-  theme = config.ananke.theme;
+  theme = config.ananke.profiles.home.theme;
 
   layout = import ../palettes/palette-layout.nix;
   inherit (layout) terminalColorRoles semanticColorRoles;
@@ -54,7 +54,7 @@ let
 in
 {
   # create global color scheme
-  options.ananke.theme.scheme = mkOption {
+  options.ananke.profiles.home.theme.scheme = mkOption {
     description = "global desktop color scheme.";
 
     type = types.submodule {

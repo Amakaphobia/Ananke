@@ -1,6 +1,6 @@
 { config, lib, ... }:
 let
-  cfg = config.ananke.home.desktop.obsidian;
+  cfg = config.ananke.profiles.home.desktop.obsidian;
 in
 {
   config = lib.mkIf cfg.enable {

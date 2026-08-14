@@ -18,9 +18,9 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    # disabled until I need it
-    ananke = {
+    ananke.profiles = {
       hardware = {
+        # disabled until I need it
         firmware.enable = lib.mkDefault false;
         storage-health.enable = lib.mkDefault true;
       };

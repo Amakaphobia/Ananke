@@ -1,6 +1,6 @@
 { config, lib, ... }:
 let
-  cfg = config.ananke.home.cli.nixvim.enable;
+  cfg = config.ananke.profiles.home.cli.nixvim.enable;
 in
 {
   imports = [

@@ -17,7 +17,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    ananke.home.desktop.media = {
+    ananke.profiles.home.desktop.media = {
       vlc.enable = lib.mkDefault true;
       spicetify.enable = lib.mkDefault true;
       spotify-player.enable = lib.mkDefault true;

@@ -4,10 +4,10 @@
   ...
 }:
 let
-  cfg = config.ananke.system.desktop.programs.firefox;
+  cfg = config.ananke.profiles.system.desktop.programs.firefox;
 in
 {
-  options.ananke.system.desktop.programs.firefox = {
+  options.ananke.profiles.system.desktop.programs.firefox = {
     enable = lib.mkEnableOption "Install Firefox";
   };
 

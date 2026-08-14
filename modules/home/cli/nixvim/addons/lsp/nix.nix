@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.ananke.home.cli.nixvim.enable;
+  cfg = config.ananke.profiles.home.cli.nixvim.enable;
 in
 {
   config = lib.mkIf cfg {

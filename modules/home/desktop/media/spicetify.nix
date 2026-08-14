@@ -6,11 +6,11 @@
   ...
 }:
 let
-  cfg = config.ananke.home.desktop.media.spicetify;
+  cfg = config.ananke.profiles.home.desktop.media.spicetify;
   spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
 in
 {
-  options.ananke.home.desktop.media.spicetify = {
+  options.ananke.profiles.home.desktop.media.spicetify = {
     enable = lib.mkEnableOption "spicetify";
   };
 

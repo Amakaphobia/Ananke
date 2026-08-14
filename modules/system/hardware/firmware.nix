@@ -1,10 +1,10 @@
 { config, lib, ... }:
 
 let
-  cfg = config.ananke.hardware.firmware;
+  cfg = config.ananke.profiles.hardware.firmware;
 in
 {
-  options.ananke.hardware.firmware = {
+  options.ananke.profiles.hardware.firmware = {
     enable = lib.mkEnableOption "firmware management through fwupd";
   };
 

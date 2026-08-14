@@ -16,50 +16,42 @@
     (paths.profiles + "/home/desktop/office.nix")
   ];
 
-  config.ananke = {
-    profiles = {
-      home = {
-        shell.zsh = {
-          enable = true;
-          akio.aliases.enable = true;
-        };
-        cli = {
-          base.enable = true;
-          ssh.akio.enable = true;
-        };
-        dev.enable = true;
-        desktop = {
-          hypr.enable = true;
-          media.enable = true;
-          office.enable = true;
-        };
-      };
-
+  config.ananke.profiles.home = {
+    shell.zsh = {
+      enable = true;
+      akio.aliases.enable = true;
     };
+    cli = {
+      base.enable = true;
+      ssh.akio.enable = true;
+    };
+    dev.enable = true;
+    desktop = {
+      hypr.enable = true;
+      media.enable = true;
+      office.enable = true;
 
-    home = {
-      desktop = {
-        obsidian.enable = true;
+      firefox.webapps = {
+        enable = true;
+        excalidraw.enable = true;
+      };
+      obsidian.enable = true;
 
-        firefox.webapps.excalidraw.enable = true;
+      apps = {
+        enable = true;
 
-        apps = {
-          enable = true;
-
-          geany.enable = true;
-          gimp.enable = true;
-          imv.enable = true;
-        };
-
-        hypr.commands = {
-          menu = "fuzzel-once";
-          hyprLayoutToggle = "hyprland-toggle-layout";
-          barToggle = "waybar-toggle";
-          lockScreen = "hyprlock-once";
-          screenshotRegion = "screenshot-region";
-          screenshotComplete = "screenshot-complete";
-          hyprSunsetToggle = "hyprsunset-toggle";
-        };
+        geany.enable = true;
+        gimp.enable = true;
+        imv.enable = true;
+      };
+      hypr.commands = {
+        menu = "fuzzel-once";
+        hyprLayoutToggle = "hyprland-toggle-layout";
+        barToggle = "waybar-toggle";
+        lockScreen = "hyprlock-once";
+        screenshotRegion = "screenshot-region";
+        screenshotComplete = "screenshot-complete";
+        hyprSunsetToggle = "hyprsunset-toggle";
       };
     };
   };

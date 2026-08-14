@@ -1,9 +1,9 @@
 { config, lib, ... }:
 let
-  cfg = config.ananke.home.desktop.hypr;
+  cfg = config.ananke.profiles.home.desktop.hypr;
 in
 {
-  options.ananke.home.desktop.hypr.sunset = {
+  options.ananke.profiles.home.desktop.hypr.sunset = {
     enable = lib.mkEnableOption "Hypr Sunset";
   };
   config = lib.mkIf (cfg.enable && cfg.sunset.enable) {

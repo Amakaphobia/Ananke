@@ -1,11 +1,11 @@
 { config, lib, ... }:
 let
-  cfg = config.ananke.home.desktop.fuzzel;
-  theme = config.ananke.theme;
+  cfg = config.ananke.profiles.home.desktop.fuzzel;
+  theme = config.ananke.profiles.home.theme;
   colors = theme.scheme.roles;
 in
 {
-  options.ananke.home.desktop.fuzzel = {
+  options.ananke.profiles.home.desktop.fuzzel = {
     enable = lib.mkEnableOption "Fuzzel";
   };
 

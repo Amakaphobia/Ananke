@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.ananke.system.desktop.windowManager.hypr;
+  cfg = config.ananke.profiles.system.desktop.windowManager.hypr;
 in
 {
-  options.ananke.system.desktop.windowManager.hypr = {
+  options.ananke.profiles.system.desktop.windowManager.hypr = {
     enable = lib.mkEnableOption "Install hyprland and its needed services on the system";
   };
   config = lib.mkIf cfg.enable {

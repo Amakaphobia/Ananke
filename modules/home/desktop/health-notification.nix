@@ -6,7 +6,7 @@
   ...
 }:
 let
-  cfg = config.ananke.home.desktop.services.serviceCheck;
+  cfg = config.ananke.profiles.home.desktop.services.serviceCheck;
 
   serviceCheck = pkgs.writeShellApplication {
     name = "service-check";
@@ -24,7 +24,7 @@ let
   };
 in
 {
-  options.ananke.home.desktop.services.serviceCheck = {
+  options.ananke.profiles.home.desktop.services.serviceCheck = {
     enable = lib.mkEnableOption "Perically Check System Health";
   };
 

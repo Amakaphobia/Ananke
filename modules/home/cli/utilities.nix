@@ -6,13 +6,12 @@
   ...
 }:
 let
-  cfg = config.ananke.home.cli.utilities;
+  cfg = config.ananke.profiles.home.cli.utilities;
 
   helper = import (paths.lib + "/helper.nix") { inherit lib; };
-
 in
 {
-  options.ananke.home.cli.utilities = {
+  options.ananke.profiles.home.cli.utilities = {
     enable = lib.mkEnableOption "utilities";
 
     bat.enable = helper.mkDefaultOnOption "bat";
@@ -38,7 +37,7 @@ in
       ++ lib.optional cfg.fd.enable pkgs.fd
       # just
       ++ lib.optional cfg.just.enable pkgs.just
-      # a jason processor
+      # a jason cfgcessor
       ++ lib.optional cfg.jq.enable pkgs.jq
       # terminal git
       ++ lib.optional cfg.lazygit.enable pkgs.lazygit

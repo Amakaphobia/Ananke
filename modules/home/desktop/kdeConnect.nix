@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.ananke.home.desktop.kdeconnect;
+  cfg = config.ananke.profiles.home.desktop.kdeconnect;
 
   # build the correct path to the device's files
   kdeconnectThunar = pkgs.writeShellApplication {
@@ -64,7 +64,7 @@ let
 
 in
 {
-  options.ananke.home.desktop.kdeconnect = {
+  options.ananke.profiles.home.desktop.kdeconnect = {
     enable = lib.mkEnableOption "KDE Connect desktop integration";
   };
 

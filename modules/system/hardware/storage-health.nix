@@ -1,10 +1,10 @@
 { config, lib, ... }:
 
 let
-  cfg = config.ananke.hardware.storage-health;
+  cfg = config.ananke.profiles.hardware.storage-health;
 in
 {
-  options.ananke.hardware.storage-health = {
+  options.ananke.profiles.hardware.storage-health = {
     enable = lib.mkEnableOption "storage health monitoring with smartd";
   };
 

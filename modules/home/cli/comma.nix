@@ -1,9 +1,9 @@
 { config, lib, ... }:
 let
-  cfg = config.ananke.home.cli.comma;
+  cfg = config.ananke.profiles.home.cli.comma;
 in
 {
-  options.ananke.home.cli.comma = {
+  options.ananke.profiles.home.cli.comma = {
     enable = lib.mkEnableOption "Comma with nix index db";
   };
 

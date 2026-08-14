@@ -17,7 +17,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    ananke.home.desktop = {
+    ananke.profiles.home.desktop.office = {
       libreoffice.enable = lib.mkDefault true;
       thunderbird = {
         enable = lib.mkDefault true;

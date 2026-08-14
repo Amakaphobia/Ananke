@@ -4,10 +4,10 @@
   ...
 }:
 let
-  cfg = config.ananke.home.cli.git;
+  cfg = config.ananke.profiles.home.cli.git;
 in
 {
-  options.ananke.home.cli.git = {
+  options.ananke.profiles.home.cli.git = {
     enable = lib.mkEnableOption "git";
   };
 

@@ -1,9 +1,9 @@
 { config, lib, ... }:
 let
-  cfg = config.ananke.home.desktop.hypr;
+  cfg = config.ananke.profiles.home.desktop.hypr;
 in
 {
-  options.ananke.home.desktop.hypr.idle = {
+  options.ananke.profiles.home.desktop.hypr.idle = {
     enable = lib.mkEnableOption "Wether to install hypridle";
 
     lock_timeout = lib.mkOption {
